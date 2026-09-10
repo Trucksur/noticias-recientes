@@ -3,13 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noticias Relevantes · Covey · 10 de septiembre de 2026</title>
+<title>Noticias Relevantes · Covey · 10.09.2026</title>
+<!--
+  PLANTILLA DEL INFORME DIARIO DE VIGILANCIA COMPETITIVA · COVEY
+  ---------------------------------------------------------------
+  Uso por la rutina:
+    1. Copiar este fichero a index.html.
+    2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
+       contenido del día. No dejar ningún marcador sin sustituir.
+    3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
+
+  Marcadores:
+    {{FECHA_CORTA}}      -> 11.09.2026
+    {{FECHA_LARGA}}      -> Viernes · Ventana 72 h
+    {{HORA}}             -> 08:16 CEST
+    {{TITULAR}}          -> Titular del día (resume lo más importante, nunca genérico)
+    {{RANGO_VENTANA}}    -> 08–11.09.2026
+
+  Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
+    - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
+      Nunca un nodo de texto suelto como hijo directo del <li>.
+    - <article class="item ..."> tiene EXACTAMENTE dos hijos:
+      <div class="item-rail"></div> y <div class="item-body">...</div>.
+    - Clases de relevancia en el <article> y en el chip: alta | media | contexto.
+    - Bloque .stats: solo si hay 3 cifras reales que lo justifiquen; si no, eliminarlo.
+    - Bloque vacío: usar <div class="empty">...</div> en lugar de rellenar con contexto antiguo.
+-->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 
 <style>
   :root {
+    color-scheme: light;
+
     --navy:        #1E2761;
     --navy-deep:   #0F1740;
     --navy-mid:    #2A3370;
@@ -29,17 +57,51 @@
     --f-data:    "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
 
     --measure: 68ch;
-    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy:        #8FA0E8;
+      --navy-deep:   #0B1030;
+      --navy-mid:    #A9B6EE;
+      --navy-light:  #7A8CD8;
+      --orange:      #F7B54A;
+      --ink:         #E8ECF7;
+      --body:        #B3BCD2;
+      --muted:       #8A94AC;
+      --hairline:    #2A3159;
+      --surface:     #141A38;
+      --surface-alt: #1A2145;
+      --ground:      #0B1030;
+      --brick:       #E08375;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --navy:        #8FA0E8;
+    --navy-deep:   #0B1030;
+    --navy-mid:    #A9B6EE;
+    --navy-light:  #7A8CD8;
+    --orange:      #F7B54A;
+    --ink:         #E8ECF7;
+    --body:        #B3BCD2;
+    --muted:       #8A94AC;
+    --hairline:    #2A3159;
+    --surface:     #141A38;
+    --surface-alt: #1A2145;
+    --ground:      #0B1030;
+    --brick:       #E08375;
   }
 
   body {
+    margin: 0;
+    padding: 0;
     background: var(--ground);
     color: var(--body);
     font-family: var(--f-body);
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    margin: 0;
   }
 
   img { max-width: 100%; }
@@ -149,6 +211,21 @@
     background: var(--navy-deep);
     padding: 4px 9px;
     border-radius: 2px;
+  }
+
+  :root[data-theme="dark"] .badge,
+  :root:not([data-theme="light"]) .badge { color: #fff; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .badge {
+      background: var(--navy-light);
+      color: #0B1030;
+    }
+  }
+
+  :root[data-theme="dark"] .badge {
+    background: var(--navy-light);
+    color: #0B1030;
   }
 
   h2 {
@@ -476,162 +553,96 @@
       <div class="wordmark">COVEY<span>VIGILANCIA COMPETITIVA</span></div>
       <div class="edition">
         <strong>Edición 10.09.2026</strong>
-        Jueves · Ventana 72 h<br>Actualizado 08:16 CEST
+        Jueves · Ventana 72 h<br>Actualizado 09:10 CEST
       </div>
     </div>
-    <h1>Madrid libera 37 millones para renovar flotas y el BOE prorroga las ayudas al gasóleo en la antesala de la IAA</h1>
+    <h1>El renting marca récord de cuota (26,3%) y llegan ayudas a la flota mientras la competencia guarda silencio esta semana</h1>
     <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
   </header>
   <div class="rule-accent"></div>
 
   <main>
 
+    <!-- ===== 1. RESUMEN EJECUTIVO (3-5 puntos) ===== -->
     <section class="exec">
       <span class="badge">Resumen ejecutivo</span>
       <h2>Lo que necesitas saber hoy</h2>
       <ol>
-        <li><div><b>La Comunidad de Madrid cierra un programa de 37,1 M€ que ha renovado más de 1.300 vehículos de transporte</b>, con 22,3 M€ destinados a compra de unidades nuevas y hasta 190.000 € de ayuda por vehículo. Es dinero público que está reconfigurando flotas en el principal mercado de Covey.</div></li>
-        <li><div><b>El BOE publicó ayer la Orden HAC/940/2026, que prorroga hasta el 30 de septiembre las compensaciones al transporte por el encarecimiento del gasóleo.</b> Afecta a la estructura de costes de los clientes profesionales de furgoneta y camión, no al alquilador, pero marca el pulso de tesorería del sector.</div></li>
-        <li><div><b>La consolidación del renting sube de nivel: cuatro candidatos elevan a más de 530 M€ la puja por FleetPartners</b> (90.000 vehículos gestionados). Element, SG Fleet con Pacific Equity Partners, Orix y un consorcio de Sumitomo compiten por la operación.</div></li>
-        <li><div><b>Volkswagen Financial Services renueva la dirección de su división de flotas en España con Marcos Grant</b>, en un año en que la marca lidera el canal de alquiler con un +4,8 % entre enero y agosto.</div></li>
-        <li><div><b>Sin menciones externas de Covey en la ventana de 72 horas.</b> La actividad de marca en estos tres días es exclusivamente contenido propio del blog corporativo.</div></li>
+        <li><div><b>Sin menciones externas ni movimientos de competidores datados en la ventana de 72 h (07–10.09.2026).</b> Se han revisado prensa sectorial, salas de prensa de competidores y buscadores en español e inglés sin localizar novedades verificables sobre Covey ni sobre Northgate, Petit Forestier, Fraikin, Ayvens, Arval, Alphabet, Record go, Europcar/Goldcar, Hertz, Avis, Sixt, Alquiber o ATP Iberia en este periodo.</div></li>
+        <li><div><b>El renting cierra agosto en máximos de cuota:</b> 254.963 vehículos matriculados por empresas de renting (+10,84% interanual) y una cuota del 26,27% sobre el total de matriculaciones, con 490 M€ invertidos en el mes (+27,9%), según AER (dato publicado el 02.09.2026, fuera de ventana pero relevante como contexto de fondo).</div></li>
+        <li><div><b>El renting de furgonetas crece por debajo de la media del sector:</b> +4,9% hasta agosto (39.520 unidades) frente al +10,4% general y al +25,4% de camiones, según AELR — una señal de que la demanda de furgón sigue expandiéndose pero a ritmo moderado frente a otros segmentos.</div></li>
+        <li><div><b>La Comunidad de Madrid destina 37,1 M€ a renovar más de 1.300 vehículos de transporte</b> (197 autobuses y 87 camiones, entre otros), anuncio del 06.09.2026; vigilar si otras autonomías replican líneas de ayuda extensibles a furgonetas ligeras.</div></li>
+        <li><div><b>Dos convocatorias de ayuda a vigilar de cerca:</b> el Programa Auto+ ya admite renting para autónomos y empresas (hasta 5.000€/furgoneta, máximo 10 renovaciones por empresa) y se espera la apertura de MOVES Flotas 2026 (hasta 9.000€/furgoneta eléctrica con achatarramiento) durante septiembre.</div></li>
       </ol>
     </section>
 
+    <!-- ===== 2. MENCIONES DE COVEY ===== -->
     <section>
       <span class="badge">Menciones de Covey</span>
       <h2>Covey en los medios</h2>
       <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 07–10.09.2026</p>
+
       <div class="empty">
-        <b>Sin menciones externas en la ventana.</b> No se han localizado noticias, entrevistas, premios, licitaciones ni reseñas de terceros sobre Covey Alquiler entre el 7 y el 10 de septiembre. Sí hay actividad de contenido propio en el blog corporativo, que se registra aparte y <b>no</b> computa como mención: entre las entradas visibles hoy figuran <a href="https://www.covey.es/noticias/que-ciudades-tienen-la-zbe-anulada-por-los-tribunales">«¿Qué ciudades tienen la ZBE anulada por los tribunales?»</a>, <a href="https://www.covey.es/noticias/deducir-iva-furgoneta-renting-autonomo">«¿Puedo deducir el 100 % del IVA de una furgoneta en renting siendo autónomo?»</a> y <a href="https://www.covey.es/noticias/normativa-furgoneta-reparto-ciudad-2026">«Normativa que debe cumplir una furgoneta de reparto en ciudad en 2026»</a>. El listado del blog no expone fecha de publicación, por lo que estas entradas quedan <b>sin fecha confirmada en la fuente</b>.
+        <b>Sin menciones externas en la ventana (07–10.09.2026).</b> Se han revisado buscadores generalistas en español e inglés, Google News, LinkedIn y las principales cabeceras sectoriales (Fleet People, Transporte 3, Ruta del Transporte, Nexotrans, Diario de Transporte) sin localizar prensa, notas de prensa, entrevistas, premios ni licitaciones de terceros que citen a Covey Alquiler en este periodo. El blog corporativo de covey.es sigue publicando contenido propio de forma regular (guías de ZBE, alquiler frigorífico, furgonetas eléctricas), pero es contenido propio y <b>no</b> computa como mención externa.
       </div>
     </section>
 
+    <!-- ===== 3. COMPETIDORES ===== -->
     <section>
       <span class="badge">Competidores</span>
       <h2>Movimientos de la competencia</h2>
       <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
 
-      <div class="items">
-
-        <article class="item media">
-          <div class="item-rail"></div>
-          <div class="item-body">
-            <div class="meta">
-              <span class="chip media">Relevancia media</span>
-              <span>Element · SG Fleet · Orix · Sumitomo</span>
-              <span>·</span>
-              <span>Fleet People</span>
-              <span>·</span>
-              <span>07.09.2026</span>
-            </div>
-            <h3>Cuatro candidatos elevan a más de 530 millones la puja por la renting FleetPartners</h3>
-            <p>La canadiense Element Fleet Management ha entrado en la subasta por FleetPartners con una oferta de entre 2,36 y 2,48 € por acción, frente a los 2,48 € de SG Fleet junto a Pacific Equity Partners, los 2,36 € de la japonesa Orix y los 2,39 € del consorcio liderado por Sumitomo, que valora la compañía en 505 M€. FleetPartners gestiona 90.000 vehículos y 1.427 M€ en activos financiados. La acción cotiza ya por encima de 2,61 €, por encima de las cuatro ofertas sobre la mesa.</p>
-            <p class="why"><b>Por qué importa:</b> la operación es en Oceanía, pero el comprador —sea Element, Orix o Sumitomo— saldrá reforzado como operador global de flotas y con más músculo para pujar por activos europeos. Para Covey el dato accionable no es el país, sino el precio: el mercado está pagando múltiplos altos por carteras de flota gestionada, lo que encarece cualquier operación de crecimiento inorgánico y, a la vez, revaloriza una flota propia de 3.500 vehículos con red de 20 delegaciones.</p>
-            <p class="src"><a href="https://fleetpeople.es/element-y-tres-rivales-elevan-a-530-millones-la-puja-por-la-renting-fleetpartners/">fleetpeople.es →</a></p>
-          </div>
-        </article>
-
-        <article class="item media">
-          <div class="item-rail"></div>
-          <div class="item-body">
-            <div class="meta">
-              <span class="chip media">Relevancia media</span>
-              <span>Volkswagen Financial Services</span>
-              <span>·</span>
-              <span>Fleet People</span>
-              <span>·</span>
-              <span>08.09.2026</span>
-            </div>
-            <h3>Volkswagen Financial Services nombra a Marcos Grant director de su división de flotas en España</h3>
-            <p>Grant sustituye a Artal Ferran al frente del área de flotas de VW Financial Services España. Llega tras más de 15 años en Volkswagen Group España Distribución, donde era responsable nacional de ventas de RAC y flotas. El CEO de la filial, Andreas Gruber, sitúa el nombramiento «en un momento trascendental para la compañía». Grant fija como prioridad adaptar las soluciones de alquiler y movilidad flexible del grupo a un entorno cambiante. Volkswagen lideró el canal de alquiler en España entre enero y agosto de 2026, con un crecimiento del 4,8 %.</p>
-            <p class="why"><b>Por qué importa:</b> el perfil del fichaje —un responsable de RAC— señala que el brazo financiero de VW quiere pisar el terreno del alquiler flexible, no solo el del renting a plazo fijo. Es el mismo espacio en el que compite Covey, y viene con la ventaja de acceso directo a producto de fábrica. Conviene vigilar sus primeras campañas de captación de autónomos y pymes.</p>
-            <p class="src"><a href="https://fleetpeople.es/vw-financial-services-oficializa-el-nombramiento-de-marcos-grant-al-frente-de-su-division-de-flotas/">fleetpeople.es →</a></p>
-          </div>
-        </article>
-
+      <div class="empty">
+        <b>Sin movimientos de competidores datados dentro de la ventana de 72 h.</b> Se ha revisado la actualidad de Northgate Renting Flexible, Petit Forestier, Fraikin, Ayvens (ALD/LeasePlan), Arval, Alphabet, Record go, Europcar/Goldcar, Hertz, Avis, Sixt, Alquiber, ATP Iberia y fondos consolidadores como Everwood Capital, sin novedades verificables publicadas entre el 07 y el 10.09.2026. Los movimientos más recientes localizados (resultados fiscales de Zigup/Northgate, integración Arval-Athlon, expansión de Everwood en transporte frigorífico y express) son de semanas o meses anteriores y no se han incluido aquí para no hacerlos pasar por novedad.
       </div>
     </section>
 
+    <!-- ===== 4. SECTOR Y MERCADO ===== -->
     <section>
       <span class="badge">Sector y mercado</span>
-      <h2>Producto, salón y cierre de agosto</h2>
-      <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
+      <h2>El renting cierra agosto en máximos de cuota</h2>
+      <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota · datos de agosto 2026, publicados el 02.09.2026</p>
 
       <div class="stats">
         <div class="stat">
-          <div class="n">11.289</div>
-          <div class="d">Comerciales ligeros matriculados en agosto<br>+5,9 % interanual · Fuente ANFAC, 01.09</div>
+          <div class="n">254.963</div>
+          <div class="d">Vehículos matriculados por empresas de renting hasta agosto<br>+10,84 % interanual · AER, 02.09.2026</div>
         </div>
         <div class="stat">
           <div class="n">490 M€</div>
-          <div class="d">Inversión del renting en compra de vehículos en agosto<br>+27,93 % interanual · Fuente AER, 02.09</div>
+          <div class="d">Inversión en compra de vehículos en renting durante agosto<br>+27,93 % interanual · AER, 02.09.2026</div>
         </div>
         <div class="stat">
-          <div class="n">48,59 %</div>
-          <div class="d">Peso del renting en el canal de vehículo comercial<br>Acumulado enero-agosto · Fuente AER</div>
+          <div class="n">26,27 %</div>
+          <div class="d">Cuota del renting sobre el total de matriculaciones en agosto<br>Frente al 25,26 % en agosto 2025 · AER, 02.09.2026</div>
         </div>
       </div>
 
       <div class="items">
 
-        <article class="item alta">
-          <div class="item-rail"></div>
-          <div class="item-body">
-            <div class="meta">
-              <span class="chip alta">Relevancia alta</span>
-              <span>Geely Farizon</span>
-              <span>·</span>
-              <span>Transporte 3</span>
-              <span>·</span>
-              <span>09.09.2026</span>
-            </div>
-            <h3>Geely Farizon debuta en la IAA con tres eléctricos y confirma su entrada en España</h3>
-            <p>La marca china presentará en Hannover (stand P55) la furgoneta Farizon SV, de hasta 13 m³ de capacidad de carga, la V7E —6,95 m³, 1.373 kg de carga útil y hasta 328 km WLTP, con más de 14 sistemas ADAS— y el camión pesado eléctrico Homtruck, con batería de 600 kWh y más de 500 km de autonomía en su estreno europeo. La entrada en el mercado español se canaliza a través del distribuidor Automoción y Movilidad Hispania (AMH).</p>
-            <p class="why"><b>Por qué importa:</b> un proveedor nuevo de furgón eléctrico grande, con distribución española ya montada, amplía la baraja de compra de flota justo cuando el eléctrico sigue siendo caro por unidad. Para Covey es una palanca de negociación frente a los proveedores actuales y una vía para bajar el coste de entrada del furgón eléctrico de reparto urbano, el producto que exigen las ZBE. La incógnita a resolver antes de cualquier pedido es la red de posventa y el valor residual de una marca sin histórico en España.</p>
-            <p class="src"><a href="https://transporte3.com/noticia/24415-geely-farizon-llevara-sus-furgonetas-electricas-y-el-homtruck-a-iaa-transportation-2026/">transporte3.com →</a></p>
-          </div>
-        </article>
-
         <article class="item contexto">
           <div class="item-rail"></div>
           <div class="item-body">
             <div class="meta">
               <span class="chip contexto">Contexto vigente</span>
-              <span>IAA Transportation · VDA</span>
+              <span>AELR</span>
               <span>·</span>
-              <span>Todo Transporte / Cadena de Suministro</span>
+              <span>PressDigital / autoPneu</span>
               <span>·</span>
-              <span>Publicado 04.09.2026 — fuera de ventana</span>
+              <span>Publicado 02.09.2026 — fuera de ventana</span>
             </div>
-            <h3>La IAA Transportation abre en Hannover del 15 al 20 de septiembre con la descarbonización como eje</h3>
-            <p>El salón del vehículo comercial se celebra la semana que viene, con jornada de prensa el 14 de septiembre. El programa gira en torno a descarbonización, digitalización, hidrógeno, conducción autónoma, infraestructura de recarga y distribución de última milla, y se organiza en cinco bloques (Exhibition, Conference, Experience, Startup Area y el fin de semana abierto al público). Mercedes-Benz Vans vuelve con stand propio en el pabellón 13 y rueda de prensa de su CEO, Thomas Klein, el día 14 a las 9:00.</p>
-            <p class="why"><b>Por qué importa:</b> es la feria donde se fija la oferta de furgón y carrozado para 2027-2028, incluidos frigoríficos y soluciones de frío eléctrico. Lo que se anuncie allí condiciona los pliegos de compra de flota de Covey del próximo ejercicio; conviene tener una lectura de las novedades a más tardar el lunes 21.</p>
-            <p class="src"><a href="https://www.todotransporte.com/texto-diario/mostrar/6002738/mercedes-benz-vans-vuelve-iaa-transportation-2026-stand-propio">todotransporte.com →</a> · <a href="https://www.cadenadesuministro.es/industria-carretera/iaa-transportation-2026-hannover-movilidad-profesional-logistica-transporte_1517225_102.html">cadenadesuministro.es →</a></p>
-          </div>
-        </article>
-
-        <article class="item contexto">
-          <div class="item-rail"></div>
-          <div class="item-body">
-            <div class="meta">
-              <span class="chip contexto">Contexto vigente</span>
-              <span>ANFAC · Faconauto · Ganvam · AER</span>
-              <span>·</span>
-              <span>El Mercantil / AER</span>
-              <span>·</span>
-              <span>Publicado 01–02.09.2026 — fuera de ventana</span>
-            </div>
-            <h3>El comercial ligero encadena tres meses al alza y el renting dispara su inversión un 27,9 % en agosto</h3>
-            <p>En agosto se matricularon 11.289 comerciales ligeros (+5,9 %), hasta 131.633 en el acumulado del año (+7 %), y 1.917 industriales (+14,6 %), con 20.796 acumulados (+14,4 %). El pick-up lideró el ligero con +26 % en el mes. En paralelo, la AER cifra en 490 M€ la inversión del renting en compra de vehículos durante agosto (+27,93 %) y en 6.347 M€ el acumulado (+20,32 %); el renting supone ya el 26,27 % del mercado total y el 48,59 % del canal comercial. Ganvam pidió activar los programas de renovación de movilidad sostenible.</p>
-            <p class="why"><b>Por qué importa:</b> el mercado de vehículo de trabajo sigue creciendo y casi la mitad de las matriculaciones comerciales pasan ya por fórmulas de uso. Es el argumento de fondo de la propuesta de Covey frente a la compra en propiedad, y también una alerta: los grandes del renting están comprando flota a un ritmo un 20 % superior al de 2025, lo que aprieta plazos de entrega y disponibilidad de carrozado.</p>
-            <p class="src"><a href="https://elmercantil.com/2026/09/01/los-vehiculos-comerciales-ligeros-e-industriales-suman-su-tercer-mes-de-matriculaciones-al-alza/">elmercantil.com →</a> · <a href="https://ae-renting.es/prensa-noticias/notas-de-prensa/el-renting-invierte-490-millones-de-euros-en-compra-de-vehiculos-en-agosto-un-2793-mas-que-hace-un-ano/">ae-renting.es →</a></p>
+            <h3>El renting de furgonetas crece un 4,9% hasta agosto, por debajo de la media del sector</h3>
+            <p>Según la Asociación Española de Leasing y Renting (AELR), el renting de automoción sumó 254.237 operaciones hasta agosto de 2026, un 10,4% más que un año antes. Dentro de ese total, los turismos crecieron un 12,3% (206.003 operaciones) y los camiones se dispararon un 25,4% (3.455 contratos), mientras que las furgonetas avanzaron un 4,9%, hasta 39.520 unidades.</p>
+            <p class="why"><b>Por qué importa:</b> el segmento de furgón crece por debajo de la media del renting y muy por debajo del repunte de camiones, lo que sugiere que la renovación de flota ligera avanza más despacio que en industriales pesados. Para Covey, centrada en corto y medio plazo de furgonetas y frigoríficos, es una señal de demanda sólida pero sin aceleración brusca, y un argumento para reforzar la propuesta de alquiler flexible frente al renting a largo plazo en este segmento.</p>
+            <p class="src"><a href="https://www.pressdigital.es/articulo/economia/2026-09-02/6000594-renting-automocion-suma-254237-operaciones-hasta-agosto-104">pressdigital.es →</a></p>
           </div>
         </article>
 
       </div>
     </section>
 
+    <!-- ===== 5. REGULACIÓN Y NORMATIVA ===== -->
     <section>
       <span class="badge">Regulación y normativa</span>
       <h2>Marco regulatorio</h2>
@@ -639,39 +650,21 @@
 
       <div class="items">
 
-        <article class="item alta">
+        <article class="item contexto">
           <div class="item-rail"></div>
           <div class="item-body">
             <div class="meta">
-              <span class="chip alta">Relevancia alta</span>
+              <span class="chip contexto">Contexto vigente</span>
               <span>Comunidad de Madrid</span>
               <span>·</span>
-              <span>Fleet People</span>
+              <span>Comunidad de Madrid / Transporte 3</span>
               <span>·</span>
-              <span>10.09.2026</span>
+              <span>Publicado 06.09.2026 — fuera de ventana</span>
             </div>
-            <h3>Madrid cierra con 37,1 millones un programa que ha renovado más de 1.300 vehículos de transporte</h3>
-            <p>La Comunidad de Madrid ha resuelto las ayudas a la transformación de flotas con una dotación de 37,1 M€, de los que 22,3 M€ han ido a compra de vehículos nuevos —197 autobuses y 87 camiones— con un máximo de 190.000 € de subvención por unidad, además de achatarramiento e instalación de puntos de recarga. Una segunda línea ha repartido más de 620.000 € entre 141 solicitudes aprobadas para digitalización de empresas de transporte, gestión documental electrónica y tacógrafos inteligentes de segunda generación. El origen es el Real Decreto 983/2021, dentro del Plan de Recuperación.</p>
-            <p class="why"><b>Por qué importa:</b> las mismas empresas que están renovando con dinero público son clientes de alquiler y renting en Madrid, la delegación de mayor volumen de Covey. Dos lecturas: a corto plazo, parte de la demanda de sustitución se cubre con vehículo propio subvencionado; a medio plazo, quien achatarra y espera entrega necesita capacidad flexible en el intervalo. Merece la pena cruzar el listado de beneficiarios con la cartera comercial de Madrid.</p>
-            <p class="src"><a href="https://fleetpeople.es/madrid-facilita-la-renovacion-de-flotas-de-1-300-vehiculos-con-una-dotacion-de-37-millones-de-euros/">fleetpeople.es →</a></p>
-          </div>
-        </article>
-
-        <article class="item media">
-          <div class="item-rail"></div>
-          <div class="item-body">
-            <div class="meta">
-              <span class="chip media">Relevancia media</span>
-              <span>BOE · Ministerio de Hacienda</span>
-              <span>·</span>
-              <span>Diario de León</span>
-              <span>·</span>
-              <span>09.09.2026</span>
-            </div>
-            <h3>El BOE prorroga hasta el 30 de septiembre las compensaciones al transporte por el precio del gasóleo</h3>
-            <p>La Orden HAC/940/2026, firmada el 8 de septiembre y publicada el 9, extiende las ayudas económicas al transporte de mercancías y viajeros por el encarecimiento del combustible. El periodo inicial cubría del 1 de marzo al 30 de junio de 2026 y se amplía ahora hasta el 30 de septiembre, al amparo del Real Decreto-ley 18/2026, de 29 de junio, y con la autorización de la Comisión Europea por Decisión SA.124070 (2026/N) de 28 de julio. Mantiene el procedimiento de la Orden HAC/674/2026 y exige justificar el gasto de combustible del periodo.</p>
-            <p class="why"><b>Por qué importa:</b> el alivio es para el transportista, no para el alquilador, pero determina la tesorería de la clientela profesional de Covey en el tramo final del año. Un cliente compensado hasta septiembre aguanta la cuota; si la prórroga no se renueva en octubre, es previsible más presión sobre precio y plazos de pago justo en la campaña de fin de año, la de mayor demanda de furgón frigorífico.</p>
-            <p class="src"><a href="https://www.diariodeleon.es/leon/260909/2096830/boe-publica-decision-clave-afecta-miles-transportistas-espana.html">diariodeleon.es →</a></p>
+            <h3>Madrid destina 37,1 M€ a renovar más de 1.300 vehículos de transporte de mercancías y viajeros</h3>
+            <p>La Comunidad de Madrid ha confirmado la renovación de más de 1.300 vehículos de transporte gracias a una línea de ayudas dotada con 37,1 M€ en su última convocatoria, financiada por el Mecanismo de Recuperación y Resiliencia europeo y los Presupuestos Generales del Estado. El mayor tramo, 22,3 M€, se destinó a la compra de vehículos nuevos —197 autobuses y 87 camiones—, con aportaciones de hasta 190.000 € por unidad, además de subvencionar el achatarramiento y la instalación de puntos de recarga.</p>
+            <p class="why"><b>Por qué importa:</b> aunque el grueso de esta convocatoria se dirige a autobuses y camiones pesados, confirma que las autonomías siguen activando líneas de achatarramiento y renovación de flota con fondos europeos. Covey, con delegación en Madrid, debe vigilar si aparecen líneas equivalentes específicas para furgones de reparto y frigoríficos, que podrían abaratar la renovación de flota propia o incentivar a clientes a comprar en vez de alquilar.</p>
+            <p class="src"><a href="https://www.comunidad.madrid/noticias/2026/09/06/comunidad-madrid-facilita-renovacion-1300-vehiculos-transporte-viajeros-mercancias-region">comunidad.madrid →</a></p>
           </div>
         </article>
 
@@ -680,70 +673,75 @@
           <div class="item-body">
             <div class="meta">
               <span class="chip contexto">Contexto vigente</span>
-              <span>Acuerdo ATP · Ministerio de Transportes</span>
+              <span>UNECE / Ministerio de Transportes</span>
               <span>·</span>
-              <span>Camión Actualidad</span>
+              <span>Autónomos en Ruta / Diario de Transporte</span>
               <span>·</span>
-              <span>Publicado 03.09.2026 — fuera de ventana</span>
+              <span>Publicado 25.08.2026 — fuera de ventana</span>
             </div>
-            <h3>El ATP 2026 está en vigor desde el 25 de agosto y no obliga a renovar los equipos de frío actuales</h3>
-            <p>El nuevo texto del Acuerdo ATP entró en vigor el 25 de agosto de 2026 con modificaciones técnicas para el transporte de mercancías perecederas. El mensaje central para los operadores es que «no existe una obligación general de renovar los vehículos o equipos actualmente en servicio». Los registradores de temperatura conformes a la EN 12830:1999 pueden seguir operando, con un periodo transitorio hasta el 25 de agosto de 2027 para verificación y actualización documental. El acuerdo precisa además los requisitos de los vehículos multitemperatura y los procedimientos de ensayo, distinguiendo con más detalle entre unidades de un solo compartimento y multizona. El Ministerio de Transportes ha publicado el documento oficial de 158 páginas en castellano.</p>
-            <p class="why"><b>Por qué importa:</b> es la novedad normativa con mayor impacto directo sobre el negocio frigorífico de Covey y la lectura es favorable: no hay obligación de renovar flota, sino de tener la documentación y la verificación de registradores en regla antes de agosto de 2027. Traducido a acción: auditoría documental de la flota frigorífica y calendario de verificación, no una compra anticipada de equipos.</p>
-            <p class="src"><a href="https://www.camionactualidad.es/destacadas-noticias/item/11720-atp-2026-transporte-frigorifico-mercancias-perecederas">camionactualidad.es →</a></p>
+            <h3>El nuevo acuerdo ATP 2026 endurece el control del aislamiento térmico en vehículos frigoríficos</h3>
+            <p>Desde el 25 de agosto de 2026 es de aplicación la nueva versión del acuerdo ATP, que introduce un control más exhaustivo sobre el deterioro del coeficiente K (aislamiento térmico) conforme a la norma UNE-EN 13486:2024, y detalla con mayor precisión las condiciones para vehículos multicompartimento y multitemperatura. La actualización no obliga a sustituir los vehículos ya en servicio, pero endurece las verificaciones periódicas de los instrumentos.</p>
+            <p class="why"><b>Por qué importa:</b> Covey es líder nacional en alquiler de furgonetas frigoríficas; cualquier endurecimiento del ATP afecta directamente a los requisitos de certificación y mantenimiento de su flota multicompartimento, y a la información sobre cumplimiento normativo que debe poder acreditar ante clientes que operan rutas internacionales de cadena de frío.</p>
+            <p class="src"><a href="https://www.autonomosenruta.com/transporte-mercancias/noticias-transporte/atp-2026-cambios-afectan-transporte-mercancias-perecederas">autonomosenruta.com →</a></p>
           </div>
         </article>
 
       </div>
     </section>
 
+    <!-- ===== 6. SEÑALES A SEGUIR (2-4) ===== -->
     <section>
       <span class="badge">Señales a seguir</span>
       <h2>Qué vigilar los próximos días</h2>
       <ul class="watch">
         <li>
-          <span class="when">14–20 septiembre</span>
-          <div><b>IAA Transportation, Hannover.</b> Novedades de furgón, carrozado y frío eléctrico que fijarán la oferta de compra de flota de 2027. Jornada de prensa el día 14; conviene una lectura de conclusiones la semana del 21.</div>
+          <span class="when">Septiembre 2026</span>
+          <div><b>Apertura de MOVES Flotas 2026.</b> Gestionada por el IDAE, prevé hasta 9.000 € por furgoneta eléctrica (N1) con achatarramiento de un vehículo de más de 7 años. Puede reducir el atractivo del alquiler frente a la compra para clientes que renueven flota propia este trimestre.</div>
         </li>
         <li>
-          <span class="when">30 septiembre</span>
-          <div><b>Vencimiento de las ayudas al gasóleo.</b> Termina el periodo prorrogado por la Orden HAC/940/2026. Vigilar si hay nueva prórroga en octubre: sin ella, aumenta la presión de coste sobre el cliente transportista en plena campaña de fin de año.</div>
+          <span class="when">En curso</span>
+          <div><b>Límite de 10 renovaciones por empresa en el Programa Auto+.</b> El programa ya admite renting para autónomos y empresas (hasta 5.000 €/furgoneta), pero el tope de 10 unidades por empresa deja fuera a flotas grandes. Vigilar si el Gobierno amplía el límite en próximas modificaciones.</div>
         </li>
         <li>
-          <span class="when">Septiembre – Q4</span>
-          <div><b>Apertura de ventanillas autonómicas del MOVES Flotas.</b> Hasta 9.000 € por furgoneta eléctrica N1 con achatarramiento de un vehículo de más de siete años y 4.500 € sin él; hasta 12.000 € por camión N2. Admite compra y renting a largo plazo, con presupuesto por orden de solicitud. Verificar convocatoria por comunidad antes de comprometer pedidos.</div>
+          <span class="when">Principios de octubre</span>
+          <div><b>Publicación de matriculaciones de septiembre.</b> ANFAC, Faconauto y Ganvam publicarán los datos de industriales y comerciales de septiembre, y AER/AELR sus cifras de renting del mes; permitirá confirmar si la cuota de renting sigue creciendo tras el máximo de agosto.</div>
         </li>
         <li>
-          <span class="when">Hasta 25.08.2027</span>
-          <div><b>Periodo transitorio del ATP para registradores de temperatura.</b> Ventana para verificar y documentar los equipos EN 12830:1999 de la flota frigorífica sin necesidad de sustituirlos.</div>
+          <span class="when">En curso</span>
+          <div><b>Cumplimiento del ATP 2026 en flota frigorífica propia.</b> Revisar que la verificación periódica de los equipos de frío de Covey conforme a UNE-EN 13486:2024 esté al día antes de inspecciones en rutas internacionales de cadena de frío.</div>
         </li>
       </ul>
     </section>
 
+    <!-- ===== 7. FUENTES (todo lo consultado, numerado) ===== -->
     <section>
       <span class="badge">Fuentes</span>
       <h2>Consultado hoy</h2>
       <ol class="sources">
-        <li><span>01</span><a href="https://fleetpeople.es/madrid-facilita-la-renovacion-de-flotas-de-1-300-vehiculos-con-una-dotacion-de-37-millones-de-euros/">Fleet People — Madrid facilita la renovación de flotas de 1.300 vehículos con una dotación de 37 millones (10.09.2026)</a></li>
-        <li><span>02</span><a href="https://www.diariodeleon.es/leon/260909/2096830/boe-publica-decision-clave-afecta-miles-transportistas-espana.html">Diario de León — El BOE publica una decisión clave que afecta a miles de transportistas (09.09.2026)</a></li>
-        <li><span>03</span><a href="https://transporte3.com/noticia/24415-geely-farizon-llevara-sus-furgonetas-electricas-y-el-homtruck-a-iaa-transportation-2026/">Transporte 3 — Geely Farizon llevará sus furgonetas eléctricas y el Homtruck a IAA Transportation 2026 (09.09.2026)</a></li>
-        <li><span>04</span><a href="https://fleetpeople.es/vw-financial-services-oficializa-el-nombramiento-de-marcos-grant-al-frente-de-su-division-de-flotas/">Fleet People — VW Financial Services oficializa el nombramiento de Marcos Grant (08.09.2026)</a></li>
-        <li><span>05</span><a href="https://fleetpeople.es/element-y-tres-rivales-elevan-a-530-millones-la-puja-por-la-renting-fleetpartners/">Fleet People — Element y tres rivales elevan a 530 millones la puja por FleetPartners (07.09.2026)</a></li>
-        <li><span>06</span><a href="https://www.todotransporte.com/texto-diario/mostrar/6002738/mercedes-benz-vans-vuelve-iaa-transportation-2026-stand-propio">Todo Transporte — Mercedes-Benz Vans vuelve a la IAA Transportation 2026 con stand propio (04.09.2026)</a></li>
-        <li><span>07</span><a href="https://www.camionactualidad.es/destacadas-noticias/item/11720-atp-2026-transporte-frigorifico-mercancias-perecederas">Camión Actualidad — ATP 2026: cambios clave para el transporte frigorífico (03.09.2026)</a></li>
-        <li><span>08</span><a href="https://ae-renting.es/prensa-noticias/notas-de-prensa/el-renting-invierte-490-millones-de-euros-en-compra-de-vehiculos-en-agosto-un-2793-mas-que-hace-un-ano/">AER — El renting invierte 490 millones en compra de vehículos en agosto (02.09.2026)</a></li>
-        <li><span>09</span><a href="https://elmercantil.com/2026/09/01/los-vehiculos-comerciales-ligeros-e-industriales-suman-su-tercer-mes-de-matriculaciones-al-alza/">El Mercantil — Los vehículos comerciales ligeros e industriales suman su tercer mes al alza (01.09.2026)</a></li>
-        <li><span>10</span><a href="https://www.motor16.com/las-ultimas-noticias/plan-moves-flotas-2026-requisitos/">Motor16 — Plan MOVES Flotas 2026: hasta 9.000 € por furgoneta eléctrica (11.08.2026)</a></li>
-        <li><span>11</span><a href="https://www.cadenadesuministro.es/industria-carretera/iaa-transportation-2026-hannover-movilidad-profesional-logistica-transporte_1517225_102.html">Cadena de Suministro — La IAA Transportation 2026 abrirá en septiembre (sin fecha confirmada en la fuente)</a></li>
-        <li><span>12</span><a href="https://www.autopneu.info/renting/renting-genera-10-mas-segun-aelr/">AutoPneu — El renting generó 254.237 operaciones hasta agosto según AELR (sin fecha confirmada en la fuente)</a></li>
-        <li><span>13</span><a href="https://www.covey.es/noticias">Covey Alquiler — Blog corporativo, contenido propio (sin fecha confirmada en la fuente)</a></li>
-        <li><span>14</span><a href="https://ae-renting.es/prensa-noticias/">AER — Prensa y notas de prensa</a></li>
-        <li><span>15</span><a href="https://www.petitforestier.com/es-es/posts">Petit Forestier — Sala de prensa (sin novedades en la ventana)</a></li>
-        <li><span>16</span><a href="https://www.northgate.es/sobre-nosotros/actualidad">Northgate — Actualidad corporativa (sin novedades en la ventana)</a></li>
+        <li><span>01</span><a href="https://www.covey.es/noticias">Covey Alquiler — Noticias (blog propio, revisado)</a></li>
+        <li><span>02</span><a href="https://www.northgate.es/sobre-nosotros/actualidad">Northgate — Toda la actualidad de Northgate y el Renting (revisado, sin novedades en ventana)</a></li>
+        <li><span>03</span><a href="https://fleetpeople.es/seccion/renting/">Fleet People — Noticias de Renting (revisado, sin novedades de competidores en ventana)</a></li>
+        <li><span>04</span><a href="https://www.pressdigital.es/articulo/economia/2026-09-02/6000594-renting-automocion-suma-254237-operaciones-hasta-agosto-104">PressDigital — El renting de automoción suma 254.237 operaciones hasta agosto, un 10,4% más (02.09.2026)</a></li>
+        <li><span>05</span><a href="https://ae-renting.es/mc-events/npmatriculac-agosto2026/?mc_id=48">AER — Nota de prensa matriculaciones agosto 2026 (02.09.2026)</a></li>
+        <li><span>06</span><a href="https://www.auto-revista.com/texto-diario/mostrar/6002588/renting-aumenta-matriculaciones-1084-cierre-agosto">Auto Revista — El renting aumenta sus matriculaciones el 10,84% a cierre de agosto (02.09.2026)</a></li>
+        <li><span>07</span><a href="https://www.comunidad.madrid/noticias/2026/09/06/comunidad-madrid-facilita-renovacion-1300-vehiculos-transporte-viajeros-mercancias-region">Comunidad de Madrid — Renovación de más de 1.300 vehículos de transporte (06.09.2026)</a></li>
+        <li><span>08</span><a href="https://transporte3.com/noticia/24422-la-comunidad-de-madrid-impulsa-la-renovacion-de-mas-de-1-300-vehiculos-de-transporte-con-37-millones-en-ayudas/">Transporte 3 — La Comunidad de Madrid impulsa la renovación de más de 1.300 vehículos (06.09.2026)</a></li>
+        <li><span>09</span><a href="https://www.autonomosenruta.com/transporte-mercancias/noticias-transporte/atp-2026-cambios-afectan-transporte-mercancias-perecederas">Autónomos en Ruta — El ATP 2026 entra en vigor (25.08.2026)</a></li>
+        <li><span>10</span><a href="https://www.diariodetransporte.com/carretera/mercancias/cuenta-atras-para-el-atp-2026-el-25-de-agosto-cambia-la-normativa-del-transporte-frigorifico-esta-tu-flota-preparada/">Diario de Transporte — Cuenta atrás para el ATP 2026 (revisado)</a></li>
+        <li><span>11</span><a href="https://www.motor16.com/las-ultimas-noticias/ayudas-moves-flotas-2026-plazos">Motor16 — Ayudas MOVES Flotas 2026: cuánto cobras por furgoneta eléctrica y cómo pedirlas</a></li>
+        <li><span>12</span><a href="https://www.mintur.gob.es/es-es/programa-auto/">Ministerio de Industria y Turismo — Programa Auto+ (revisado)</a></li>
+        <li><span>13</span><a href="https://elmercantil.com/2026/09/01/los-vehiculos-comerciales-ligeros-e-industriales-suman-su-tercer-mes-de-matriculaciones-al-alza/">El Mercantil — Los vehículos comerciales ligeros e industriales suman su tercer mes de matriculaciones al alza (01.09.2026)</a></li>
+        <li><span>14</span><a href="https://transporteprofesional.es/noticias-fabricantes/las-matriculaciones-de-vehiculos-industriales-crecen-un-14-4-hasta-agosto">Transporte Profesional — Las matriculaciones de vehículos industriales crecen un 14,4% hasta agosto (revisado)</a></li>
+        <li><span>15</span><a href="https://www.eldebate.com/motor/20260319/arval-eleva-10-flota-financiada-espana-preve-cerrar-compra-athlon-finales-ano_397977.html">El Debate — Arval eleva un 10% su flota financiada y compra Athlon (revisado, fuera de ventana)</a></li>
+        <li><span>16</span><a href="https://www.eleconomista.es/motor/noticias/13849866/03/26/ayvens-se-hace-con-un-cuarto-del-negocio-del-renting-en-espana-y-supera-los-2000-millones-en-facturacion.html">El Economista — Ayvens se hace con un cuarto del negocio del renting en España (revisado, fuera de ventana)</a></li>
+        <li><span>17</span><a href="https://fleetpeople.es/petit-forestier-y-fraikin-los-reyes-del-renting-de-industriales-coquetean-con-su-accionariado/">Fleet People — Petit Forestier y Fraikin, los reyes del renting de industriales (revisado, fuera de ventana)</a></li>
+        <li><span>18</span><a href="https://www.rutadeltransporte.com/flotas/flotas/everwood-capital-continua-con-su-expansion-en-el-transporte-frigorifico-con-la-compra-de-grupo-palomo.html">Ruta del Transporte — Everwood Capital continúa su expansión en transporte frigorífico (revisado, fuera de ventana)</a></li>
       </ol>
     </section>
 
+    <!-- ===== 8. MÉTODO ===== -->
     <p class="method">
-      <b>Método.</b> Ventana de 72 horas (07–10.09.2026) sobre prensa económica, sectorial de automoción, transporte y logística, boletines oficiales y comunicaciones de asociaciones (AER, AELR, ANFAC, Faconauto, Ganvam). Se han revisado además las salas de prensa de Northgate, Petit Forestier, Fraikin, Ayvens, Arval, Alphabet, Alquiber, Record go, Europcar, Hertz, Avis y Sixt, sin novedades datables dentro de la ventana. Se descarta todo resultado relativo a Stephen Covey, FranklinCovey y homónimos. Los ítems sin fecha verificable en la fuente se marcan como tales y no computan como novedad; el material anterior a la ventana se etiqueta como «Contexto vigente» con su fecha real. Cuando un bloque no tiene material dentro de la ventana se declara vacío en lugar de rellenarse.
+      <b>Método.</b> Ventana de 72 horas (07–10.09.2026) sobre prensa económica, sectorial de automoción, transporte y logística, boletines oficiales y comunicaciones de asociaciones (AER, AELR, ANFAC, Faconauto, Ganvam), con más de 20 búsquedas en español e inglés. Se han revisado directamente las salas de prensa y secciones de actualidad de Northgate, Fleet People (Ayvens, Arval, Alphabet, Sixt, Hertz), Transporte 3 y Ruta del Transporte (Petit Forestier, Fraikin, Alquiber, Everwood Capital), así como el blog y perfil de LinkedIn de Covey Alquiler. Se descarta todo resultado relativo a Stephen Covey, FranklinCovey y homónimos. Los ítems sin fecha verificable en la fuente se marcan como tales y no computan como novedad; el material anterior a la ventana se etiqueta como «Contexto vigente» con su fecha real. Cuando un bloque no tiene material dentro de la ventana se declara vacío en lugar de rellenarse.
     </p>
 
   </main>
