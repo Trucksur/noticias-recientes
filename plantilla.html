@@ -23,6 +23,7 @@
     {{RANGO_VENTANA}}    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
     {{RECUENTO}}         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
                             (solo cuenta ítems Nuevo/Actualizado; el contexto no suma)
+    {{METODO}}           -> Edición completa del 15.09.2026, con ventana desde la edición anterior del 14.09.2026 (17:11 CEST) hasta hoy a las 08:12 CEST.
     {{CIFRA}} {{QUE_MIDE}} {{VARIACION_FUENTE}} -> solo en el bloque .stats
 
   Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
@@ -569,7 +570,7 @@
 
   <header class="masthead">
     <div class="masthead-top">
-      <div class="wordmark">COVEY<span>VIGILANCIA COMPETITIVA</span></div>
+      <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
       <div class="edition">
         <strong>Edición {{FECHA_CORTA}}</strong>
         {{FECHA_LARGA}}<br>Actualizado {{HORA}}
@@ -718,16 +719,18 @@
       </ul>
     </section>
 
-    <!-- ===== 8. MÉTODO ===== -->
+    <!-- ===== 8. MÉTODO =====
+         Una o dos frases: qué edición es y su ventana (desde qué edición y hora hasta cuándo) y, si sustituye
+         a otra edición del mismo día, decirlo. Nada más: ni fuentes revisadas, ni descartes, ni webs no accesibles. -->
     <p class="method">
-      <b>Método.</b> Ventana desde la edición anterior ({{RANGO_VENTANA}}) sobre prensa económica, sectorial de automoción, transporte y logística, boletines oficiales y comunicaciones de asociaciones (AER, AELR, ANFAC, Faconauto, Ganvam). Indicar qué salas de prensa de competidores se han revisado. Se descarta todo resultado relativo a Stephen Covey, FranklinCovey y homónimos. Cada fuente se abre y se data en la propia página; los resultados de buscador no se citan. Los ítems sin fecha verificable se marcan como tales y no computan como novedad; el material anterior a la ventana se etiqueta como «Contexto vigente» con su fecha real. Lo publicado en ediciones anteriores solo se repite si hay información nueva, con la etiqueta «Actualizado». Cuando un bloque no tiene material dentro de la ventana se declara vacío en lugar de rellenarse.
+      <b>Método.</b> {{METODO}}
     </p>
 
   </main>
 
   <footer>
     <span class="mark">COVEY</span>
-    <span>Vigilancia competitiva · Uso interno · Edición {{FECHA_CORTA}}</span>
+    <span>Noticias recientes · Edición {{FECHA_CORTA}}</span>
   </footer>
 
 </div>
