@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticias Relevantes · Covey · 11.09.2026</title>
+<!--
+  PLANTILLA DEL INFORME DIARIO DE VIGILANCIA COMPETITIVA · COVEY
+  ---------------------------------------------------------------
+  Uso por la rutina:
+    1. Copiar este fichero a index.html.
+    2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
+       contenido del día. No dejar ningún marcador sin sustituir.
+    3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
+
+  Marcadores:
+    {{FECHA_CORTA}}      -> 11.09.2026
+    {{FECHA_LARGA}}      -> Viernes · Ventana 72 h
+    {{HORA}}             -> 08:16 CEST
+    {{TITULAR}}          -> Titular del día (resume lo más importante, nunca genérico)
+    {{RANGO_VENTANA}}    -> 08–11.09.2026
+
+  Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
+    - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
+      Nunca un nodo de texto suelto como hijo directo del <li>.
+    - <article class="item ..."> tiene EXACTAMENTE dos hijos:
+      <div class="item-rail"></div> y <div class="item-body">...</div>.
+    - Clases de relevancia en el <article> y en el chip: alta | media | contexto.
+    - Bloque .stats: solo si hay 3 cifras reales que lo justifiquen; si no, eliminarlo.
+    - Bloque vacío: usar <div class="empty">...</div> en lugar de rellenar con contexto antiguo.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    color-scheme: light;
+
+    --navy:        #1E2761;
+    --navy-deep:   #0F1740;
+    --navy-mid:    #2A3370;
+    --navy-light:  #3D4FA0;
+    --orange:      #F5A623;
+    --ink:         #171C33;
+    --body:        #4C566B;
+    --muted:       #7B8598;
+    --hairline:    #DCE1EA;
+    --surface:     #FFFFFF;
+    --surface-alt: #F3F5FA;
+    --ground:      #EBEEF4;
+    --brick:       #A93B2C;
+
+    --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --f-body:    "Source Serif 4", Georgia, "Times New Roman", serif;
+    --f-data:    "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+    --measure: 68ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy:        #8FA0E8;
+      --navy-deep:   #0B1030;
+      --navy-mid:    #A9B6EE;
+      --navy-light:  #7A8CD8;
+      --orange:      #F7B54A;
+      --ink:         #E8ECF7;
+      --body:        #B3BCD2;
+      --muted:       #8A94AC;
+      --hairline:    #2A3159;
+      --surface:     #141A38;
+      --surface-alt: #1A2145;
+      --ground:      #0B1030;
+      --brick:       #E08375;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --navy:        #8FA0E8;
+    --navy-deep:   #0B1030;
+    --navy-mid:    #A9B6EE;
+    --navy-light:  #7A8CD8;
+    --orange:      #F7B54A;
+    --ink:         #E8ECF7;
+    --body:        #B3BCD2;
+    --muted:       #8A94AC;
+    --hairline:    #2A3159;
+    --surface:     #141A38;
+    --surface-alt: #1A2145;
+    --ground:      #0B1030;
+    --brick:       #E08375;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--surface);
+    min-height: 100vh;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 34px 44px 26px;
+  }
+
+  .masthead-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px 24px;
+  }
+
+  .wordmark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.10em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .wordmark span {
+    display: block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.62);
+    margin-top: 7px;
+  }
+
+  .edition {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-align: right;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .edition strong {
+    display: block;
+    font-weight: 500;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .masthead h1 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #fff;
+    margin: 26px 0 8px;
+    text-wrap: balance;
+  }
+
+  .masthead p {
+    margin: 0;
+    max-width: 56ch;
+    font-size: 15px;
+    color: rgba(255,255,255,0.74);
+  }
+
+  .rule-accent {
+    height: 5px;
+    background: var(--orange);
+  }
+
+  /* ---------- Page body ---------- */
+
+  main {
+    padding: 0 44px 8px;
+  }
+
+  section {
+    padding: 34px 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  section:first-of-type { border-top: 0; }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--navy-deep);
+    padding: 4px 9px;
+    border-radius: 2px;
+  }
+
+  :root[data-theme="dark"] .badge,
+  :root:not([data-theme="light"]) .badge { color: #fff; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .badge {
+      background: var(--navy-light);
+      color: #0B1030;
+    }
+  }
+
+  :root[data-theme="dark"] .badge {
+    background: var(--navy-light);
+    color: #0B1030;
+  }
+
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 23px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 14px 0 4px;
+    text-wrap: balance;
+  }
+
+  .section-note {
+    font-family: var(--f-data);
+    font-size: 11.5px;
+    color: var(--muted);
+    margin: 0 0 22px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Executive summary ---------- */
+
+  .exec {
+    background: var(--surface-alt);
+    padding: 28px 30px;
+    margin: 0 0 4px;
+    border-left: 5px solid var(--orange);
+  }
+
+  .exec h2 { margin-top: 10px; }
+
+  .exec ol {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    counter-reset: keyline;
+  }
+
+  /* Sangría colgante robusta: no usar grid aquí. Un nodo de texto suelto
+     dentro del <li> se convertiría en una celda propia y saldría en vertical. */
+  .exec li {
+    position: relative;
+    padding-left: 38px;
+    max-width: var(--measure);
+    counter-increment: keyline;
+  }
+
+  .exec li::before {
+    content: counter(keyline, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.6;
+    font-family: var(--f-data);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .exec li b {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ---------- Items ---------- */
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 18px;
+  }
+
+  .item-rail { background: var(--hairline); border-radius: 2px; }
+  .item.alta    .item-rail { background: var(--navy); }
+  .item.media   .item-rail { background: var(--navy-light); }
+  .item.contexto .item-rail { background: var(--hairline); }
+
+  .item-body { min-width: 0; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .chip {
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    padding: 1px 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .chip.alta     { color: var(--brick); }
+  .chip.media    { color: var(--navy-light); }
+  .chip.contexto { color: var(--muted); }
+
+  .item h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 9px 0 8px;
+    max-width: var(--measure);
+    text-wrap: balance;
+  }
+
+  .item p {
+    margin: 0 0 10px;
+    max-width: var(--measure);
+  }
+
+  .why {
+    font-family: var(--f-display);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: var(--measure);
+    padding-left: 14px;
+    border-left: 2px solid var(--orange);
+    margin: 0 0 10px;
+  }
+
+  .why b {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .src {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  a {
+    color: var(--navy);
+    text-decoration-color: var(--hairline);
+    text-underline-offset: 3px;
+  }
+
+  a:hover { text-decoration-color: var(--orange); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  /* ---------- Stats ---------- */
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border-block: 1px solid var(--hairline);
+    margin: 0 0 26px;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 18px 16px 16px;
+  }
+
+  .stat .n {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 1;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .stat .d {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Empty state ---------- */
+
+  .empty {
+    font-family: var(--f-data);
+    font-size: 12.5px;
+    color: var(--muted);
+    background: var(--surface-alt);
+    padding: 16px 18px;
+    border-left: 3px solid var(--hairline);
+    letter-spacing: 0.01em;
+  }
+
+  .empty b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Watchlist ---------- */
+
+  .watch {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Columna fija para que la etiqueta temporal alinee en todas las filas. */
+  .watch li {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    max-width: calc(var(--measure) + 146px);
+  }
+
+  .watch .when {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .watch b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Sources ---------- */
+
+  .sources {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-family: var(--f-data);
+    font-size: 12px;
+  }
+
+  .sources li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 8px;
+    color: var(--muted);
+  }
+
+  .sources span { font-variant-numeric: tabular-nums; }
+
+  /* ---------- Method + footer ---------- */
+
+  .method {
+    font-family: var(--f-data);
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+    padding: 24px 0 30px;
+    border-top: 1px solid var(--hairline);
+    max-width: 74ch;
+  }
+
+  footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.6);
+    padding: 16px 44px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+  }
+
+  footer .mark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: #fff;
+  }
+
+  @media (max-width: 620px) {
+    .masthead, main, footer { padding-inline: 24px; }
+    .exec { padding: 22px 20px; }
+    .stats { grid-template-columns: 1fr; }
+    .edition { text-align: left; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { max-width: none; }
+    section { break-inside: avoid; }
+    .item { break-inside: avoid; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="wordmark">COVEY<span>VIGILANCIA COMPETITIVA</span></div>
+      <div class="edition">
+        <strong>Edición 11.09.2026</strong>
+        Viernes · Ventana 72 h<br>Actualizado 09:20 CEST
+      </div>
+    </div>
+    <h1>El renting industrial repunta un 32 % hasta agosto y el sector se concentra tras la compra de Athlon por Arval</h1>
+    <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
+  </header>
+  <div class="rule-accent"></div>
+
+  <main>
+
+    <!-- ===== 1. RESUMEN EJECUTIVO (3-5 puntos) ===== -->
+    <section class="exec">
+      <span class="badge">Resumen ejecutivo</span>
+      <h2>Lo que necesitas saber hoy</h2>
+      <ol>
+        <li><div><b>Sin novedades directas de Covey en la ventana de 72 horas.</b> No se han localizado menciones externas, competidores citando a Covey ni licitaciones en las que participe entre el 08 y el 11.09.2026.</div></li>
+        <li><div><b>El renting industrial acelera con fuerza.</b> Según AER, los vehículos industriales de más de 3,5 t matriculados en renting crecen un 32,17 % hasta agosto (1.783 unidades) y el conjunto del renting alcanza 254.963 vehículos (+10,84 %), su mayor cuota histórica sobre el mercado total (26,27 %).</div></li>
+        <li><div><b>El mercado de furgonetas encadena su tercer mes al alza.</b> ANFAC registra 11.289 matriculaciones de comerciales ligeros en agosto (+5,9 %) y 131.633 en el acumulado del año (+7 %), un contexto favorable para la demanda de alquiler.</div></li>
+        <li><div><b>Arval cierra la compra de Athlon y suma 400.000 vehículos.</b> La operación, fuera de la ventana de 72 h pero de fondo relevante, acelera la concentración entre los grandes operadores de renting de vehículo ligero en Europa.</div></li>
+        <li><div><b>Las ayudas a la electrificación de furgonetas siguen activas.</b> El plan MOVES Flotas 2026 ofrece hasta 9.000 € por furgoneta eléctrica que sustituya a un diésel de más de siete años, un argumento comercial para la renovación de flota vía alquiler.</div></li>
+      </ol>
+    </section>
+
+    <!-- ===== 2. MENCIONES DE COVEY ===== -->
+    <section>
+      <span class="badge">Menciones de Covey</span>
+      <h2>Covey en los medios</h2>
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 08–11.09.2026</p>
+
+      <div class="empty">
+        <b>Sin menciones externas en la ventana (08–11.09.2026).</b> Se han revisado búsquedas específicas de "Covey Alquiler" (descartando resultados de Stephen Covey, FranklinCovey y homónimos) y la cobertura de prensa económica y sectorial habitual (Fleet People, Ruta del Transporte, Transporte 3, Andalucía Económica, Nexotrans) sin localizar noticias, notas de prensa, entrevistas, premios ni licitaciones publicadas en estos tres días. El blog de covey.es no muestra contenido nuevo detectable en la ventana; en cualquier caso, sus publicaciones no computarían como mención externa.
+      </div>
+    </section>
+
+    <!-- ===== 3. COMPETIDORES ===== -->
+    <section>
+      <span class="badge">Competidores</span>
+      <h2>Movimientos de la competencia</h2>
+      <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
+
+      <p class="section-note">Sin movimientos de competidores confirmados dentro de la ventana (08–11.09.2026): se han revisado las salas de prensa y coberturas de Northgate, Petit Forestier, Fraikin, Ayvens (ALD/LeasePlan), Arval, Alphabet, Record go, Europcar/Goldcar, Hertz, Avis, Sixt, Alquiber, ATP Iberia y Everwood Capital sin localizar hechos datados en estos tres días. Se recogen dos movimientos de fondo como contexto vigente.</p>
+
+      <div class="items">
+
+        <article class="item contexto">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip contexto">Contexto vigente</span>
+              <span>Arval (BNP Paribas)</span>
+              <span>·</span>
+              <span>Grupo BNP Paribas / Fleet Europe</span>
+              <span>·</span>
+              <span>Publicado 31.07.2026 — fuera de ventana</span>
+            </div>
+            <h3>Arval cierra la compra de Athlon y suma 400.000 vehículos a su flota europea</h3>
+            <p>Arval (BNP Paribas) completó el 31 de julio de 2026 la adquisición de Athlon, la filial de renting de Mercedes-Benz Group, incorporando unos 400.000 vehículos a su flota combinada. En España, Arval cerró 2025 con 256.000 vehículos financiados y prevé elevar su flota un 10 % y sus ingresos un 3 % en 2026.</p>
+            <p class="why"><b>Por qué importa:</b> la operación concentra el renting de turismos y vehículo comercial ligero en menos actores de gran escala. Covey no compite en ese terreno de flotas generalistas, pero el movimiento reduce el número de operadores independientes y puede presionar precios en furgonetas ligeras; conviene vigilar si Athlon aporta capacidad adicional en vehículo comercial e industrial.</p>
+            <p class="src"><a href="https://group.bnpparibas/en/press-release/arval-completes-the-acquisition-of-athlon">group.bnpparibas.com →</a></p>
+          </div>
+        </article>
+
+        <article class="item contexto">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip contexto">Contexto vigente</span>
+              <span>Northgate Renting Flexible</span>
+              <span>·</span>
+              <span>Pressdigital</span>
+              <span>·</span>
+              <span>Publicado 12.05.2026 — fuera de ventana</span>
+            </div>
+            <h3>Northgate centraliza la gestión de flotas de sus clientes en una nueva plataforma digital</h3>
+            <p>Northgate lanzó una app y área de cliente (web e iOS/Android) desde la que los gestores de flota consultan pedidos, contratos y facturas, solicitan nuevos vehículos, comunican incidencias y piden cita de taller en un único entorno digital.</p>
+            <p class="why"><b>Por qué importa:</b> el renting flexible de furgonetas es el terreno donde Northgate compite más directamente con Covey. La inversión en autoservicio digital eleva el estándar de experiencia de cliente que Covey debe igualar o superar en su propia área de cliente.</p>
+            <p class="src"><a href="https://www.pressdigital.es/articulo/economia/2026-05-12/5878662-northgate-lanza-nueva-plataforma-centraliza-gestion-flotas-clientes">pressdigital.es →</a></p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 4. SECTOR Y MERCADO ===== -->
+    <section>
+      <span class="badge">Sector y mercado</span>
+      <h2>El renting industrial acelera en agosto</h2>
+      <p class="section-note">Matriculaciones de vehículo comercial e industrial e inversión en flota · datos agosto 2026, fuera de la ventana de 72 h</p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="n">11.289</div>
+          <div class="d">Matriculaciones de comerciales ligeros, agosto<br>+5,9 % interanual · ANFAC, agosto 2026</div>
+        </div>
+        <div class="stat">
+          <div class="n">254.963</div>
+          <div class="d">Vehículos matriculados en renting, acumulado<br>+10,84 % · AER, hasta agosto 2026</div>
+        </div>
+        <div class="stat">
+          <div class="n">32,17 %</div>
+          <div class="d">Crecimiento de industriales &gt;3,5 t en renting<br>1.783 unidades · AER, hasta agosto 2026</div>
+        </div>
+      </div>
+
+      <div class="items">
+
+        <article class="item contexto">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip contexto">Contexto vigente</span>
+              <span>AER / ANFAC</span>
+              <span>·</span>
+              <span>Datos oficiales del sector</span>
+              <span>·</span>
+              <span>Agosto 2026 — fuera de ventana</span>
+            </div>
+            <h3>El renting de vehículo industrial pesado dispara sus matriculaciones un 32 % hasta agosto</h3>
+            <p>Según AER, el renting matriculó 254.963 vehículos hasta agosto de 2026 (+10,84 %), elevando su cuota sobre el mercado total al 26,27 % (25,26 % un año antes). Los vehículos industriales de más de 3,5 t crecieron un 32,17 % (1.783 unidades) y los comerciales ligeros hasta 3,5 t un 4,74 % (17.064 unidades). ANFAC confirma el mismo impulso: 11.289 matriculaciones de comerciales ligeros en agosto (+5,9 %) y 131.633 en el acumulado del año (+7 %), el tercer mes consecutivo al alza.</p>
+            <p class="why"><b>Por qué importa:</b> el segmento exacto en el que opera Covey —furgonetas y vehículo industrial en renting y alquiler— crece más rápido que el mercado global de automoción, reforzando la demanda de flota tanto propia como de terceros. Conviene vigilar si el repunte de matriculaciones tensiona los precios de adquisición de cara a la próxima renovación de flota de Covey.</p>
+            <p class="src"><a href="https://anfac.com/matriculaciones-de-turismos-y-todoterrenos-ccaa-agosto-2026/">anfac.com →</a></p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 5. REGULACIÓN Y NORMATIVA ===== -->
+    <section>
+      <span class="badge">Regulación y normativa</span>
+      <h2>Marco regulatorio</h2>
+      <p class="section-note">ZBE, transporte de mercancías, tacógrafo, fiscalidad del renting y ayudas · sin novedades normativas datadas en la ventana de 72 h; se recoge contexto vigente relevante</p>
+
+      <div class="items">
+
+        <article class="item contexto">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip contexto">Contexto vigente</span>
+              <span>ZBE — movilidad urbana</span>
+              <span>·</span>
+              <span>Alphabet / Eranovum</span>
+              <span>·</span>
+              <span>Vigente desde 01.01.2026 — fuera de ventana</span>
+            </div>
+            <h3>Las Zonas de Bajas Emisiones dejan la moratoria y entran en aplicación plena en 2026</h3>
+            <p>Desde el 1 de enero de 2026 las ZBE dejan de ser "experimentales" y pasan a ser un elemento estructural de la movilidad urbana, con sanciones de hasta 200 € por incumplimiento y restricciones más estrictas a los vehículos categoría A (22-26 % del parque). Barcelona reactivó su ZBE metropolitana el 16 de marzo de 2026; Madrid mantiene una prórroga para vehículos con etiqueta A empadronados y al corriente del IVTM.</p>
+            <p class="why"><b>Por qué importa:</b> la flota de alquiler de Covey debe garantizar acceso a todas las ZBE (ya lo hace en su gama frigorífica). El endurecimiento normativo refuerza el argumento comercial del alquiler frente a mantener vehículo diésel antiguo en propiedad para clientes de última milla urbana.</p>
+            <p class="src"><a href="https://www.alphabet.com/es-es/sobre-nosotros-renting/blog/zbe-en-2026-que-cambia-y-como-prepararte-sin-complicarte.html">alphabet.com →</a></p>
+          </div>
+        </article>
+
+        <article class="item contexto">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip contexto">Contexto vigente</span>
+              <span>Ministerio de Transportes / UE</span>
+              <span>·</span>
+              <span>VDO Tacógrafo Inteligente</span>
+              <span>·</span>
+              <span>Vigente desde 01.07.2026 — fuera de ventana</span>
+            </div>
+            <h3>Tacógrafo obligatorio desde julio para furgonetas de 2,5 a 3,5 t en transporte por cuenta ajena</h3>
+            <p>Desde el 1 de julio de 2026, los vehículos ligeros de entre 2,5 y 3,5 toneladas dedicados a transporte internacional de mercancías por cuenta ajena o alquiler deben cumplir la normativa UE de tacógrafo y tiempos de conducción. Además, la Orden TRM/282/2026 (BOE 25.03.2026) permite a los conductores con solo el permiso B obtener la tarjeta de tacógrafo digital, antes reservada a permisos C/D/BE.</p>
+            <p class="why"><b>Por qué importa:</b> afecta directamente a los clientes de Covey que operan furgonetas de reparto y transporte frigorífico en ese rango de tonelaje. Covey puede anticiparse asesorando sobre instalación y homologación del tacógrafo en su flota de alquiler.</p>
+            <p class="src"><a href="https://tacografointeligente.com/blog-tacografo/uso-manejo-tacografo-digital/tacografo-obligatorio-furgonetas-2026/">tacografointeligente.com →</a></p>
+          </div>
+        </article>
+
+        <article class="item contexto">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip contexto">Contexto vigente</span>
+              <span>MITECO / IDAE — Plan MOVES Flotas y Plan Auto+</span>
+              <span>·</span>
+              <span>Motor16 / Autónomos en Ruta</span>
+              <span>·</span>
+              <span>Programas activos en 2026 — fuera de ventana</span>
+            </div>
+            <h3>Hasta 9.000 € por furgoneta eléctrica: las ayudas MOVES Flotas y el futuro Plan Auto+ siguen activas</h3>
+            <p>El plan MOVES Flotas permite a autónomos, pymes y gestores de flota obtener hasta 9.000 € por furgoneta N1 eléctrica si achatarran un diésel de más de siete años, compatible con operaciones de renting; el presupuesto se agota por orden de presentación. El futuro Plan Auto+ (400 M€), que sustituirá a MOVES III con gestión centralizada y carácter retroactivo desde el 1 de enero de 2026, prioriza eléctricos de hasta 35.000 € con ayudas de hasta 5.000 € para furgonetas.</p>
+            <p class="why"><b>Por qué importa:</b> son palancas de venta para Covey al proponer a sus clientes la sustitución de furgonetas diésel antiguas por alquiler de vehículo eléctrico, combinando la ayuda pública con el ahorro de no inmovilizar capital en la compra. Conviene vigilar el agotamiento de fondos y la puesta en marcha efectiva del Plan Auto+.</p>
+            <p class="src"><a href="https://www.motor16.com/las-ultimas-noticias/ayudas-moves-flotas-2026-plazos">motor16.com →</a></p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 6. SEÑALES A SEGUIR (2-4) ===== -->
+    <section>
+      <span class="badge">Señales a seguir</span>
+      <h2>Qué vigilar los próximos días</h2>
+      <ul class="watch">
+        <li>
+          <span class="when">Principios de octubre</span>
+          <div><b>Datos de matriculaciones de septiembre (ANFAC/AER).</b> Confirmarán si el renting industrial mantiene el ritmo de crecimiento del +32 % visto hasta agosto; referencia directa para la demanda de furgonetas de Covey.</div>
+        </li>
+        <li>
+          <span class="when">Próximas semanas</span>
+          <div><b>Integración de Athlon en Arval España.</b> Vigilar si el operador combinado amplía capacidad en vehículo comercial ligero y presiona precios en el segmento donde compite Covey.</div>
+        </li>
+        <li>
+          <span class="when">Este trimestre</span>
+          <div><b>Agotamiento de fondos del plan MOVES Flotas 2026.</b> Las ayudas se conceden por orden de presentación; conviene informar a clientes antes de que se agote el presupuesto disponible.</div>
+        </li>
+        <li>
+          <span class="when">De cara a 2027</span>
+          <div><b>Nuevas fases de ZBE en más municipios.</b> Seguir el calendario de ampliación para anticipar necesidades de acceso de la flota de alquiler en nuevas ciudades.</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== 7. FUENTES (todo lo consultado, numerado) ===== -->
+    <section>
+      <span class="badge">Fuentes</span>
+      <h2>Consultado hoy</h2>
+      <ol class="sources">
+        <li><span>01</span><a href="https://es.linkedin.com/company/covey-alquiler">LinkedIn / covey.es — Perfil corporativo y noticias de Covey Alquiler</a></li>
+        <li><span>02</span><a href="https://www.covey.es/noticias/area-cliente-covey-alquiler">covey.es — Blog corporativo (contenido propio, no computa como mención)</a></li>
+        <li><span>03</span><a href="https://www.northgate.es/sobre-nosotros/actualidad">northgate.es — Sala de actualidad de Northgate Renting Flexible</a></li>
+        <li><span>04</span><a href="https://www.pressdigital.es/articulo/economia/2026-05-12/5878662-northgate-lanza-nueva-plataforma-centraliza-gestion-flotas-clientes">Pressdigital (12.05.2026) — Northgate lanza nueva plataforma de gestión de flotas</a></li>
+        <li><span>05</span><a href="https://www.petitforestier.com/es-es/posts">petitforestier.com — Noticias y asesoramiento de Petit Forestier España</a></li>
+        <li><span>06</span><a href="https://www.fraikin.es/es/newsroom-es">fraikin.es — Sala de prensa de Fraikin España</a></li>
+        <li><span>07</span><a href="https://www.ayvens.com/es-es/sobre-nosotros/noticias/noticias/ald-lp-nuevamarca/">ayvens.com — Sala de noticias de Ayvens (ALD Automotive/LeasePlan)</a></li>
+        <li><span>08</span><a href="https://www.arval.es/sobre-arval/notas-de-prensa">arval.es — Notas de prensa de Arval España</a></li>
+        <li><span>09</span><a href="https://group.bnpparibas/en/press-release/arval-completes-the-acquisition-of-athlon">group.bnpparibas.com (31.07.2026) — Arval completes the acquisition of Athlon</a></li>
+        <li><span>10</span><a href="https://everwoodcapital.com/">everwoodcapital.com — Operaciones de consolidación de flotas de transporte frigorífico</a></li>
+        <li><span>11</span><a href="https://fleetpeople.es/">fleetpeople.es — Noticias de renting y flotas de coches en España</a></li>
+        <li><span>12</span><a href="https://anfac.com/matriculaciones-de-turismos-y-todoterrenos-ccaa-agosto-2026/">anfac.com — Matriculaciones de vehículos comerciales, agosto 2026</a></li>
+        <li><span>13</span><a href="https://ae-renting.es/">ae-renting.es — Asociación Española de Renting de Vehículos (AER)</a></li>
+        <li><span>14</span><a href="https://www.posventa.com/texto-diario/mostrar/6000677/renting-matricula-254963-vehiculos-hasta-agosto-108">posventa.com — El renting matricula 254.963 vehículos hasta agosto, el 10,8 % más</a></li>
+        <li><span>15</span><a href="https://www.rutadeltransporte.com/furgonetas/las-matriculaciones-de-ligeros-crecen-un-7-en-los-ocho-primeros-meses-del-ano.html">rutadeltransporte.com — Las matriculaciones de ligeros crecen un 7 % en ocho meses</a></li>
+        <li><span>16</span><a href="https://transporte3.com/">transporte3.com — Actualidad del transporte de mercancías, camiones y furgonetas</a></li>
+        <li><span>17</span><a href="https://nexotrans.com/">nexotrans.com — Actualidad de transporte y logística frigorífica</a></li>
+        <li><span>18</span><a href="https://www.alphabet.com/es-es/sobre-nosotros-renting/blog/zbe-en-2026-que-cambia-y-como-prepararte-sin-complicarte.html">alphabet.com — ZBE en 2026: qué cambia y cómo prepararte</a></li>
+        <li><span>19</span><a href="https://eranovum.energy/es/blog/novedades-2026-zonas-bajas-emisiones/">eranovum.energy — Novedades 2026 en la aplicación de las ZBE en España</a></li>
+        <li><span>20</span><a href="https://www.miteco.gob.es/en/calidad-y-evaluacion-ambiental/temas/movilidad/zonas_de_bajas_emisiones_en_espana.html">miteco.gob.es — Las zonas de bajas emisiones en España</a></li>
+        <li><span>21</span><a href="https://tacografointeligente.com/blog-tacografo/uso-manejo-tacografo-digital/tacografo-obligatorio-furgonetas-2026/">tacografointeligente.com — Tacógrafo obligatorio en furgonetas desde julio de 2026</a></li>
+        <li><span>22</span><a href="https://www.aeplustest.es/permiso-de-conducir-b96-todo-lo-que-debes-saber-sobre-este-carnet/">aeplustest.es — Permiso de conducir B96, guía 2026</a></li>
+        <li><span>23</span><a href="https://www.motor16.com/las-ultimas-noticias/ayudas-moves-flotas-2026-plazos">motor16.com — Ayudas MOVES Flotas 2026: cuánto cobras por furgoneta eléctrica</a></li>
+        <li><span>24</span><a href="https://www.autonomosenruta.com/transporte-mercancias/gobierno/plan-auto-plus-furgonetas-electricas">autonomosenruta.com — Plan Auto+ 2026: nuevas ayudas a coches eléctricos y furgonetas</a></li>
+      </ol>
+    </section>
+
+    <!-- ===== 8. MÉTODO ===== -->
+    <p class="method">
+      <b>Método.</b> Ventana de 72 horas (08–11.09.2026) sobre prensa económica, sectorial de automoción, transporte y logística, boletines oficiales y comunicaciones de asociaciones (AER, ANFAC, Faconauto, Ganvam). Se han revisado las salas de prensa y coberturas de Covey, Northgate, Petit Forestier, Fraikin, Ayvens, Arval, Alphabet, Record go, Europcar/Goldcar, Hertz, Avis, Sixt, Alquiber, ATP Iberia y Everwood Capital. Se descarta todo resultado relativo a Stephen Covey, FranklinCovey y homónimos. Los ítems sin fecha verificable en la fuente se marcan como tales y no computan como novedad; el material anterior a la ventana se etiqueta como «Contexto vigente» con su fecha real. Cuando un bloque no tiene material dentro de la ventana se declara vacío en lugar de rellenarse. Nota técnica: en esta edición el acceso directo a varias fuentes primarias (fleetpeople.es, anfac.com, transporte3.com, rutadeltransporte.com, entre otras) estuvo bloqueado para verificación por lectura directa; las cifras y fechas se han contrastado cruzando varias búsquedas independientes y priorizando fechas visibles en la propia URL de la fuente.
+    </p>
+
+  </main>
+
+  <footer>
+    <span class="mark">COVEY</span>
+    <span>Vigilancia competitiva · Uso interno · Edición 11.09.2026</span>
+  </footer>
+
+</div>
+
+<script id="covey-nav" src="../../../nav.js" data-fecha="2026-09-11" defer></script>
+</body>
+</html>
