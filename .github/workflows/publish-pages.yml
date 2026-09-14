@@ -8,9 +8,6 @@
 #   claude/* para que no se acumulen.
 # - Push a main que toca el menú o el script, o lanzamiento manual: redespliega
 #   el menú y regenera el archivo sin publicar ninguna edición nueva.
-#
-# En todos los casos se archivan los días del historial de gh-pages que aún no
-# estén en el archivo (nunca se sobrescribe un día ya archivado).
 
 name: Publicar en GitHub Pages
 
@@ -62,9 +59,6 @@ jobs:
         run: |
           set -euo pipefail
           args=(--sitio "$RUNNER_TEMP/gh-pages" --assets sitio)
-          if git rev-parse --verify --quiet origin/gh-pages >/dev/null; then
-            args+=(--recuperar-historial origin/gh-pages)
-          fi
           if [[ "$ES_EDICION" == "true" ]]; then
             args+=(--edicion index.html)
           fi
