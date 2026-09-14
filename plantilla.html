@@ -12,13 +12,18 @@
     2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
        contenido del día. No dejar ningún marcador sin sustituir.
     3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
+    4. NO añadir scripts ni menú de ediciones: los inyecta la GitHub Action al publicar.
+       La Action archiva la edición por la fecha de «Edición {{FECHA_CORTA}}».
 
   Marcadores:
-    {{FECHA_CORTA}}      -> 11.09.2026
-    {{FECHA_LARGA}}      -> Viernes · Ventana 72 h
-    {{HORA}}             -> 08:16 CEST
+    {{FECHA_CORTA}}      -> 15.09.2026
+    {{FECHA_LARGA}}      -> Martes · Desde la edición del 14.09
+    {{HORA}}             -> 08:12 CEST  (salida real de: TZ=Europe/Madrid date '+%H:%M %Z')
     {{TITULAR}}          -> Titular del día (resume lo más importante, nunca genérico)
-    {{RANGO_VENTANA}}    -> 08–11.09.2026
+    {{RANGO_VENTANA}}    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
+    {{RECUENTO}}         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
+                            (solo cuenta ítems Nuevo/Actualizado; el contexto no suma)
+    {{CIFRA}} {{QUE_MIDE}} {{VARIACION_FUENTE}} -> solo en el bloque .stats
 
   Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
     - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
@@ -28,6 +33,16 @@
     - Clases de relevancia en el <article> y en el chip: alta | media | contexto.
     - Bloque .stats: solo si hay 3 cifras reales que lo justifiquen; si no, eliminarlo.
     - Bloque vacío: usar <div class="empty">...</div> en lugar de rellenar con contexto antiguo.
+
+  Reglas de contenido:
+    - Chip de estado en .meta, justo después del chip de relevancia:
+      <span class="chip">Nuevo</span> o <span class="chip">Actualizado</span>.
+      Los ítems «Contexto vigente» no llevan chip de estado.
+    - Cada ítem cita sus fuentes en .src con el número de «Fuentes citadas»: [03].
+    - .why empieza por <b>Por qué importa · Área · Acción:</b>
+        Área:   Comercial | Flota y compras | Dirección | Operaciones
+        Acción: Actuar | Informar | Contexto
+    - Toda cifra del resumen ejecutivo o de .stats aparece también en un ítem con su fuente.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -256,6 +271,8 @@
   }
 
   .exec h2 { margin-top: 10px; }
+
+  .exec .section-note { margin: 0; }
 
   .exec ol {
     list-style: none;
@@ -491,6 +508,8 @@
 
   .sources span { font-variant-numeric: tabular-nums; }
 
+  .sources + .section-note { margin-top: 26px; }
+
   /* ---------- Method + footer ---------- */
 
   .method {
@@ -563,13 +582,17 @@
 
   <main>
 
-    <!-- ===== 1. RESUMEN EJECUTIVO (3-5 puntos) ===== -->
+    <!-- ===== 1. RESUMEN EJECUTIVO (1-5 puntos) ===== -->
     <section class="exec">
       <span class="badge">Resumen ejecutivo</span>
       <h2>Lo que necesitas saber hoy</h2>
+      <p class="section-note">{{RECUENTO}}</p>
       <ol>
-        <!-- Repetir este <li> por cada punto. El texto SIEMPRE dentro del <div>. -->
-        <li><div><b>Frase clave del punto en negrita</b>, seguida de una o dos frases con la cifra o el hecho concreto y su implicación para Covey.</div></li>
+        <!-- Repetir este <li> por cada punto. El texto SIEMPRE dentro del <div>.
+             Solo ítems Nuevo/Actualizado que estén en el cuerpo del informe, con sus mismas cifras.
+             Día sin novedades: un único punto que lo diga. Sin recomendaciones genéricas.
+             Si no se han podido abrir las fuentes, el PRIMER punto es ese aviso. -->
+        <li><div><b>Frase clave del punto en negrita</b>, seguida de una o dos frases con la cifra o el hecho concreto, su fuente [01] y su implicación para Covey.</div></li>
       </ol>
     </section>
 
@@ -595,12 +618,14 @@
       <div class="items">
 
         <!-- ITEM DE EJEMPLO. Repetir por cada noticia. Clase del article y del chip: alta | media | contexto.
-             El <article> tiene EXACTAMENTE dos hijos: item-rail e item-body. -->
+             El <article> tiene EXACTAMENTE dos hijos: item-rail e item-body.
+             Chip de estado: Nuevo | Actualizado (si ya salió en la edición anterior, decir qué ha cambiado). -->
         <article class="item alta">
           <div class="item-rail"></div>
           <div class="item-body">
             <div class="meta">
               <span class="chip alta">Relevancia alta</span>
+              <span class="chip">Nuevo</span>
               <span>Empresa u organismo</span>
               <span>·</span>
               <span>Medio</span>
@@ -609,13 +634,13 @@
             </div>
             <h3>Titular de la noticia</h3>
             <p>Resumen de 2-4 frases con cifras concretas.</p>
-            <p class="why"><b>Por qué importa:</b> lectura desde la posición de Covey.</p>
-            <p class="src"><a href="https://ejemplo.com/noticia">dominio.com →</a></p>
+            <p class="why"><b>Por qué importa · Comercial · Actuar:</b> lectura desde la posición de Covey, sin exagerar a quién afecta.</p>
+            <p class="src"><a href="https://ejemplo.com/noticia">dominio.com →</a> · [01]</p>
           </div>
         </article>
 
-        <!-- Para material anterior a la ventana pero relevante:
-             <article class="item contexto"> con <span class="chip contexto">Contexto vigente</span>
+        <!-- Para material anterior a la ventana pero relevante (y que no haya salido en las últimas 5 ediciones):
+             <article class="item contexto"> con <span class="chip contexto">Contexto vigente</span>, sin chip de estado,
              y en la fecha: "Publicado DD.MM.AAAA — fuera de ventana". -->
 
       </div>
@@ -628,19 +653,20 @@
       <h2>Titular de la sección (adaptar al día)</h2>
       <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
 
-      <!-- FILA DE 3 ESTADÍSTICAS: incluir SOLO si hay 3 cifras reales y datadas. Si no, eliminar el bloque entero. -->
+      <!-- FILA DE 3 ESTADÍSTICAS: incluir SOLO si hay 3 cifras reales y datadas que también aparezcan
+           en un ítem con su fuente. Si no, eliminar el bloque entero. -->
       <div class="stats">
         <div class="stat">
-          <div class="n">11.289</div>
-          <div class="d">Qué mide la cifra<br>Variación · Fuente, fecha</div>
+          <div class="n">{{CIFRA}}</div>
+          <div class="d">{{QUE_MIDE}}<br>{{VARIACION_FUENTE}}</div>
         </div>
         <div class="stat">
-          <div class="n">490 M€</div>
-          <div class="d">Qué mide la cifra<br>Variación · Fuente, fecha</div>
+          <div class="n">{{CIFRA}}</div>
+          <div class="d">{{QUE_MIDE}}<br>{{VARIACION_FUENTE}}</div>
         </div>
         <div class="stat">
-          <div class="n">48,6 %</div>
-          <div class="d">Qué mide la cifra<br>Variación · Fuente, fecha</div>
+          <div class="n">{{CIFRA}}</div>
+          <div class="d">{{QUE_MIDE}}<br>{{VARIACION_FUENTE}}</div>
         </div>
       </div>
 
@@ -665,7 +691,9 @@
       <span class="badge">Señales a seguir</span>
       <h2>Qué vigilar los próximos días</h2>
       <ul class="watch">
-        <!-- Repetir este <li>. Exactamente dos hijos: <span class="when"> y <div>. Todo el texto dentro del <div>. -->
+        <!-- Repetir este <li>. Exactamente dos hijos: <span class="when"> y <div>. Todo el texto dentro del <div>.
+             Partir de las señales de la edición anterior: mantener las abiertas ("abierta desde DD.MM"),
+             actualizar las que cambian y retirar las que ya ocurrieron. Nuevas solo si salen de ítems de hoy. -->
         <li>
           <span class="when">Etiqueta temporal</span>
           <div><b>Qué vigilar.</b> Por qué y qué hacer al respecto.</div>
@@ -673,19 +701,26 @@
       </ul>
     </section>
 
-    <!-- ===== 7. FUENTES (todo lo consultado, numerado) ===== -->
+    <!-- ===== 7. FUENTES (citadas + revisadas sin novedad) ===== -->
     <section>
       <span class="badge">Fuentes</span>
       <h2>Consultado hoy</h2>
+      <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
       <ol class="sources">
-        <!-- Repetir este <li>. Numeración con dos dígitos. -->
+        <!-- Solo páginas abiertas con WebFetch y usadas en el informe (nunca un resultado de buscador).
+             Repetir este <li>. Numeración con dos dígitos. -->
         <li><span>01</span><a href="https://ejemplo.com/noticia">Medio — Titular (DD.MM.AAAA)</a></li>
       </ol>
+      <p class="section-note">Revisadas sin novedad en la ventana</p>
+      <ul class="sources">
+        <!-- Webs y salas de prensa consultadas que no aportaron nada. Repetir este <li>. Si no hay, borrar la nota y la lista. -->
+        <li><span>—</span><a href="https://ejemplo.com/sala-de-prensa">Medio o sala de prensa</a></li>
+      </ul>
     </section>
 
     <!-- ===== 8. MÉTODO ===== -->
     <p class="method">
-      <b>Método.</b> Ventana de 72 horas ({{RANGO_VENTANA}}) sobre prensa económica, sectorial de automoción, transporte y logística, boletines oficiales y comunicaciones de asociaciones (AER, AELR, ANFAC, Faconauto, Ganvam). Indicar qué salas de prensa de competidores se han revisado. Se descarta todo resultado relativo a Stephen Covey, FranklinCovey y homónimos. Los ítems sin fecha verificable en la fuente se marcan como tales y no computan como novedad; el material anterior a la ventana se etiqueta como «Contexto vigente» con su fecha real. Cuando un bloque no tiene material dentro de la ventana se declara vacío en lugar de rellenarse.
+      <b>Método.</b> Ventana desde la edición anterior ({{RANGO_VENTANA}}) sobre prensa económica, sectorial de automoción, transporte y logística, boletines oficiales y comunicaciones de asociaciones (AER, AELR, ANFAC, Faconauto, Ganvam). Indicar qué salas de prensa de competidores se han revisado. Se descarta todo resultado relativo a Stephen Covey, FranklinCovey y homónimos. Cada fuente se abre y se data en la propia página; los resultados de buscador no se citan. Los ítems sin fecha verificable se marcan como tales y no computan como novedad; el material anterior a la ventana se etiqueta como «Contexto vigente» con su fecha real. Lo publicado en ediciones anteriores solo se repite si hay información nueva, con la etiqueta «Actualizado». Cuando un bloque no tiene material dentro de la ventana se declara vacío en lugar de rellenarse.
     </p>
 
   </main>
