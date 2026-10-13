@@ -3,7 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noticias Relevantes · Covey · 12.10.2026</title>
+<title>Noticias Relevantes · Covey · 13.10.2026</title>
+<!--
+  PLANTILLA DEL INFORME DIARIO DE VIGILANCIA COMPETITIVA · COVEY
+  ---------------------------------------------------------------
+  Uso por la rutina:
+    1. Copiar este fichero a index.html.
+    2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
+       contenido del día. No dejar ningún marcador sin sustituir.
+    3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
+    4. NO añadir scripts ni menú de ediciones: los inyecta la GitHub Action al publicar.
+       La Action archiva la edición por la fecha de «Edición 13.10.2026».
+
+  Marcadores:
+    13.10.2026      -> 15.09.2026
+    martes 13 de octubre de 2026      -> Martes · Desde la edición del 14.09
+    08:11 CEST             -> 08:12 CEST  (salida real de: TZ=Europe/Madrid date '+%H:%M %Z')
+    Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; siguen abiertos el DeCA digital, el Plan Auto+, el plazo de los registradores ATP y la oferta de Alquiber hasta el 16.10          -> Titular del día (resume lo más importante, nunca genérico)
+    {{RANGO_VENTANA}}    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
+    {{RECUENTO}}         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
+                            (solo cuenta ítems Nuevo/Actualizado; el contexto no suma)
+    {{METODO}}           -> Edición completa del 15.09.2026, con ventana desde la edición anterior del 14.09.2026 (17:11 CEST) hasta hoy a las 08:12 CEST.
+    {{CIFRA}} {{QUE_MIDE}} {{VARIACION_FUENTE}} -> solo en el bloque .stats
+
+  Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
+    - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
+      Nunca un nodo de texto suelto como hijo directo del <li>.
+    - <article class="item ..."> tiene EXACTAMENTE dos hijos:
+      <div class="item-rail"></div> y <div class="item-body">...</div>.
+    - Clases de relevancia en el <article> y en el chip: alta | media | contexto.
+    - Bloque .stats: solo si hay 3 cifras reales que lo justifiquen; si no, eliminarlo.
+    - Bloque vacío: usar <div class="empty">...</div> en lugar de rellenar con contexto antiguo.
+
+  Reglas de contenido:
+    - Chip de estado en .meta, justo después del chip de relevancia:
+      <span class="chip">Nuevo</span> o <span class="chip">Actualizado</span>.
+      Los ítems «Contexto vigente» no llevan chip de estado.
+    - Cada ítem cita sus fuentes en .src con el número de «Fuentes citadas»: [03].
+    - .why empieza por <b>Por qué importa · Área · Acción:</b>
+        Área:   Comercial | Flota y compras | Dirección | Operaciones
+        Acción: Actuar | Informar | Contexto
+    - Toda cifra del resumen ejecutivo o de .stats aparece también en un ítem con su fuente.
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -531,11 +572,11 @@
     <div class="masthead-top">
       <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
       <div class="edition">
-        <strong>Edición 12.10.2026</strong>
-        lunes 12 de octubre de 2026<br>Actualizado 08:12 CEST
+        <strong>Edición 13.10.2026</strong>
+        martes 13 de octubre de 2026<br>Actualizado 08:11 CEST
       </div>
     </div>
-    <h1>Northgate gana el Premio Ejecutivos al Servicio al Cliente; sin menciones de Covey ni novedades de mercado o regulación, y siguen abiertos el DeCA digital, el Plan Auto+ y el plazo de los registradores ATP</h1>
+    <h1>Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; siguen abiertos el DeCA digital, el Plan Auto+, el plazo de los registradores ATP y la oferta de Alquiber hasta el 16.10</h1>
     <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
   </header>
   <div class="rule-accent"></div>
@@ -545,19 +586,18 @@
     <section class="exec">
       <span class="badge">Resumen ejecutivo</span>
       <h2>Lo que necesitas saber hoy</h2>
-      <p class="section-note">Nuevas 1 · Actualizadas 0 · Menciones 0 · Competencia 1 · Sector 0 · Regulación 0</p>
+      <p class="section-note">Nuevas 0 · Actualizadas 0 · Menciones 0 · Competencia 0 · Sector 0 · Regulación 0</p>
       <ol>
-        <li><div><b>Northgate Renting Flexible recibe el Premio Ejecutivos al Servicio al Cliente.</b> El galardón, en su 35.ª edición, se entregó el 08.10 en Madrid y se publicó el 09.10 [01]. Es un reconocimiento reputacional de un competidor directo, sin cifras ni cambios de oferta.</div></li>
-        <li><div><b>Sin novedades verificables</b> en menciones de Covey, mercado ni regulación entre el 09.10 y hoy; lo vigente se mantiene en Señales a seguir.</div></li>
+        <li><div><b>Sin novedades verificables</b> en menciones de Covey, competidores, mercado ni regulación entre la edición del 12.10 y hoy; lo vigente se mantiene en Señales a seguir.</div></li>
       </ol>
     </section>
 
     <section>
       <span class="badge">Menciones de Covey</span>
       <h2>Covey en los medios</h2>
-      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 09–12.10.2026</p>
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 12–13.10.2026</p>
       <div class="empty">
-        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas frigoríficas» en buscadores, descartando resultados sobre Stephen Covey, FranklinCovey o la localidad de Covey, sin localizar ninguna noticia, nota de prensa, entrevista, premio o licitación de terceros fechada entre el 09.10 y hoy.
+        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas» y «alquiler furgonetas frigoríficas» en buscadores, descartando resultados sobre Stephen Covey, FranklinCovey o la localidad de Covey, sin localizar ninguna noticia, nota de prensa, entrevista, premio o licitación de terceros fechada en la ventana.
       </div>
     </section>
 
@@ -565,26 +605,8 @@
       <span class="badge">Competidores</span>
       <h2>Movimientos de la competencia</h2>
       <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
-
-      <div class="items">
-        <article class="item media">
-          <div class="item-rail"></div>
-          <div class="item-body">
-            <div class="meta">
-              <span class="chip media">Relevancia media</span>
-              <span class="chip">Nuevo</span>
-              <span>Northgate Renting Flexible</span>
-              <span>·</span>
-              <span>Northgate (sala de prensa)</span>
-              <span>·</span>
-              <span>09.10.2026</span>
-            </div>
-            <h3>Northgate recibe el Premio Ejecutivos al Servicio al Cliente</h3>
-            <p>La revista <i>Ejecutivos</i> ha concedido a Northgate Renting Flexible el premio en la categoría de Servicio al Cliente, en la 35.ª edición de sus premios, entregados el 08.10 en Madrid. El jurado destaca un modelo de atención basado en la cercanía, la escucha activa y la adaptación a empresas, autónomos y particulares. El consejero delegado, Jorge Alarcón, recogió el premio. La nota no aporta cifras.</p>
-            <p class="why"><b>Por qué importa · Comercial · Informar:</b> Northgate, competidor directo en alquiler flexible de furgonetas, refuerza su posicionamiento en servicio al cliente. Comercial puede tenerlo presente si un cliente lo menciona como argumento; no implica cambios de oferta ni de precios.</p>
-            <p class="src"><a href="https://www.northgate.es/sobre-nosotros/actualidad/premio-ejecutivos-por-servicio-cliente">northgate.es →</a> · [01]</p>
-          </div>
-        </article>
+      <div class="empty">
+        <b>Sin movimientos de competidores en la ventana.</b> La sala de prensa de Northgate no tiene entradas posteriores al 09.10 (la última es el premio ya publicado el 12.10), Ayvens España no supera su entrada del 29.09 y Petit Forestier no publica nada posterior a agosto. La campaña de Alquiber sigue vigente y se mantiene en Señales a seguir.
       </div>
     </section>
 
@@ -593,7 +615,7 @@
       <h2>Sin datos de mercado nuevos</h2>
       <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
       <div class="empty">
-        <b>Sin novedades de mercado en la ventana.</b> La nota de matriculaciones más reciente de ANFAC es del 01.10 (septiembre) y ya queda fuera de la ventana; el balance de octubre no se publicará hasta principios de noviembre. Tampoco se han localizado datos nuevos de AER, AELR, Faconauto o Ganvam fechados entre el 09.10 y hoy.
+        <b>Sin novedades de mercado en la ventana.</b> La nota de matriculaciones más reciente de ANFAC es del 01.10 (septiembre) y queda fuera de la ventana; no se han localizado datos nuevos de AER, AELR, Faconauto o Ganvam fechados entre el 12.10 y hoy.
       </div>
     </section>
 
@@ -602,7 +624,7 @@
       <h2>Marco regulatorio</h2>
       <p class="section-note">ZBE, transporte de mercancías, ATP frigorífico, fiscalidad del renting y ayudas</p>
       <div class="empty">
-        <b>Sin cambios normativos en la ventana.</b> El sumario del BOE del 12.10 no contiene disposiciones sobre transporte de mercancías, ATP, DeCA, ZBE, ayudas a vehículos eléctricos o renting, y las búsquedas sobre ZBE y transporte no han arrojado ninguna disposición nueva fechada entre el 09.10 y hoy.
+        <b>Sin cambios normativos en la ventana.</b> El sumario del BOE del 13.10 no recoge en la parte consultada disposiciones sobre transporte de mercancías, ATP, DeCA, ZBE, ayudas a vehículos eléctricos o renting, y la búsqueda sobre ZBE y transporte no ha arrojado ninguna disposición nueva.
       </div>
     </section>
 
@@ -620,11 +642,11 @@
         </li>
         <li>
           <span class="when">Abierta desde 02.10</span>
-          <div><b>Registradores de temperatura de la flota frigorífica.</b> Las enmiendas al ATP publicadas en el BOE prevén, según la edición del 02.10, un plazo transitorio para equipos con la norma antigua. Operaciones: inventariar los registradores de la flota frigorífica.</div>
+          <div><b>Registradores de temperatura de la flota frigorífica.</b> Las enmiendas al ATP prevén, según la edición del 02.10, un plazo transitorio para equipos con la norma antigua. Operaciones: inventariar los registradores de la flota frigorífica.</div>
         </li>
         <li>
           <span class="when">Hasta 16.10</span>
-          <div><b>Oferta de Alquiber en frigoríficos.</b> Su web mantiene un mes gratis en contratos nuevos y ampliaciones de flota de más de 6 meses firmados entre el 14.09 y el 16.10. Comercial: comprobar si algún cliente de frío la menciona antes de que termine.</div>
+          <div><b>Oferta de Alquiber en frigoríficos.</b> Su web [01] mantiene un mes gratis en contratos nuevos y ampliaciones de flota de más de 6 meses firmados entre el 14.09 y el 16.10. Comercial: comprobar si algún cliente de frío la menciona antes de que termine.</div>
         </li>
       </ul>
     </section>
@@ -634,31 +656,31 @@
       <h2>Consultado hoy</h2>
       <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
       <ol class="sources">
-        <li><span>01</span><a href="https://www.northgate.es/sobre-nosotros/actualidad/premio-ejecutivos-por-servicio-cliente">Northgate — Northgate recibe el Premio Ejecutivos al Servicio al Cliente (09.10.2026)</a></li>
+        <li><span>01</span><a href="https://www.alquiber.es/">Alquiber — oferta «Un mes gratis» en flota frigorífica (vigente hasta el 16.10)</a></li>
       </ol>
       <p class="section-note">Revisadas sin novedad en la ventana</p>
       <ul class="sources">
+        <li><span>—</span><a href="https://www.northgate.es/sobre-nosotros/actualidad">Northgate — actualidad (última entrada 09.10)</a></li>
         <li><span>—</span><a href="https://www.ayvens.com/es-es/sobre-nosotros/noticias/">Ayvens España — noticias (última entrada 29.09)</a></li>
-        <li><span>—</span><a href="https://www.petitforestier.com/es-es/">Petit Forestier España — web corporativa</a></li>
-        <li><span>—</span><a href="https://www.alquiber.es/">Alquiber — web corporativa</a></li>
+        <li><span>—</span><a href="https://www.petitforestier.com/es-es/">Petit Forestier España — web corporativa (última entrada 10.08)</a></li>
         <li><span>—</span><a href="https://anfac.com/category/actualidad/notas-de-matriculacion/">ANFAC — notas de matriculación (última 01.10)</a></li>
-        <li><span>—</span><a href="https://www.boe.es/boe/dias/2026/10/12/">BOE — sumario del 12.10.2026</a></li>
+        <li><span>—</span><a href="https://www.boe.es/boe/dias/2026/10/13/">BOE — sumario del 13.10.2026</a></li>
       </ul>
     </section>
 
     <p class="method">
-      <b>Método.</b> Edición completa del 12.10.2026, con ventana desde la edición anterior del 09.10.2026 (08:12 CEST) hasta hoy a las 08:12 CEST.
+      <b>Método.</b> Edición completa del 13.10.2026, con ventana desde la edición anterior del 12.10.2026 (08:12 CEST) hasta hoy a las 08:11 CEST.
     </p>
 
   </main>
 
   <footer>
     <span class="mark">COVEY</span>
-    <span>Noticias recientes · Edición 12.10.2026</span>
+    <span>Noticias recientes · Edición 13.10.2026</span>
   </footer>
 
 </div>
 
-<script id="covey-nav" src="nav.js" data-fecha="2026-10-12" defer></script>
+<script id="covey-nav" src="nav.js" data-fecha="2026-10-13" defer></script>
 </body>
 </html>
