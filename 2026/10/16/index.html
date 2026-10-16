@@ -4,47 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Noticias Relevantes · Covey · 16.10.2026</title>
-<!--
-  PLANTILLA DEL INFORME DIARIO DE VIGILANCIA COMPETITIVA · COVEY
-  ---------------------------------------------------------------
-  Uso por la rutina:
-    1. Copiar este fichero a index.html.
-    2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
-       contenido del día. No dejar ningún marcador sin sustituir.
-    3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
-    4. NO añadir scripts ni menú de ediciones: los inyecta la GitHub Action al publicar.
-       La Action archiva la edición por la fecha de «Edición 16.10.2026».
-
-  Marcadores:
-    16.10.2026      -> 15.09.2026
-    Viernes · Desde la edición del 15.10      -> Martes · Desde la edición del 14.09
-    08:12 CEST             -> 08:12 CEST  (salida real de: TZ=Europe/Madrid date '+%H:%M %Z')
-    Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; el DeCA digital y Auto+ siguen abiertos y la oferta de Alquiber termina hoy          -> Titular del día (resume lo más importante, nunca genérico)
-    {{RANGO_VENTANA}}    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
-    {{RECUENTO}}         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
-                            (solo cuenta ítems Nuevo/Actualizado; el contexto no suma)
-    {{METODO}}           -> Edición completa del 15.09.2026, con ventana desde la edición anterior del 14.09.2026 (17:11 CEST) hasta hoy a las 08:12 CEST.
-    {{CIFRA}} {{QUE_MIDE}} {{VARIACION_FUENTE}} -> solo en el bloque .stats
-
-  Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
-    - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
-      Nunca un nodo de texto suelto como hijo directo del <li>.
-    - <article class="item ..."> tiene EXACTAMENTE dos hijos:
-      <div class="item-rail"></div> y <div class="item-body">...</div>.
-    - Clases de relevancia en el <article> y en el chip: alta | media | contexto.
-    - Bloque .stats: solo si hay 3 cifras reales que lo justifiquen; si no, eliminarlo.
-    - Bloque vacío: usar <div class="empty">...</div> en lugar de rellenar con contexto antiguo.
-
-  Reglas de contenido:
-    - Chip de estado en .meta, justo después del chip de relevancia:
-      <span class="chip">Nuevo</span> o <span class="chip">Actualizado</span>.
-      Los ítems «Contexto vigente» no llevan chip de estado.
-    - Cada ítem cita sus fuentes en .src con el número de «Fuentes citadas»: [03].
-    - .why empieza por <b>Por qué importa · Área · Acción:</b>
-        Área:   Comercial | Flota y compras | Dirección | Operaciones
-        Acción: Actuar | Informar | Contexto
-    - Toda cifra del resumen ejecutivo o de .stats aparece también en un ítem con su fuente.
--->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
