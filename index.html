@@ -3,7 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noticias Relevantes · Covey · 15.10.2026</title>
+<title>Noticias Relevantes · Covey · 16.10.2026</title>
+<!--
+  PLANTILLA DEL INFORME DIARIO DE VIGILANCIA COMPETITIVA · COVEY
+  ---------------------------------------------------------------
+  Uso por la rutina:
+    1. Copiar este fichero a index.html.
+    2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
+       contenido del día. No dejar ningún marcador sin sustituir.
+    3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
+    4. NO añadir scripts ni menú de ediciones: los inyecta la GitHub Action al publicar.
+       La Action archiva la edición por la fecha de «Edición 16.10.2026».
+
+  Marcadores:
+    16.10.2026      -> 15.09.2026
+    Viernes · Desde la edición del 15.10      -> Martes · Desde la edición del 14.09
+    08:12 CEST             -> 08:12 CEST  (salida real de: TZ=Europe/Madrid date '+%H:%M %Z')
+    Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; el DeCA digital y Auto+ siguen abiertos y la oferta de Alquiber termina hoy          -> Titular del día (resume lo más importante, nunca genérico)
+    {{RANGO_VENTANA}}    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
+    {{RECUENTO}}         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
+                            (solo cuenta ítems Nuevo/Actualizado; el contexto no suma)
+    {{METODO}}           -> Edición completa del 15.09.2026, con ventana desde la edición anterior del 14.09.2026 (17:11 CEST) hasta hoy a las 08:12 CEST.
+    {{CIFRA}} {{QUE_MIDE}} {{VARIACION_FUENTE}} -> solo en el bloque .stats
+
+  Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
+    - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
+      Nunca un nodo de texto suelto como hijo directo del <li>.
+    - <article class="item ..."> tiene EXACTAMENTE dos hijos:
+      <div class="item-rail"></div> y <div class="item-body">...</div>.
+    - Clases de relevancia en el <article> y en el chip: alta | media | contexto.
+    - Bloque .stats: solo si hay 3 cifras reales que lo justifiquen; si no, eliminarlo.
+    - Bloque vacío: usar <div class="empty">...</div> en lugar de rellenar con contexto antiguo.
+
+  Reglas de contenido:
+    - Chip de estado en .meta, justo después del chip de relevancia:
+      <span class="chip">Nuevo</span> o <span class="chip">Actualizado</span>.
+      Los ítems «Contexto vigente» no llevan chip de estado.
+    - Cada ítem cita sus fuentes en .src con el número de «Fuentes citadas»: [03].
+    - .why empieza por <b>Por qué importa · Área · Acción:</b>
+        Área:   Comercial | Flota y compras | Dirección | Operaciones
+        Acción: Actuar | Informar | Contexto
+    - Toda cifra del resumen ejecutivo o de .stats aparece también en un ítem con su fuente.
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -531,96 +572,89 @@
     <div class="masthead-top">
       <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
       <div class="edition">
-        <strong>Edición 15.10.2026</strong>
-        Jueves · Desde la edición del 14.10<br>Actualizado 08:11 CEST
+        <strong>Edición 16.10.2026</strong>
+        Viernes · Desde la edición del 15.10<br>Actualizado 08:12 CEST
       </div>
     </div>
-    <h1>Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; siguen abiertos el DeCA digital, el Plan Auto+, el plazo de los registradores ATP y la oferta de Alquiber hasta el 16.10</h1>
+    <h1>Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; el DeCA digital y Auto+ siguen abiertos y la oferta de Alquiber termina hoy</h1>
     <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
   </header>
   <div class="rule-accent"></div>
 
   <main>
-
-        <section class="exec">
+    <section class="exec">
       <span class="badge">Resumen ejecutivo</span>
       <h2>Lo que necesitas saber hoy</h2>
       <p class="section-note">Nuevas 0 · Actualizadas 0 · Menciones 0 · Competencia 0 · Sector 0 · Regulación 0</p>
       <ol>
-        <li><div><b>Sin novedades verificables</b> en menciones de Covey, competidores, mercado ni regulación entre la edición del 14.10 y hoy; lo vigente se mantiene en Señales a seguir.</div></li>
+        <li><div><b>Sin novedades verificables</b> en menciones de Covey, competidores, mercado ni regulación entre la edición del 15.10 y hoy; la oferta de Alquiber [02] termina hoy y el resto de lo vigente se mantiene en Señales a seguir.</div></li>
       </ol>
     </section>
 
-        <section>
+    <section>
       <span class="badge">Menciones de Covey</span>
       <h2>Covey en los medios</h2>
-      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 14–15.10.2026</p>
-
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 15–16.10.2026</p>
       <div class="empty">
-        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas frigoríficas», descartando resultados sobre Stephen Covey, FranklinCovey o la localidad de Covey; los resultados son comparativas y artículos comerciales sin fecha confirmada en la ventana y no se cuentan como novedad. El blog de covey.es devolvió error 403 y no se ha podido revisar.
+        <b>Sin menciones externas en la ventana.</b> Se han buscado «Covey Alquiler furgonetas frigoríficas» y «Covey alquiler furgonetas noticia», descartando resultados sobre Stephen Covey, FranklinCovey o la localidad de Covey. Los resultados son comparativas y artículos comerciales sin fecha en la ventana; el único artículo abierto sobre Covey es de 2018 y no se cuenta como novedad.
       </div>
     </section>
 
-        <section>
+    <section>
       <span class="badge">Competidores</span>
       <h2>Movimientos de la competencia</h2>
       <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
-
       <div class="empty">
-        <b>Sin movimientos de competidores en la ventana.</b> La portada de Northgate muestra noticias sin fecha (superar los 80.000 vehículos, nueva app, 50 talleres propios), por lo que no se cuentan como novedad; la web de Petit Forestier España solo lista entradas del 10.08, 11.06 y 05.05.2026. La oferta de Alquiber sigue vigente y se mantiene en Señales a seguir. No se localizó prensa fechada de Fraikin.
+        <b>Sin movimientos de competidores en la ventana.</b> La portada de Northgate muestra noticias sin fecha (superar los 80.000 vehículos, nueva app, 50 talleres propios), por lo que no se cuentan como novedad; la web de Petit Forestier España no muestra noticias fechadas en la ventana. La oferta de Alquiber [02] termina hoy y se recoge en Señales a seguir. Las búsquedas sobre Arval, Ayvens, Alphabet, Europcar y Sixt solo devuelven material de 2024-2025.
       </div>
     </section>
 
-        <section>
+    <section>
       <span class="badge">Sector y mercado</span>
       <h2>Sin datos de mercado nuevos</h2>
       <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
-
       <div class="empty">
-        <b>Sin novedades de mercado en la ventana.</b> La sala de prensa de ANFAC se abrió sin notas fechadas en la ventana; las búsquedas sobre matriculaciones de comerciales ligeros y renting (AER, AELR) solo devuelven datos de octubre de 2025 o de meses anteriores de 2026, y las cifras de octubre de 2026 se publicarán a principios de noviembre.
+        <b>Sin novedades de mercado en la ventana.</b> La sala de prensa de ANFAC se abrió sin notas de octubre de 2026; las búsquedas sobre matriculaciones de comerciales ligeros y renting solo devuelven datos de años anteriores o del primer semestre de 2026, y las cifras de octubre se publicarán a principios de noviembre.
       </div>
     </section>
 
-        <section>
+    <section>
       <span class="badge">Regulación y normativa</span>
       <h2>Marco regulatorio</h2>
       <p class="section-note">ZBE, transporte de mercancías, ATP frigorífico, fiscalidad del renting y ayudas</p>
-
       <div class="empty">
-        <b>Sin cambios normativos en la ventana.</b> El sumario del BOE del 15.10 [01] no recoge disposiciones sobre ATP, DeCA, ZBE, ayudas al vehículo eléctrico, renting o carnés de conducir; lo único de transporte es el Real Decreto 826/2026 de subvenciones al transporte público regular de viajeros, sin impacto para Covey.
+        <b>Sin cambios normativos en la ventana.</b> En las secciones revisadas del sumario del BOE del 16.10 (núm. 257) [01] no hay disposiciones sobre ATP, DeCA, ZBE, ayudas al vehículo eléctrico, renting o carnés de conducir; la parte final de los anuncios (V.B y V.C) no se pudo leer.
       </div>
     </section>
 
-        <section>
+    <section>
       <span class="badge">Señales a seguir</span>
       <h2>Qué vigilar los próximos días</h2>
       <ul class="watch">
         <li>
           <span class="when">Abierta desde 05.10</span>
-          <div><b>Primeros controles del DeCA digital.</b> Obligatorio en el transporte de mercancías desde el 05.10 según la edición de esa fecha. Operaciones: preguntar a las delegaciones si algún cliente que usa la furgoneta para transporte por cuenta ajena plantea dudas.</div>
+          <div><b>Primeros controles del DeCA digital.</b> Es obligatorio desde el 05.10 en el transporte público de mercancías dentro de España y en el cabotaje, y ASTIC ha pedido a la Administración periodos transitorios [03]. Operaciones: preguntar a las delegaciones si algún cliente que usa la furgoneta para transporte por cuenta ajena plantea dudas.</div>
         </li>
         <li>
           <span class="when">Abierta desde 01.10</span>
-          <div><b>Programa Auto+ para furgonetas eléctricas.</b> Sigue abierto según las ediciones del 01.10 y del 06.10. Comercial: valorar si interesa a clientes de renting a largo plazo.</div>
+          <div><b>Programa Auto+ para furgonetas eléctricas.</b> La línea de particulares admite solicitudes hasta el 31.12.2026 y la de autónomos y empresas se anunció «después del verano» sin fecha; la prensa no coincide en los importes [04]. Comercial: confirmar importes y plazos en fuente oficial antes de ofrecerlo a clientes de renting a largo plazo.</div>
         </li>
         <li>
-          <span class="when">Abierta desde 02.10</span>
-          <div><b>Registradores de temperatura de la flota frigorífica.</b> Las enmiendas al ATP prevén, según la edición del 02.10, un plazo transitorio para equipos con la norma antigua. Operaciones: inventariar los registradores de la flota frigorífica.</div>
-        </li>
-        <li>
-          <span class="when">Hasta 16.10</span>
-          <div><b>Oferta de Alquiber en frigoríficos.</b> Su web [02], abierta hoy, mantiene «un mes gratis» en contratos nuevos y ampliaciones de flota de más de 6 meses firmados entre el 14.09 y el 16.10 (la página no indica el año). Comercial: comprobar si algún cliente de frío la menciona antes de que termine.</div>
+          <span class="when">Termina hoy 16.10</span>
+          <div><b>Oferta de Alquiber en frigoríficos.</b> Su web [02] mantiene «un mes gratis» en contratos nuevos y ampliaciones de flota de más de 6 meses firmados entre el 14.09 y el 16.10 (la página no indica el año). Comercial: comprobar si algún cliente de frío la menciona; se retira de la lista en la próxima edición.</div>
         </li>
       </ul>
     </section>
 
-        <section>
+    <section>
       <span class="badge">Fuentes</span>
       <h2>Consultado hoy</h2>
       <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
       <ol class="sources">
-        <li><span>01</span><a href="https://www.boe.es/boe/dias/2026/10/15/">BOE — Sumario del 15.10.2026 (núm. 256)</a></li>
+        <li><span>01</span><a href="https://www.boe.es/boe/dias/2026/10/16/">BOE — Sumario del 16.10.2026 (núm. 257)</a></li>
         <li><span>02</span><a href="https://www.alquiber.es/">Alquiber — oferta «Un mes gratis» en flota frigorífica (vigente hasta el 16.10)</a></li>
+        <li><span>03</span><a href="https://www.interempresas.net/Camiones-transporte-carretera/665200-Entra-en-vigor-el-DeCA-para-el-transporte-por-carretera.html">Interempresas — Entra en vigor el DeCA para el transporte por carretera (05.10.2026)</a></li>
+        <li><span>04</span><a href="https://www.motor16.com/las-ultimas-noticias/plan-auto-solicitudes-2026/">Motor16 — Plan Auto+ solicitudes 2026 (05.08.2026)</a></li>
       </ol>
       <p class="section-note">Revisadas sin novedad en la ventana</p>
       <ul class="sources">
@@ -630,19 +664,19 @@
       </ul>
     </section>
 
-        <p class="method">
-      <b>Método.</b> Edición completa del 15.10.2026, con ventana desde la edición anterior del 14.10.2026 (08:12 CEST) hasta hoy a las 08:11 CEST.
+    <p class="method">
+      <b>Método.</b> Edición del 16.10.2026, con ventana desde la edición anterior del 15.10.2026 (08:11 CEST) hasta hoy a las 08:12 CEST.
     </p>
 
   </main>
 
   <footer>
     <span class="mark">COVEY</span>
-    <span>Noticias recientes · Edición 15.10.2026</span>
+    <span>Noticias recientes · Edición 16.10.2026</span>
   </footer>
 
 </div>
 
-<script id="covey-nav" src="nav.js" data-fecha="2026-10-15" defer></script>
+<script id="covey-nav" src="nav.js" data-fecha="2026-10-16" defer></script>
 </body>
 </html>
