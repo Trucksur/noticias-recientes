@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticias Relevantes · Covey · 22.10.2026</title>
+<!--
+  PLANTILLA DEL INFORME DIARIO DE VIGILANCIA COMPETITIVA · COVEY
+  ---------------------------------------------------------------
+  Uso por la rutina:
+    1. Copiar este fichero a index.html.
+    2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
+       contenido del día. No dejar ningún marcador sin sustituir.
+    3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
+    4. NO añadir scripts ni menú de ediciones: los inyecta la GitHub Action al publicar.
+       La Action archiva la edición por la fecha de «Edición 22.10.2026».
+
+  Marcadores:
+    22.10.2026      -> 15.09.2026
+    Jueves · Desde la edición del 21.10      -> Martes · Desde la edición del 14.09
+    08:13 CEST             -> 08:12 CEST  (salida real de: TZ=Europe/Madrid date '+%H:%M %Z')
+    Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; sigue abierta la venta de Fraikin a Asterion          -> Titular del día (resume lo más importante, nunca genérico)
+    21.10 08:11 – 22.10.2026 08:13    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
+    Nuevas 0 · Actualizadas 0 · Menciones 0 · Competencia 0 · Sector 0 · Regulación 0         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
+                            (solo cuenta ítems Nuevo/Actualizado; el contexto no suma)
+    Edición del jueves 22.10.2026 con ventana desde la edición del 21.10 (08:11 CEST) hasta las 08:13 CEST de hoy.           -> Edición completa del 15.09.2026, con ventana desde la edición anterior del 14.09.2026 (17:11 CEST) hasta hoy a las 08:12 CEST.
+    {{CIFRA}} {{QUE_MIDE}} {{VARIACION_FUENTE}} -> solo en el bloque .stats
+
+  Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
+    - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
+      Nunca un nodo de texto suelto como hijo directo del <li>.
+    - <article class="item ..."> tiene EXACTAMENTE dos hijos:
+      <div class="item-rail"></div> y <div class="item-body">...</div>.
+    - Clases de relevancia en el <article> y en el chip: alta | media | contexto.
+    - Bloque .stats: solo si hay 3 cifras reales que lo justifiquen; si no, eliminarlo.
+    - Bloque vacío: usar <div class="empty"><b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas frigoríficas», descartando resultados sobre Stephen Covey o FranklinCovey; solo aparecen artículos comerciales sin fecha en la ventana. Fleet People no contiene menciones de Covey [01]. El blog de covey.es devolvió error 403 y no se pudo abrir.</div> en lugar de rellenar con contexto antiguo.
+
+  Reglas de contenido:
+    - Chip de estado en .meta, justo después del chip de relevancia:
+      <span class="chip">Nuevo</span> o <span class="chip">Actualizado</span>.
+      Los ítems «Contexto vigente» no llevan chip de estado.
+    - Cada ítem cita sus fuentes en .src con el número de «Fuentes citadas»: [03].
+    - .why empieza por <b>Por qué importa · Área · Acción:</b>
+        Área:   Comercial | Flota y compras | Dirección | Operaciones
+        Acción: Actuar | Informar | Contexto
+    - Toda cifra del resumen ejecutivo o de .stats aparece también en un ítem con su fuente.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    color-scheme: light;
+
+    --navy:        #1E2761;
+    --navy-deep:   #0F1740;
+    --navy-mid:    #2A3370;
+    --navy-light:  #3D4FA0;
+    --orange:      #F5A623;
+    --ink:         #171C33;
+    --body:        #4C566B;
+    --muted:       #7B8598;
+    --hairline:    #DCE1EA;
+    --surface:     #FFFFFF;
+    --surface-alt: #F3F5FA;
+    --ground:      #EBEEF4;
+    --brick:       #A93B2C;
+
+    --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --f-body:    "Source Serif 4", Georgia, "Times New Roman", serif;
+    --f-data:    "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+    --measure: 68ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy:        #8FA0E8;
+      --navy-deep:   #0B1030;
+      --navy-mid:    #A9B6EE;
+      --navy-light:  #7A8CD8;
+      --orange:      #F7B54A;
+      --ink:         #E8ECF7;
+      --body:        #B3BCD2;
+      --muted:       #8A94AC;
+      --hairline:    #2A3159;
+      --surface:     #141A38;
+      --surface-alt: #1A2145;
+      --ground:      #0B1030;
+      --brick:       #E08375;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --navy:        #8FA0E8;
+    --navy-deep:   #0B1030;
+    --navy-mid:    #A9B6EE;
+    --navy-light:  #7A8CD8;
+    --orange:      #F7B54A;
+    --ink:         #E8ECF7;
+    --body:        #B3BCD2;
+    --muted:       #8A94AC;
+    --hairline:    #2A3159;
+    --surface:     #141A38;
+    --surface-alt: #1A2145;
+    --ground:      #0B1030;
+    --brick:       #E08375;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--surface);
+    min-height: 100vh;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 34px 44px 26px;
+  }
+
+  .masthead-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px 24px;
+  }
+
+  .wordmark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.10em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .wordmark span {
+    display: block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.62);
+    margin-top: 7px;
+  }
+
+  .edition {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-align: right;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .edition strong {
+    display: block;
+    font-weight: 500;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .masthead h1 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #fff;
+    margin: 26px 0 8px;
+    text-wrap: balance;
+  }
+
+  .masthead p {
+    margin: 0;
+    max-width: 56ch;
+    font-size: 15px;
+    color: rgba(255,255,255,0.74);
+  }
+
+  .rule-accent {
+    height: 5px;
+    background: var(--orange);
+  }
+
+  /* ---------- Page body ---------- */
+
+  main {
+    padding: 0 44px 8px;
+  }
+
+  section {
+    padding: 34px 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  section:first-of-type { border-top: 0; }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--navy-deep);
+    padding: 4px 9px;
+    border-radius: 2px;
+  }
+
+  :root[data-theme="dark"] .badge,
+  :root:not([data-theme="light"]) .badge { color: #fff; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .badge {
+      background: var(--navy-light);
+      color: #0B1030;
+    }
+  }
+
+  :root[data-theme="dark"] .badge {
+    background: var(--navy-light);
+    color: #0B1030;
+  }
+
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 23px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 14px 0 4px;
+    text-wrap: balance;
+  }
+
+  .section-note {
+    font-family: var(--f-data);
+    font-size: 11.5px;
+    color: var(--muted);
+    margin: 0 0 22px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Executive summary ---------- */
+
+  .exec {
+    background: var(--surface-alt);
+    padding: 28px 30px;
+    margin: 0 0 4px;
+    border-left: 5px solid var(--orange);
+  }
+
+  .exec h2 { margin-top: 10px; }
+
+  .exec .section-note { margin: 0; }
+
+  .exec ol {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    counter-reset: keyline;
+  }
+
+  /* Sangría colgante robusta: no usar grid aquí. Un nodo de texto suelto
+     dentro del <li> se convertiría en una celda propia y saldría en vertical. */
+  .exec li {
+    position: relative;
+    padding-left: 38px;
+    max-width: var(--measure);
+    counter-increment: keyline;
+  }
+
+  .exec li::before {
+    content: counter(keyline, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.6;
+    font-family: var(--f-data);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .exec li b {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ---------- Items ---------- */
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 18px;
+  }
+
+  .item-rail { background: var(--hairline); border-radius: 2px; }
+  .item.alta    .item-rail { background: var(--navy); }
+  .item.media   .item-rail { background: var(--navy-light); }
+  .item.contexto .item-rail { background: var(--hairline); }
+
+  .item-body { min-width: 0; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .chip {
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    padding: 1px 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .chip.alta     { color: var(--brick); }
+  .chip.media    { color: var(--navy-light); }
+  .chip.contexto { color: var(--muted); }
+
+  .item h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 9px 0 8px;
+    max-width: var(--measure);
+    text-wrap: balance;
+  }
+
+  .item p {
+    margin: 0 0 10px;
+    max-width: var(--measure);
+  }
+
+  .why {
+    font-family: var(--f-display);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: var(--measure);
+    padding-left: 14px;
+    border-left: 2px solid var(--orange);
+    margin: 0 0 10px;
+  }
+
+  .why b {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .src {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  a {
+    color: var(--navy);
+    text-decoration-color: var(--hairline);
+    text-underline-offset: 3px;
+  }
+
+  a:hover { text-decoration-color: var(--orange); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  /* ---------- Stats ---------- */
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border-block: 1px solid var(--hairline);
+    margin: 0 0 26px;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 18px 16px 16px;
+  }
+
+  .stat .n {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 1;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .stat .d {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Empty state ---------- */
+
+  .empty {
+    font-family: var(--f-data);
+    font-size: 12.5px;
+    color: var(--muted);
+    background: var(--surface-alt);
+    padding: 16px 18px;
+    border-left: 3px solid var(--hairline);
+    letter-spacing: 0.01em;
+  }
+
+  .empty b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Watchlist ---------- */
+
+  .watch {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Columna fija para que la etiqueta temporal alinee en todas las filas. */
+  .watch li {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    max-width: calc(var(--measure) + 146px);
+  }
+
+  .watch .when {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .watch b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Sources ---------- */
+
+  .sources {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-family: var(--f-data);
+    font-size: 12px;
+  }
+
+  .sources li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 8px;
+    color: var(--muted);
+  }
+
+  .sources span { font-variant-numeric: tabular-nums; }
+
+  .sources + .section-note { margin-top: 26px; }
+
+  /* ---------- Method + footer ---------- */
+
+  .method {
+    font-family: var(--f-data);
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+    padding: 24px 0 30px;
+    border-top: 1px solid var(--hairline);
+    max-width: 74ch;
+  }
+
+  footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.6);
+    padding: 16px 44px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+  }
+
+  footer .mark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: #fff;
+  }
+
+  @media (max-width: 620px) {
+    .masthead, main, footer { padding-inline: 24px; }
+    .exec { padding: 22px 20px; }
+    .stats { grid-template-columns: 1fr; }
+    .edition { text-align: left; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { max-width: none; }
+    section { break-inside: avoid; }
+    .item { break-inside: avoid; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
+      <div class="edition">
+        <strong>Edición 22.10.2026</strong>
+        Jueves · Desde la edición del 21.10<br>Actualizado 08:13 CEST
+      </div>
+    </div>
+    <h1>Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; sigue abierta la venta de Fraikin a Asterion</h1>
+    <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
+  </header>
+  <div class="rule-accent"></div>
+
+  <main>
+
+    <!-- ===== 1. RESUMEN EJECUTIVO (1-5 puntos) ===== -->
+    <section class="exec">
+      <span class="badge">Resumen ejecutivo</span>
+      <h2>Lo que necesitas saber hoy</h2>
+      <p class="section-note">Nuevas 0 · Actualizadas 0 · Menciones 0 · Competencia 0 · Sector 0 · Regulación 0</p>
+      <ol>
+        <!-- Repetir este <li> por cada punto. El texto SIEMPRE dentro del <div>.
+             Solo ítems Nuevo/Actualizado que estén en el cuerpo del informe, con sus mismas cifras.
+             Día sin novedades: un único punto que lo diga. Sin recomendaciones genéricas.
+             Si no se han podido abrir las fuentes, el PRIMER punto es ese aviso. -->
+        <li><div><b>Sin novedades verificables</b> en menciones de Covey, competidores de Nivel 1, mercado ni regulación entre la edición del 21.10 (08:11 CEST) y hoy. Sigue abierta la venta de Fraikin al fondo Asterion, publicada el 12.10 [01]; no hay hechos nuevos sobre ella en la prensa abierta hoy.</div></li>
+      </ol>
+    </section>
+
+    <!-- ===== 2. MENCIONES DE COVEY ===== -->
+    <section>
+      <span class="badge">Menciones de Covey</span>
+      <h2>Covey en los medios</h2>
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 21.10 08:11 – 22.10.2026 08:13</p>
+
+      <!-- OPCIÓN A: hay menciones -> usar <div class="empty"><b>Sin novedades de competidores con impacto para Covey en la ventana.</b> Se han buscado operaciones corporativas en español, francés e inglés (Fraikin, Petit Forestier, Northgate, Alquiber, fondos y compras de loueurs de utilitarios) sin ningún hecho nuevo desde el 21.10. La portada de Fleet People solo recoge, sobre el sector, la venta de Fraikin a Asterion (12.10), ya recogida en la edición del 19.10, y los resultados de Alquiber (13.10) [01]; la de Journal de l'Automobile no trae nada sobre loueurs en la ventana [04]. La página de actualidad de Northgate España no muestra fechas en sus noticias [05].</div>
+    </section>
+
+    <!-- ===== 4. SECTOR Y MERCADO ===== -->
+    <section>
+      <span class="badge">Sector y mercado</span>
+      <h2>Sin datos de mercado nuevos</h2>
+      <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
+
+      <div class="empty"><b>Sin novedades de mercado en la ventana.</b> La portada de ANFAC solo muestra una nota de producción del 21.10 (septiembre: 222.304 vehículos, −0,5 % interanual), que no es dato de matriculación ni de inversión en flota [03]. Los datos de matriculaciones de octubre se publican normalmente a principios de noviembre.</div>
+    </section>
+
+    <!-- ===== 5. REGULACIÓN Y NORMATIVA ===== -->
+    <section>
+      <span class="badge">Regulación y normativa</span>
+      <h2>Marco regulatorio</h2>
+      <p class="section-note">ZBE, transporte de mercancías, ATP frigorífico, fiscalidad del renting y ayudas</p>
+
+      <div class="empty"><b>Sin cambios normativos en la ventana.</b> En la parte leída del sumario del BOE del 22.10 no figura nada sobre transporte de mercancías, ATP, ZBE, ayudas al vehículo eléctrico o industrial, renting ni carnés [02].</div>
+    </section>
+
+    <!-- ===== 6. SEÑALES A SEGUIR (2-4) ===== -->
+    <section>
+      <span class="badge">Señales a seguir</span>
+      <h2>Qué vigilar los próximos días</h2>
+      <ul class="watch">
+        <!-- Repetir este <li>. Exactamente dos hijos: <span class="when"> y <div>. Todo el texto dentro del <div>.
+             Partir de las señales de la edición anterior: mantener las abiertas ("abierta desde DD.MM"),
+             actualizar las que cambian y retirar las que ya ocurrieron. Nuevas solo si salen de ítems de hoy. -->
+        <li>
+          <span class="when">Abierta desde 19.10 · sin fecha de cierre confirmada hoy</span>
+          <div><b>Venta de Fraikin a Asterion.</b> El fondo Asterion acordó adquirir Fraikin, noticia del 12.10 [01]. Dirección: seguir cualquier decisión de competencia y anuncios de integración o compras posteriores del grupo.</div>
+        </li>
+        <li>
+          <span class="when">Abierta desde 20.10 · principios de noviembre</span>
+          <div><b>Matriculaciones de octubre.</b> ANFAC publica normalmente los datos del mes a principios del siguiente [03]. Flota y compras: contrastar la evolución de comerciales ligeros cuando salgan.</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== 7. FUENTES (citadas + revisadas sin novedad) ===== -->
+    <section>
+      <span class="badge">Fuentes</span>
+      <h2>Consultado hoy</h2>
+      <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
+      <ol class="sources">
+        <!-- Solo páginas abiertas con WebFetch y usadas en el informe (nunca un resultado de buscador).
+             Repetir este <li>. Numeración con dos dígitos. -->
+        <li><span>01</span><a href="https://www.fleetpeople.es/">Fleet People — portada (Fraikin/Asterion 12.10.2026; Alquiber 13.10.2026)</a></li>
+        <li><span>02</span><a href="https://www.boe.es/boe/dias/2026/10/22/">BOE — sumario del 22.10.2026</a></li>
+        <li><span>03</span><a href="https://www.anfac.com/">ANFAC — portada (nota de producción 21.10.2026)</a></li>
+        <li><span>04</span><a href="https://www.journalauto.com/">Journal de l'Automobile — portada</a></li>
+        <li><span>05</span><a href="https://www.northgate.es/">Northgate España — actualidad (noticias sin fecha visible)</a></li>
+      </ol>
+      <p class="section-note">Revisadas sin novedad en la ventana</p>
+      <ul class="sources">
+        <!-- Webs y salas de prensa consultadas que no aportaron nada. Repetir este <li>. Si no hay, borrar la nota y la lista. -->
+        <li><span>—</span><a href="https://www.fleetpeople.es/">Fleet People — portada</a></li>
+      </ul>
+    </section>
+
+    <!-- ===== 8. MÉTODO =====
+         Una o dos frases: qué edición es y su ventana (desde qué edición y hora hasta cuándo) y, si sustituye
+         a otra edición del mismo día, decirlo. Nada más: ni fuentes revisadas, ni descartes, ni webs no accesibles. -->
+    <p class="method">
+      <b>Método.</b> Edición del jueves 22.10.2026 con ventana desde la edición del 21.10 (08:11 CEST) hasta las 08:13 CEST de hoy.
+    </p>
+
+  </main>
+
+  <footer>
+    <span class="mark">COVEY</span>
+    <span>Noticias recientes · Edición 22.10.2026</span>
+  </footer>
+
+</div>
+
+<script id="covey-nav" src="../../../nav.js" data-fecha="2026-10-22" defer></script>
+</body>
+</html>

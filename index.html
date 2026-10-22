@@ -3,7 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noticias Relevantes · Covey · 21.10.2026</title>
+<title>Noticias Relevantes · Covey · 22.10.2026</title>
+<!--
+  PLANTILLA DEL INFORME DIARIO DE VIGILANCIA COMPETITIVA · COVEY
+  ---------------------------------------------------------------
+  Uso por la rutina:
+    1. Copiar este fichero a index.html.
+    2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
+       contenido del día. No dejar ningún marcador sin sustituir.
+    3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
+    4. NO añadir scripts ni menú de ediciones: los inyecta la GitHub Action al publicar.
+       La Action archiva la edición por la fecha de «Edición 22.10.2026».
+
+  Marcadores:
+    22.10.2026      -> 15.09.2026
+    Jueves · Desde la edición del 21.10      -> Martes · Desde la edición del 14.09
+    08:13 CEST             -> 08:12 CEST  (salida real de: TZ=Europe/Madrid date '+%H:%M %Z')
+    Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; sigue abierta la venta de Fraikin a Asterion          -> Titular del día (resume lo más importante, nunca genérico)
+    21.10 08:11 – 22.10.2026 08:13    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
+    Nuevas 0 · Actualizadas 0 · Menciones 0 · Competencia 0 · Sector 0 · Regulación 0         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
+                            (solo cuenta ítems Nuevo/Actualizado; el contexto no suma)
+    Edición del jueves 22.10.2026 con ventana desde la edición del 21.10 (08:11 CEST) hasta las 08:13 CEST de hoy.           -> Edición completa del 15.09.2026, con ventana desde la edición anterior del 14.09.2026 (17:11 CEST) hasta hoy a las 08:12 CEST.
+    {{CIFRA}} {{QUE_MIDE}} {{VARIACION_FUENTE}} -> solo en el bloque .stats
+
+  Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
+    - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
+      Nunca un nodo de texto suelto como hijo directo del <li>.
+    - <article class="item ..."> tiene EXACTAMENTE dos hijos:
+      <div class="item-rail"></div> y <div class="item-body">...</div>.
+    - Clases de relevancia en el <article> y en el chip: alta | media | contexto.
+    - Bloque .stats: solo si hay 3 cifras reales que lo justifiquen; si no, eliminarlo.
+    - Bloque vacío: usar <div class="empty"><b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas frigoríficas», descartando resultados sobre Stephen Covey o FranklinCovey; solo aparecen artículos comerciales sin fecha en la ventana. Fleet People no contiene menciones de Covey [01]. El blog de covey.es devolvió error 403 y no se pudo abrir.</div> en lugar de rellenar con contexto antiguo.
+
+  Reglas de contenido:
+    - Chip de estado en .meta, justo después del chip de relevancia:
+      <span class="chip">Nuevo</span> o <span class="chip">Actualizado</span>.
+      Los ítems «Contexto vigente» no llevan chip de estado.
+    - Cada ítem cita sus fuentes en .src con el número de «Fuentes citadas»: [03].
+    - .why empieza por <b>Por qué importa · Área · Acción:</b>
+        Área:   Comercial | Flota y compras | Dirección | Operaciones
+        Acción: Actuar | Informar | Contexto
+    - Toda cifra del resumen ejecutivo o de .stats aparece también en un ítem con su fuente.
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -531,108 +572,114 @@
     <div class="masthead-top">
       <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
       <div class="edition">
-        <strong>Edición 21.10.2026</strong>
-        miércoles 21 de octubre de 2026<br>Actualizado 08:11 CEST
+        <strong>Edición 22.10.2026</strong>
+        Jueves · Desde la edición del 21.10<br>Actualizado 08:13 CEST
       </div>
     </div>
-    <h1>Día sin novedades verificables de Covey, la competencia directa, el mercado ni la regulación; sigue abierta la venta de Fraikin a Asterion, con cierre previsto en el primer trimestre de 2027</h1>
+    <h1>Día sin novedades verificables de Covey, la competencia, el mercado ni la regulación; sigue abierta la venta de Fraikin a Asterion</h1>
     <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
   </header>
   <div class="rule-accent"></div>
 
   <main>
 
+    <!-- ===== 1. RESUMEN EJECUTIVO (1-5 puntos) ===== -->
     <section class="exec">
       <span class="badge">Resumen ejecutivo</span>
       <h2>Lo que necesitas saber hoy</h2>
       <p class="section-note">Nuevas 0 · Actualizadas 0 · Menciones 0 · Competencia 0 · Sector 0 · Regulación 0</p>
       <ol>
-        <li><div><b>Sin novedades verificables</b> en menciones de Covey, competidores de Nivel 1, mercado ni regulación entre la edición del 20.10 (08:09 CEST) y hoy. Sigue abierta la venta de Fraikin a Asterion, con cierre previsto en el primer trimestre de 2027 [01].</div></li>
+        <!-- Repetir este <li> por cada punto. El texto SIEMPRE dentro del <div>.
+             Solo ítems Nuevo/Actualizado que estén en el cuerpo del informe, con sus mismas cifras.
+             Día sin novedades: un único punto que lo diga. Sin recomendaciones genéricas.
+             Si no se han podido abrir las fuentes, el PRIMER punto es ese aviso. -->
+        <li><div><b>Sin novedades verificables</b> en menciones de Covey, competidores de Nivel 1, mercado ni regulación entre la edición del 21.10 (08:11 CEST) y hoy. Sigue abierta la venta de Fraikin al fondo Asterion, publicada el 12.10 [01]; no hay hechos nuevos sobre ella en la prensa abierta hoy.</div></li>
       </ol>
     </section>
 
+    <!-- ===== 2. MENCIONES DE COVEY ===== -->
     <section>
       <span class="badge">Menciones de Covey</span>
       <h2>Covey en los medios</h2>
-      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 20.10 08:09 – 21.10.2026 08:11</p>
-      <div class="empty">
-        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas», descartando resultados sobre Stephen Covey, FranklinCovey o la localidad de Covey; solo aparecen artículos comerciales y comparativas sin fecha en la ventana. El blog de covey.es devolvió error 403 y no se pudo abrir.
-      </div>
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 21.10 08:11 – 22.10.2026 08:13</p>
+
+      <!-- OPCIÓN A: hay menciones -> usar <div class="empty"><b>Sin novedades de competidores con impacto para Covey en la ventana.</b> Se han buscado operaciones corporativas en español, francés e inglés (Fraikin, Petit Forestier, Northgate, Alquiber, fondos y compras de loueurs de utilitarios) sin ningún hecho nuevo desde el 21.10. La portada de Fleet People solo recoge, sobre el sector, la venta de Fraikin a Asterion (12.10), ya recogida en la edición del 19.10, y los resultados de Alquiber (13.10) [01]; la de Journal de l'Automobile no trae nada sobre loueurs en la ventana [04]. La página de actualidad de Northgate España no muestra fechas en sus noticias [05].</div>
     </section>
 
-    <section>
-      <span class="badge">Competidores</span>
-      <h2>Movimientos de la competencia</h2>
-      <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
-      <div class="empty">
-        <b>Sin novedades de competidores con impacto para Covey en la ventana.</b> Se han buscado operaciones corporativas en español, francés e inglés (Fraikin, Petit Forestier, Northgate, Alquiber, fondos y compras de loueurs de utilitarios) sin ningún hecho nuevo desde el 20.10 sobre competidores de Nivel 1. En la prensa especializada abierta hoy, lo más reciente sobre el sector es la venta de Fraikin, ya recogida en la edición del 19.10 [01]. Las únicas piezas del 20.10 sobre renting son la compra de FleetPartners por SG Fleet, que opera en Australia y Nueva Zelanda sin mención de España ni Europa [02], y el protocolo de Arval con Geely para ofrecer renting de turismos eléctricos, sin referencia a furgonetas ni a España [03]; no tienen impacto directo para Covey. En la página de actualidad de Northgate lo más reciente es del 09.10.
-      </div>
-    </section>
-
+    <!-- ===== 4. SECTOR Y MERCADO ===== -->
     <section>
       <span class="badge">Sector y mercado</span>
       <h2>Sin datos de mercado nuevos</h2>
       <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
-      <div class="empty">
-        <b>Sin novedades de mercado en la ventana.</b> La sección de notas de matriculación de ANFAC no tiene entradas posteriores al 01.10.2026 (cifras de septiembre) [04]; los datos de octubre se publican normalmente a principios de noviembre.
-      </div>
+
+      <div class="empty"><b>Sin novedades de mercado en la ventana.</b> La portada de ANFAC solo muestra una nota de producción del 21.10 (septiembre: 222.304 vehículos, −0,5 % interanual), que no es dato de matriculación ni de inversión en flota [03]. Los datos de matriculaciones de octubre se publican normalmente a principios de noviembre.</div>
     </section>
 
+    <!-- ===== 5. REGULACIÓN Y NORMATIVA ===== -->
     <section>
       <span class="badge">Regulación y normativa</span>
       <h2>Marco regulatorio</h2>
       <p class="section-note">ZBE, transporte de mercancías, ATP frigorífico, fiscalidad del renting y ayudas</p>
-      <div class="empty">
-        <b>Sin cambios normativos en la ventana.</b> En el sumario del BOE del 21.10 solo figura el Real Decreto-ley 31/2026 sobre la acción protectora de la Seguridad Social y otras normas sociales, sin referencia a transporte de mercancías, ATP, ZBE, ayudas al vehículo eléctrico o industrial, renting ni carnés [05]. Las búsquedas sobre ZBE y ATP solo devuelven guías generales sin novedades de octubre.
-      </div>
+
+      <div class="empty"><b>Sin cambios normativos en la ventana.</b> En la parte leída del sumario del BOE del 22.10 no figura nada sobre transporte de mercancías, ATP, ZBE, ayudas al vehículo eléctrico o industrial, renting ni carnés [02].</div>
     </section>
 
+    <!-- ===== 6. SEÑALES A SEGUIR (2-4) ===== -->
     <section>
       <span class="badge">Señales a seguir</span>
       <h2>Qué vigilar los próximos días</h2>
       <ul class="watch">
+        <!-- Repetir este <li>. Exactamente dos hijos: <span class="when"> y <div>. Todo el texto dentro del <div>.
+             Partir de las señales de la edición anterior: mantener las abiertas ("abierta desde DD.MM"),
+             actualizar las que cambian y retirar las que ya ocurrieron. Nuevas solo si salen de ítems de hoy. -->
         <li>
-          <span class="when">Abierta desde 19.10 · 1T 2027</span>
-          <div><b>Cierre de la venta de Fraikin a Asterion.</b> Los accionistas de Fraikin están en negociaciones exclusivas con Asterion Industrial Partners y el cierre se prevé en el primer trimestre de 2027 [01]. Dirección: seguir la decisión de las autoridades de competencia y cualquier anuncio de integración o compras posteriores.</div>
+          <span class="when">Abierta desde 19.10 · sin fecha de cierre confirmada hoy</span>
+          <div><b>Venta de Fraikin a Asterion.</b> El fondo Asterion acordó adquirir Fraikin, noticia del 12.10 [01]. Dirección: seguir cualquier decisión de competencia y anuncios de integración o compras posteriores del grupo.</div>
         </li>
         <li>
           <span class="when">Abierta desde 20.10 · principios de noviembre</span>
-          <div><b>Matriculaciones de octubre.</b> ANFAC publica normalmente los datos del mes a principios del mes siguiente; la última nota disponible es la de septiembre [04]. Flota y compras: contrastar la evolución de comerciales ligeros cuando salgan.</div>
+          <div><b>Matriculaciones de octubre.</b> ANFAC publica normalmente los datos del mes a principios del siguiente [03]. Flota y compras: contrastar la evolución de comerciales ligeros cuando salgan.</div>
         </li>
       </ul>
     </section>
 
+    <!-- ===== 7. FUENTES (citadas + revisadas sin novedad) ===== -->
     <section>
       <span class="badge">Fuentes</span>
       <h2>Consultado hoy</h2>
       <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
       <ol class="sources">
-        <li><span>01</span><a href="https://journalauto.com/journal-des-flottes/">Journal des Flottes — portada de la sección (venta de Fraikin a Asterion, 13.10.2026)</a></li>
-        <li><span>02</span><a href="https://fleetpeople.es/sg-fleet-gana-la-batalla-por-fleetpartners-tras-pagar-703-millones-e-imponerse-a-orix-y-sumitomo/">Fleet People — SG Fleet gana la batalla por FleetPartners (20.10.2026)</a></li>
-        <li><span>03</span><a href="https://journalauto.com/constructeurs/avec-arval-geely-trouve-un-allie-dans-son-developpement-international/">Journal de l'Automobile — Avec Arval, Geely trouve un allié (20.10.2026)</a></li>
-        <li><span>04</span><a href="https://anfac.com/category/actualidad/notas-de-matriculacion/">ANFAC — notas de matriculación (última entrada 01.10.2026)</a></li>
-        <li><span>05</span><a href="https://www.boe.es/boe/dias/2026/10/21/">BOE — sumario del 21.10.2026</a></li>
+        <!-- Solo páginas abiertas con WebFetch y usadas en el informe (nunca un resultado de buscador).
+             Repetir este <li>. Numeración con dos dígitos. -->
+        <li><span>01</span><a href="https://www.fleetpeople.es/">Fleet People — portada (Fraikin/Asterion 12.10.2026; Alquiber 13.10.2026)</a></li>
+        <li><span>02</span><a href="https://www.boe.es/boe/dias/2026/10/22/">BOE — sumario del 22.10.2026</a></li>
+        <li><span>03</span><a href="https://www.anfac.com/">ANFAC — portada (nota de producción 21.10.2026)</a></li>
+        <li><span>04</span><a href="https://www.journalauto.com/">Journal de l'Automobile — portada</a></li>
+        <li><span>05</span><a href="https://www.northgate.es/">Northgate España — actualidad (noticias sin fecha visible)</a></li>
       </ol>
       <p class="section-note">Revisadas sin novedad en la ventana</p>
       <ul class="sources">
-        <li><span>—</span><a href="https://www.fleetpeople.es">Fleet People — portada</a></li>
-        <li><span>—</span><a href="https://www.northgate.es/sobre-nosotros/actualidad">Northgate España — actualidad (última entrada 09.10.2026)</a></li>
+        <!-- Webs y salas de prensa consultadas que no aportaron nada. Repetir este <li>. Si no hay, borrar la nota y la lista. -->
+        <li><span>—</span><a href="https://www.fleetpeople.es/">Fleet People — portada</a></li>
       </ul>
     </section>
 
+    <!-- ===== 8. MÉTODO =====
+         Una o dos frases: qué edición es y su ventana (desde qué edición y hora hasta cuándo) y, si sustituye
+         a otra edición del mismo día, decirlo. Nada más: ni fuentes revisadas, ni descartes, ni webs no accesibles. -->
     <p class="method">
-      <b>Método.</b> Edición del miércoles 21.10.2026 con ventana desde la edición del 20.10 (08:09 CEST) hasta las 08:11 CEST de hoy.
+      <b>Método.</b> Edición del jueves 22.10.2026 con ventana desde la edición del 21.10 (08:11 CEST) hasta las 08:13 CEST de hoy.
     </p>
 
   </main>
 
   <footer>
     <span class="mark">COVEY</span>
-    <span>Noticias recientes · Edición 21.10.2026</span>
+    <span>Noticias recientes · Edición 22.10.2026</span>
   </footer>
 
 </div>
 
-<script id="covey-nav" src="nav.js" data-fecha="2026-10-21" defer></script>
+<script id="covey-nav" src="nav.js" data-fecha="2026-10-22" defer></script>
 </body>
 </html>
