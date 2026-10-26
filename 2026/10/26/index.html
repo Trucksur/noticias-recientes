@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticias Relevantes · Covey · 26.10.2026</title>
+<!--
+  PLANTILLA DEL INFORME DIARIO DE VIGILANCIA COMPETITIVA · COVEY
+  ---------------------------------------------------------------
+  Uso por la rutina:
+    1. Copiar este fichero a index.html.
+    2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
+       contenido del día. No dejar ningún marcador sin sustituir.
+    3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
+    4. NO añadir scripts ni menú de ediciones: los inyecta la GitHub Action al publicar.
+       La Action archiva la edición por la fecha de «Edición 26.10.2026».
+
+  Marcadores:
+    26.10.2026      -> 15.09.2026
+    Lunes · Desde la edición del 23.10      -> Martes · Desde la edición del 14.09
+    07:12 CET             -> 08:12 CEST  (salida real de: TZ=Europe/Madrid date '+%H:%M %Z')
+    El parque de renting supera el millón de vehículos (+8 %) en el tercer trimestre; sin movimientos nuevos de competidores y sigue abierta la venta de Fraikin a Asterion          -> Titular del día (resume lo más importante, nunca genérico)
+    {{RANGO_VENTANA}}    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
+    {{RECUENTO}}         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
+                            (solo cuenta ítems Nuevo/Actualizado; el contexto no suma)
+    {{METODO}}           -> Edición completa del 15.09.2026, con ventana desde la edición anterior del 14.09.2026 (17:11 CEST) hasta hoy a las 08:12 CEST.
+    {{CIFRA}} {{QUE_MIDE}} {{VARIACION_FUENTE}} -> solo en el bloque .stats
+
+  Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
+    - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
+      Nunca un nodo de texto suelto como hijo directo del <li>.
+    - <article class="item ..."> tiene EXACTAMENTE dos hijos:
+      <div class="item-rail"></div> y <div class="item-body">...</div>.
+    - Clases de relevancia en el <article> y en el chip: alta | media | contexto.
+    - Bloque .stats: solo si hay 3 cifras reales que lo justifiquen; si no, eliminarlo.
+    - Bloque vacío: usar <div class="empty">...</div> en lugar de rellenar con contexto antiguo.
+
+  Reglas de contenido:
+    - Chip de estado en .meta, justo después del chip de relevancia:
+      <span class="chip">Nuevo</span> o <span class="chip">Actualizado</span>.
+      Los ítems «Contexto vigente» no llevan chip de estado.
+    - Cada ítem cita sus fuentes en .src con el número de «Fuentes citadas»: [03].
+    - .why empieza por <b>Por qué importa · Área · Acción:</b>
+        Área:   Comercial | Flota y compras | Dirección | Operaciones
+        Acción: Actuar | Informar | Contexto
+    - Toda cifra del resumen ejecutivo o de .stats aparece también en un ítem con su fuente.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    color-scheme: light;
+
+    --navy:        #1E2761;
+    --navy-deep:   #0F1740;
+    --navy-mid:    #2A3370;
+    --navy-light:  #3D4FA0;
+    --orange:      #F5A623;
+    --ink:         #171C33;
+    --body:        #4C566B;
+    --muted:       #7B8598;
+    --hairline:    #DCE1EA;
+    --surface:     #FFFFFF;
+    --surface-alt: #F3F5FA;
+    --ground:      #EBEEF4;
+    --brick:       #A93B2C;
+
+    --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --f-body:    "Source Serif 4", Georgia, "Times New Roman", serif;
+    --f-data:    "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+    --measure: 68ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy:        #8FA0E8;
+      --navy-deep:   #0B1030;
+      --navy-mid:    #A9B6EE;
+      --navy-light:  #7A8CD8;
+      --orange:      #F7B54A;
+      --ink:         #E8ECF7;
+      --body:        #B3BCD2;
+      --muted:       #8A94AC;
+      --hairline:    #2A3159;
+      --surface:     #141A38;
+      --surface-alt: #1A2145;
+      --ground:      #0B1030;
+      --brick:       #E08375;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --navy:        #8FA0E8;
+    --navy-deep:   #0B1030;
+    --navy-mid:    #A9B6EE;
+    --navy-light:  #7A8CD8;
+    --orange:      #F7B54A;
+    --ink:         #E8ECF7;
+    --body:        #B3BCD2;
+    --muted:       #8A94AC;
+    --hairline:    #2A3159;
+    --surface:     #141A38;
+    --surface-alt: #1A2145;
+    --ground:      #0B1030;
+    --brick:       #E08375;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--surface);
+    min-height: 100vh;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 34px 44px 26px;
+  }
+
+  .masthead-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px 24px;
+  }
+
+  .wordmark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.10em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .wordmark span {
+    display: block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.62);
+    margin-top: 7px;
+  }
+
+  .edition {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-align: right;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .edition strong {
+    display: block;
+    font-weight: 500;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .masthead h1 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #fff;
+    margin: 26px 0 8px;
+    text-wrap: balance;
+  }
+
+  .masthead p {
+    margin: 0;
+    max-width: 56ch;
+    font-size: 15px;
+    color: rgba(255,255,255,0.74);
+  }
+
+  .rule-accent {
+    height: 5px;
+    background: var(--orange);
+  }
+
+  /* ---------- Page body ---------- */
+
+  main {
+    padding: 0 44px 8px;
+  }
+
+  section {
+    padding: 34px 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  section:first-of-type { border-top: 0; }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--navy-deep);
+    padding: 4px 9px;
+    border-radius: 2px;
+  }
+
+  :root[data-theme="dark"] .badge,
+  :root:not([data-theme="light"]) .badge { color: #fff; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .badge {
+      background: var(--navy-light);
+      color: #0B1030;
+    }
+  }
+
+  :root[data-theme="dark"] .badge {
+    background: var(--navy-light);
+    color: #0B1030;
+  }
+
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 23px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 14px 0 4px;
+    text-wrap: balance;
+  }
+
+  .section-note {
+    font-family: var(--f-data);
+    font-size: 11.5px;
+    color: var(--muted);
+    margin: 0 0 22px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Executive summary ---------- */
+
+  .exec {
+    background: var(--surface-alt);
+    padding: 28px 30px;
+    margin: 0 0 4px;
+    border-left: 5px solid var(--orange);
+  }
+
+  .exec h2 { margin-top: 10px; }
+
+  .exec .section-note { margin: 0; }
+
+  .exec ol {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    counter-reset: keyline;
+  }
+
+  /* Sangría colgante robusta: no usar grid aquí. Un nodo de texto suelto
+     dentro del <li> se convertiría en una celda propia y saldría en vertical. */
+  .exec li {
+    position: relative;
+    padding-left: 38px;
+    max-width: var(--measure);
+    counter-increment: keyline;
+  }
+
+  .exec li::before {
+    content: counter(keyline, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.6;
+    font-family: var(--f-data);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .exec li b {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ---------- Items ---------- */
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 18px;
+  }
+
+  .item-rail { background: var(--hairline); border-radius: 2px; }
+  .item.alta    .item-rail { background: var(--navy); }
+  .item.media   .item-rail { background: var(--navy-light); }
+  .item.contexto .item-rail { background: var(--hairline); }
+
+  .item-body { min-width: 0; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .chip {
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    padding: 1px 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .chip.alta     { color: var(--brick); }
+  .chip.media    { color: var(--navy-light); }
+  .chip.contexto { color: var(--muted); }
+
+  .item h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 9px 0 8px;
+    max-width: var(--measure);
+    text-wrap: balance;
+  }
+
+  .item p {
+    margin: 0 0 10px;
+    max-width: var(--measure);
+  }
+
+  .why {
+    font-family: var(--f-display);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: var(--measure);
+    padding-left: 14px;
+    border-left: 2px solid var(--orange);
+    margin: 0 0 10px;
+  }
+
+  .why b {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .src {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  a {
+    color: var(--navy);
+    text-decoration-color: var(--hairline);
+    text-underline-offset: 3px;
+  }
+
+  a:hover { text-decoration-color: var(--orange); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  /* ---------- Stats ---------- */
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border-block: 1px solid var(--hairline);
+    margin: 0 0 26px;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 18px 16px 16px;
+  }
+
+  .stat .n {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 1;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .stat .d {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Empty state ---------- */
+
+  .empty {
+    font-family: var(--f-data);
+    font-size: 12.5px;
+    color: var(--muted);
+    background: var(--surface-alt);
+    padding: 16px 18px;
+    border-left: 3px solid var(--hairline);
+    letter-spacing: 0.01em;
+  }
+
+  .empty b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Watchlist ---------- */
+
+  .watch {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Columna fija para que la etiqueta temporal alinee en todas las filas. */
+  .watch li {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    max-width: calc(var(--measure) + 146px);
+  }
+
+  .watch .when {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .watch b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Sources ---------- */
+
+  .sources {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-family: var(--f-data);
+    font-size: 12px;
+  }
+
+  .sources li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 8px;
+    color: var(--muted);
+  }
+
+  .sources span { font-variant-numeric: tabular-nums; }
+
+  .sources + .section-note { margin-top: 26px; }
+
+  /* ---------- Method + footer ---------- */
+
+  .method {
+    font-family: var(--f-data);
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+    padding: 24px 0 30px;
+    border-top: 1px solid var(--hairline);
+    max-width: 74ch;
+  }
+
+  footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.6);
+    padding: 16px 44px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+  }
+
+  footer .mark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: #fff;
+  }
+
+  @media (max-width: 620px) {
+    .masthead, main, footer { padding-inline: 24px; }
+    .exec { padding: 22px 20px; }
+    .stats { grid-template-columns: 1fr; }
+    .edition { text-align: left; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { max-width: none; }
+    section { break-inside: avoid; }
+    .item { break-inside: avoid; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
+      <div class="edition">
+        <strong>Edición 26.10.2026</strong>
+        Lunes · Desde la edición del 23.10<br>Actualizado 07:12 CET
+      </div>
+    </div>
+    <h1>El parque de renting supera el millón de vehículos (+8 %) en el tercer trimestre; sin movimientos nuevos de competidores y sigue abierta la venta de Fraikin a Asterion</h1>
+    <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
+  </header>
+  <div class="rule-accent"></div>
+
+  <main>
+
+    <section class="exec">
+      <span class="badge">Resumen ejecutivo</span>
+      <h2>Lo que necesitas saber hoy</h2>
+      <p class="section-note">Nuevas 2 · Actualizadas 0 · Menciones 0 · Competencia 0 · Sector 1 · Regulación 1</p>
+      <ol>
+        <li><div><b>El parque de renting supera el millón de vehículos</b>: 1,08 millones a cierre del tercer trimestre, un 7,99 % más, con una inversión en compras de 7.035 millones de euros (+18,77 %), según la AER [01]. Es renting en general; la nota no desglosa vehículo industrial.</div></li>
+        <li><div><b>Transportes archiva las multas por fallos del DeCA</b> entre el 5 y el 19.10 cuando solo se debieron a que el documento no pudo consultarse en el control [02]. La fuente no aclara si afecta a furgonetas.</div></li>
+        <li><div><b>Sin novedades en menciones de Covey ni en competidores</b> en la ventana. Sigue abierta la venta de Fraikin a Asterion, sin hechos nuevos hoy.</div></li>
+      </ol>
+    </section>
+
+    <section>
+      <span class="badge">Menciones de Covey</span>
+      <h2>Covey en los medios</h2>
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 23.10 08:14 – 26.10.2026 07:12</p>
+      <div class="empty">
+        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas frigoríficas» y «Covey Alquiler noticia» en prensa sectorial, descartando resultados sobre Stephen Covey o FranklinCovey; solo salen fichas de directorio y artículos sin fecha en la ventana. Las portadas de Fleet People [01] y trans.info [02] no recogen menciones de Covey.
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Competidores</span>
+      <h2>Movimientos de la competencia</h2>
+      <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
+      <div class="empty">
+        <b>Sin novedades de competidores con impacto para Covey en la ventana.</b> Se han buscado operaciones corporativas en español, francés e inglés (ventas y compras de empresas de alquiler de furgonetas y renting industrial, Fraikin, Petit Forestier, Northgate, Alquiber, fondos y loueurs de utilitarios) sin ningún hecho nuevo desde el 23.10. La portada de Fleet People solo recoge, fuera de la ventana, la compra de FleetPartners por SG Fleet (20.10, sector australiano) [01]; la de Fusacq no trae operaciones de loueurs.
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Sector y mercado</span>
+      <h2>El renting supera el millón de vehículos</h2>
+      <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
+      <div class="items">
+        <article class="item media">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip media">Relevancia media</span>
+              <span class="chip">Nuevo</span>
+              <span>AER</span>
+              <span>·</span>
+              <span>Fleet People</span>
+              <span>·</span>
+              <span>23.10.2026</span>
+            </div>
+            <h3>El parque de renting supera el millón de vehículos tras crecer un 8 %</h3>
+            <p>Según la AER, el parque de renting alcanzó 1,08 millones de vehículos a cierre del tercer trimestre (+7,99 %), con una facturación de 7.575,41 millones de euros (+7,2 %) y 293.194 clientes (+9,04 %). La inversión en compra de vehículos fue de 7.035 millones (+18,77 %) y el renting supuso el 26,09 % de las 282.438 matriculaciones del trimestre. La duración media de los contratos baja a 47,77 meses desde 48,83 [01]. La nota no incluye datos de vehículo industrial o comercial.</p>
+            <p class="why"><b>Por qué importa · Flota y compras · Contexto:</b> confirma demanda al alza de renting en el conjunto del mercado, pero son cifras de todo el renting (mayoritariamente turismo), no del alquiler flexible de furgonetas donde compite Covey. No se deduce nada sobre su segmento sin datos desglosados.</p>
+            <p class="src"><a href="https://fleetpeople.es/el-parque-de-renting-supera-el-millon-de-vehiculos-tras-crecer-un-8/">fleetpeople.es →</a> · [01]</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Regulación y normativa</span>
+      <h2>Marco regulatorio</h2>
+      <p class="section-note">ZBE, transporte de mercancías, ATP frigorífico, fiscalidad del renting y ayudas</p>
+      <div class="items">
+        <article class="item media">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip media">Relevancia media</span>
+              <span class="chip">Nuevo</span>
+              <span>Ministerio de Transportes · DeCA</span>
+              <span>·</span>
+              <span>trans.info</span>
+              <span>·</span>
+              <span>23.10.2026</span>
+            </div>
+            <h3>Multas por el DeCA, al archivo: Transportes confirma fallos en el sistema</h3>
+            <p>El DeCA, documento electrónico de control obligatorio en España desde el 5.10.2026, con código QR, falló en las tabletas de la Guardia Civil de Tráfico entre el 5 y el 19.10. Transportes ha pedido a las comunidades autónomas archivar los expedientes abiertos en ese periodo cuando el único motivo fue que el documento no pudo descargarse o visualizarse; siguen siendo sancionables otras infracciones, como datos obligatorios ausentes [02].</p>
+            <p class="why"><b>Por qué importa · Operaciones · Informar:</b> el artículo solo habla de operadores de transporte y conductores y no aclara si alcanza a furgonetas, por lo que Operaciones debería comprobar si los clientes de Covey que transportan mercancías con vehículo alquilado están obligados a llevar el DeCA antes de avisarles.</p>
+            <p class="src"><a href="https://trans.info/es/multas-por-el-deca-al-archivo-transportes-confirma-fallos-en-el-sistema-510491">trans.info →</a> · [02]</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Señales a seguir</span>
+      <h2>Qué vigilar los próximos días</h2>
+      <ul class="watch">
+        <li>
+          <span class="when">Abierta desde 19.10 · sin fecha de cierre confirmada hoy</span>
+          <div><b>Venta de Fraikin a Asterion.</b> Los dueños de Fraikin negocian en exclusiva su venta al fondo Asterion; hoy no hay hechos nuevos en las fuentes abiertas. Dirección: seguir la decisión de competencia y cualquier compra posterior del grupo.</div>
+        </li>
+        <li>
+          <span class="when">Abierta desde 20.10 · principios de noviembre</span>
+          <div><b>Matriculaciones de octubre.</b> ANFAC publica normalmente los datos del mes a principios del siguiente. Flota y compras: contrastar la evolución de comerciales ligeros cuando salgan.</div>
+        </li>
+        <li>
+          <span class="when">Abierta desde 23.10 · hasta el 31.12</span>
+          <div><b>Promoción de lanzamiento de Isofleet (Alquiber).</b> Un mes gratis en contratos de más de seis meses, según la edición del 23.10. Comercial: detectar clientes de frío de Covey que reciban esta oferta y su respuesta.</div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="badge">Fuentes</span>
+      <h2>Consultado hoy</h2>
+      <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
+      <ol class="sources">
+        <li><span>01</span><a href="https://fleetpeople.es/el-parque-de-renting-supera-el-millon-de-vehiculos-tras-crecer-un-8/">Fleet People — El parque de renting supera el millón de vehículos tras crecer un 8 % (23.10.2026)</a></li>
+        <li><span>02</span><a href="https://trans.info/es/multas-por-el-deca-al-archivo-transportes-confirma-fallos-en-el-sistema-510491">trans.info — Multas por el DeCA, al archivo: Transportes confirma fallos en el sistema (23.10.2026)</a></li>
+      </ol>
+      <p class="section-note">Revisadas sin novedad en la ventana</p>
+      <ul class="sources">
+        <li><span>—</span><a href="https://www.fusacq.com">Fusacq — portada</a></li>
+        <li><span>—</span><a href="https://www.renting-automocion.com">Renting Automoción — portada</a></li>
+        <li><span>—</span><a href="https://www.anfac.com/sala-de-prensa/">ANFAC — sala de prensa (sin notas fechadas visibles)</a></li>
+      </ul>
+    </section>
+
+    <p class="method">
+      <b>Método.</b> Edición del lunes 26.10.2026 con ventana desde la edición del 23.10 (08:14 CEST) hasta las 07:12 CET de hoy.
+    </p>
+
+  </main>
+
+  <footer>
+    <span class="mark">COVEY</span>
+    <span>Noticias recientes · Edición 26.10.2026</span>
+  </footer>
+
+</div>
+
+<script id="covey-nav" src="../../../nav.js" data-fecha="2026-10-26" defer></script>
+</body>
+</html>

@@ -3,28 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noticias Relevantes · Covey · 23.10.2026</title>
+<title>Noticias Relevantes · Covey · 26.10.2026</title>
 <!--
   PLANTILLA DEL INFORME DIARIO DE VIGILANCIA COMPETITIVA · COVEY
   ---------------------------------------------------------------
   Uso por la rutina:
     1. Copiar este fichero a index.html.
-    2. Sustituir TODOS los marcadores de plantilla y los bloques de ejemplo por el
+    2. Sustituir TODOS los marcadores {{...}} y los bloques de ejemplo por el
        contenido del día. No dejar ningún marcador sin sustituir.
     3. NO modificar nada dentro de <style>. El diseño es identidad corporativa.
     4. NO añadir scripts ni menú de ediciones: los inyecta la GitHub Action al publicar.
-       La Action archiva la edición por la fecha de «Edición FECHA_CORTA».
+       La Action archiva la edición por la fecha de «Edición 26.10.2026».
 
   Marcadores:
-    FECHA_CORTA      -> 15.09.2026
-    FECHA_LARGA      -> Martes · Desde la edición del 14.09
-    HORA             -> 08:12 CEST  (salida real de: TZ=Europe/Madrid date '+%H:%M %Z')
-    TITULAR          -> Titular del día (resume lo más importante, nunca genérico)
-    RANGO_VENTANA    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
-    RECUENTO         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
+    26.10.2026      -> 15.09.2026
+    Lunes · Desde la edición del 23.10      -> Martes · Desde la edición del 14.09
+    07:12 CET             -> 08:12 CEST  (salida real de: TZ=Europe/Madrid date '+%H:%M %Z')
+    El parque de renting supera el millón de vehículos (+8 %) en el tercer trimestre; sin movimientos nuevos de competidores y sigue abierta la venta de Fraikin a Asterion          -> Titular del día (resume lo más importante, nunca genérico)
+    {{RANGO_VENTANA}}    -> 14–15.09.2026  (desde la edición anterior hasta hoy)
+    {{RECUENTO}}         -> Nuevas 2 · Actualizadas 1 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1
                             (solo cuenta ítems Nuevo/Actualizado; el contexto no suma)
-    METODO           -> Edición completa del 15.09.2026, con ventana desde la edición anterior del 14.09.2026 (17:11 CEST) hasta hoy a las 08:12 CEST.
-    CIFRA QUE_MIDE VARIACION_FUENTE -> solo en el bloque .stats
+    {{METODO}}           -> Edición completa del 15.09.2026, con ventana desde la edición anterior del 14.09.2026 (17:11 CEST) hasta hoy a las 08:12 CEST.
+    {{CIFRA}} {{QUE_MIDE}} {{VARIACION_FUENTE}} -> solo en el bloque .stats
 
   Reglas de estructura (ya han causado fallos visuales, respetarlas SIEMPRE):
     - En .exec ol > li y en .watch li, TODO el texto va envuelto en un <div>.
@@ -565,71 +565,79 @@
 </style>
 </head>
 <body>
+
 <div class="sheet">
+
   <header class="masthead">
     <div class="masthead-top">
       <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
       <div class="edition">
-        <strong>Edición 23.10.2026</strong>
-        Viernes · Desde la edición del 22.10<br>Actualizado 08:14 CEST
+        <strong>Edición 26.10.2026</strong>
+        Lunes · Desde la edición del 23.10<br>Actualizado 07:12 CET
       </div>
     </div>
-    <h1>Alquiber lanza Isofleet, su línea de renting flexible de vehículos frigoríficos, en las 25 delegaciones que tiene en España</h1>
+    <h1>El parque de renting supera el millón de vehículos (+8 %) en el tercer trimestre; sin movimientos nuevos de competidores y sigue abierta la venta de Fraikin a Asterion</h1>
     <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
   </header>
   <div class="rule-accent"></div>
+
   <main>
+
     <section class="exec">
       <span class="badge">Resumen ejecutivo</span>
       <h2>Lo que necesitas saber hoy</h2>
-      <p class="section-note">Nuevas 2 · Actualizadas 0 · Menciones 0 · Competencia 1 · Sector 0 · Regulación 1</p>
+      <p class="section-note">Nuevas 2 · Actualizadas 0 · Menciones 0 · Competencia 0 · Sector 1 · Regulación 1</p>
       <ol>
-        <li><div><b>Alquiber presenta Isofleet, renting flexible de vehículos frigoríficos e isotermos</b>, ya disponible en sus 25 delegaciones en España, sin penalizaciones ni permanencias y con cuota fija [01][02]. Compite directamente con el negocio de frío de Covey.</div></li>
-        <li><div><b>Los tacógrafos son obligatorios en vehículos de más de 2,5 t</b> en transporte internacional y cabotaje desde el 1 de julio de 2026; el cambio de hora del 25.10 es el primero con esa obligación en furgonetas [03]. Afecta solo a clientes que operen en internacional.</div></li>
-        <li><div><b>Sin novedades</b> en menciones de Covey ni en datos de mercado en la ventana. Sigue abierta la venta de Fraikin a Asterion, sin hechos nuevos hoy [04].</div></li>
+        <li><div><b>El parque de renting supera el millón de vehículos</b>: 1,08 millones a cierre del tercer trimestre, un 7,99 % más, con una inversión en compras de 7.035 millones de euros (+18,77 %), según la AER [01]. Es renting en general; la nota no desglosa vehículo industrial.</div></li>
+        <li><div><b>Transportes archiva las multas por fallos del DeCA</b> entre el 5 y el 19.10 cuando solo se debieron a que el documento no pudo consultarse en el control [02]. La fuente no aclara si afecta a furgonetas.</div></li>
+        <li><div><b>Sin novedades en menciones de Covey ni en competidores</b> en la ventana. Sigue abierta la venta de Fraikin a Asterion, sin hechos nuevos hoy.</div></li>
       </ol>
     </section>
+
     <section>
       <span class="badge">Menciones de Covey</span>
       <h2>Covey en los medios</h2>
-      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 22.10 08:13 – 23.10.2026 08:14</p>
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 23.10 08:14 – 26.10.2026 07:12</p>
       <div class="empty">
-        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas frigoríficas», descartando resultados sobre Stephen Covey o FranklinCovey; solo aparecen fichas de directorio y artículos antiguos sin fecha en la ventana. Ni la portada de Fleet People [04] ni la de trans.info [03] recogen menciones de Covey.
+        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas frigoríficas» y «Covey Alquiler noticia» en prensa sectorial, descartando resultados sobre Stephen Covey o FranklinCovey; solo salen fichas de directorio y artículos sin fecha en la ventana. Las portadas de Fleet People [01] y trans.info [02] no recogen menciones de Covey.
       </div>
     </section>
+
     <section>
       <span class="badge">Competidores</span>
       <h2>Movimientos de la competencia</h2>
       <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
+      <div class="empty">
+        <b>Sin novedades de competidores con impacto para Covey en la ventana.</b> Se han buscado operaciones corporativas en español, francés e inglés (ventas y compras de empresas de alquiler de furgonetas y renting industrial, Fraikin, Petit Forestier, Northgate, Alquiber, fondos y loueurs de utilitarios) sin ningún hecho nuevo desde el 23.10. La portada de Fleet People solo recoge, fuera de la ventana, la compra de FleetPartners por SG Fleet (20.10, sector australiano) [01]; la de Fusacq no trae operaciones de loueurs.
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Sector y mercado</span>
+      <h2>El renting supera el millón de vehículos</h2>
+      <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
       <div class="items">
-        <article class="item alta">
+        <article class="item media">
           <div class="item-rail"></div>
           <div class="item-body">
             <div class="meta">
-              <span class="chip alta">Relevancia alta</span>
+              <span class="chip media">Relevancia media</span>
               <span class="chip">Nuevo</span>
-              <span>Alquiber</span>
+              <span>AER</span>
               <span>·</span>
               <span>Fleet People</span>
               <span>·</span>
-              <span>22.10.2026</span>
+              <span>23.10.2026</span>
             </div>
-            <h3>Alquiber presenta Isofleet, su renting flexible para vehículos frigoríficos e isotermos</h3>
-            <p>Alquiber, competidor directo de Covey, lanza Isofleet como nueva línea de renting flexible de vehículos para el control de temperatura, con especialistas en logística del frío que asesoran la elección y configuración del vehículo. Las 25 delegaciones de Alquiber en España ya la comercializan y mantiene las garantías de su servicio: sin penalizaciones ni permanencias, cuota fija, disponibilidad inmediata y vehículo de sustitución [01]. Su web indica que «Alquiber Frío pasa a ser Isofleet», es decir, es una marca propia para su negocio de frío existente, y anuncia una promoción de lanzamiento hasta el 31 de diciembre con un mes gratis en contratos o ampliaciones de más de seis meses [02]. Alquiber aspira a que Isofleet sea la referencia nacional del renting flexible con control de temperatura, con precios competitivos [01]. No se facilitan datos de flota ni de precios.</p>
-            <p class="why"><b>Por qué importa · Comercial · Actuar:</b> Alquiber compite en el segmento de frío donde Covey es líder nacional en alquiler de furgonetas frigoríficas, con marca propia, asesoramiento especializado y promoción hasta fin de año. Comercial debería revisar qué condiciones (permanencia, vehículo de sustitución, mes gratis) están ofreciendo a clientes de Covey en renovación antes del 31.12.</p>
-            <p class="src"><a href="https://fleetpeople.es/alquiber-da-marca-propia-a-su-renting-de-vehiculos-para-la-cadena-de-frio/">fleetpeople.es →</a> · [01] · <a href="https://www.alquiber.es/">alquiber.es →</a> · [02]</p>
+            <h3>El parque de renting supera el millón de vehículos tras crecer un 8 %</h3>
+            <p>Según la AER, el parque de renting alcanzó 1,08 millones de vehículos a cierre del tercer trimestre (+7,99 %), con una facturación de 7.575,41 millones de euros (+7,2 %) y 293.194 clientes (+9,04 %). La inversión en compra de vehículos fue de 7.035 millones (+18,77 %) y el renting supuso el 26,09 % de las 282.438 matriculaciones del trimestre. La duración media de los contratos baja a 47,77 meses desde 48,83 [01]. La nota no incluye datos de vehículo industrial o comercial.</p>
+            <p class="why"><b>Por qué importa · Flota y compras · Contexto:</b> confirma demanda al alza de renting en el conjunto del mercado, pero son cifras de todo el renting (mayoritariamente turismo), no del alquiler flexible de furgonetas donde compite Covey. No se deduce nada sobre su segmento sin datos desglosados.</p>
+            <p class="src"><a href="https://fleetpeople.es/el-parque-de-renting-supera-el-millon-de-vehiculos-tras-crecer-un-8/">fleetpeople.es →</a> · [01]</p>
           </div>
         </article>
       </div>
     </section>
-    <section>
-      <span class="badge">Sector y mercado</span>
-      <h2>Sin datos de mercado nuevos</h2>
-      <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
-      <div class="empty">
-        <b>Sin novedades de mercado en la ventana.</b> La portada de ANFAC solo muestra notas anteriores a la ventana (producción de septiembre, 21.10; prioridad de país para la automoción, 20.10), sin datos de matriculación ni de inversión en flota [05]. Los datos de matriculaciones de octubre se publican normalmente a principios de noviembre.
-      </div>
-    </section>
+
     <section>
       <span class="badge">Regulación y normativa</span>
       <h2>Marco regulatorio</h2>
@@ -641,65 +649,69 @@
             <div class="meta">
               <span class="chip media">Relevancia media</span>
               <span class="chip">Nuevo</span>
-              <span>Tacógrafo en furgonetas</span>
+              <span>Ministerio de Transportes · DeCA</span>
               <span>·</span>
               <span>trans.info</span>
               <span>·</span>
-              <span>22.10.2026</span>
+              <span>23.10.2026</span>
             </div>
-            <h3>Primer cambio de hora con tacógrafos obligatorios en furgonetas</h3>
-            <p>La obligación de tacógrafo afecta a vehículos con masa máxima autorizada superior a 2,5 toneladas y rige desde el 1 de julio de 2026 para el transporte internacional de mercancías y el cabotaje. Con el cambio de hora de la madrugada del 24 al 25 de octubre (de las 3:00 a las 2:00 en la España peninsular), el artículo recuerda que el registro digital usa hora UTC y solo hay que comprobar la hora local; el cambio no da una hora extra de conducción ni altera los descansos [03].</p>
-            <p class="why"><b>Por qué importa · Operaciones · Informar:</b> solo afecta a clientes de Covey que usen furgonetas de más de 2,5 t en transporte internacional o cabotaje, no al reparto nacional. Operaciones puede avisar a esos clientes de que verifiquen la hora local del tacógrafo antes del 25.10.</p>
-            <p class="src"><a href="https://trans.info/es/primer-cambio-de-hora-con-tacografos-obligatorios-para-las-furgonetas-que-deben-tener-en-cuenta-los-conductores-509997">trans.info →</a> · [03]</p>
+            <h3>Multas por el DeCA, al archivo: Transportes confirma fallos en el sistema</h3>
+            <p>El DeCA, documento electrónico de control obligatorio en España desde el 5.10.2026, con código QR, falló en las tabletas de la Guardia Civil de Tráfico entre el 5 y el 19.10. Transportes ha pedido a las comunidades autónomas archivar los expedientes abiertos en ese periodo cuando el único motivo fue que el documento no pudo descargarse o visualizarse; siguen siendo sancionables otras infracciones, como datos obligatorios ausentes [02].</p>
+            <p class="why"><b>Por qué importa · Operaciones · Informar:</b> el artículo solo habla de operadores de transporte y conductores y no aclara si alcanza a furgonetas, por lo que Operaciones debería comprobar si los clientes de Covey que transportan mercancías con vehículo alquilado están obligados a llevar el DeCA antes de avisarles.</p>
+            <p class="src"><a href="https://trans.info/es/multas-por-el-deca-al-archivo-transportes-confirma-fallos-en-el-sistema-510491">trans.info →</a> · [02]</p>
           </div>
         </article>
       </div>
     </section>
+
     <section>
       <span class="badge">Señales a seguir</span>
       <h2>Qué vigilar los próximos días</h2>
       <ul class="watch">
         <li>
           <span class="when">Abierta desde 19.10 · sin fecha de cierre confirmada hoy</span>
-          <div><b>Venta de Fraikin a Asterion.</b> El fondo Asterion acordó adquirir Fraikin, noticia del 12.10 [04]; hoy no hay hechos nuevos en las fuentes abiertas. Dirección: seguir la decisión de competencia y cualquier compra posterior del grupo.</div>
+          <div><b>Venta de Fraikin a Asterion.</b> Los dueños de Fraikin negocian en exclusiva su venta al fondo Asterion; hoy no hay hechos nuevos en las fuentes abiertas. Dirección: seguir la decisión de competencia y cualquier compra posterior del grupo.</div>
         </li>
         <li>
           <span class="when">Abierta desde 20.10 · principios de noviembre</span>
-          <div><b>Matriculaciones de octubre.</b> ANFAC publica normalmente los datos del mes a principios del siguiente [05]. Flota y compras: contrastar la evolución de comerciales ligeros cuando salgan.</div>
+          <div><b>Matriculaciones de octubre.</b> ANFAC publica normalmente los datos del mes a principios del siguiente. Flota y compras: contrastar la evolución de comerciales ligeros cuando salgan.</div>
         </li>
         <li>
-          <span class="when">Nueva · hasta el 31.12</span>
-          <div><b>Promoción de lanzamiento de Isofleet.</b> Alquiber ofrece un mes gratis en contratos de más de seis meses [02]. Comercial: detectar clientes de frío de Covey que reciban esta oferta y su respuesta.</div>
+          <span class="when">Abierta desde 23.10 · hasta el 31.12</span>
+          <div><b>Promoción de lanzamiento de Isofleet (Alquiber).</b> Un mes gratis en contratos de más de seis meses, según la edición del 23.10. Comercial: detectar clientes de frío de Covey que reciban esta oferta y su respuesta.</div>
         </li>
       </ul>
     </section>
+
     <section>
       <span class="badge">Fuentes</span>
       <h2>Consultado hoy</h2>
       <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
       <ol class="sources">
-        <li><span>01</span><a href="https://fleetpeople.es/alquiber-da-marca-propia-a-su-renting-de-vehiculos-para-la-cadena-de-frio/">Fleet People — Alquiber da marca propia a su renting de vehículos para la cadena de frío (22.10.2026)</a></li>
-        <li><span>02</span><a href="https://www.alquiber.es/">Alquiber — web corporativa (Alquiber Frío pasa a ser Isofleet; promoción hasta 31.12)</a></li>
-        <li><span>03</span><a href="https://trans.info/es/primer-cambio-de-hora-con-tacografos-obligatorios-para-las-furgonetas-que-deben-tener-en-cuenta-los-conductores-509997">trans.info — Primer cambio de hora con tacógrafos obligatorios para las furgonetas (22.10.2026)</a></li>
-        <li><span>04</span><a href="https://www.fleetpeople.es/">Fleet People — portada (Asterion/Fraikin 12.10.2026)</a></li>
-        <li><span>05</span><a href="https://www.anfac.com/">ANFAC — portada (notas del 20 y 21.10.2026)</a></li>
+        <li><span>01</span><a href="https://fleetpeople.es/el-parque-de-renting-supera-el-millon-de-vehiculos-tras-crecer-un-8/">Fleet People — El parque de renting supera el millón de vehículos tras crecer un 8 % (23.10.2026)</a></li>
+        <li><span>02</span><a href="https://trans.info/es/multas-por-el-deca-al-archivo-transportes-confirma-fallos-en-el-sistema-510491">trans.info — Multas por el DeCA, al archivo: Transportes confirma fallos en el sistema (23.10.2026)</a></li>
       </ol>
       <p class="section-note">Revisadas sin novedad en la ventana</p>
       <ul class="sources">
-        <li><span>—</span><a href="https://www.journalauto.com/">Journal de l'Automobile — portada</a></li>
-        <li><span>—</span><a href="https://www.fusacq.com/">Fusacq — portada</a></li>
-        <li><span>—</span><a href="https://www.northgate.es/">Northgate España — portada (noticias sin fecha visible)</a></li>
+        <li><span>—</span><a href="https://www.fusacq.com">Fusacq — portada</a></li>
+        <li><span>—</span><a href="https://www.renting-automocion.com">Renting Automoción — portada</a></li>
+        <li><span>—</span><a href="https://www.anfac.com/sala-de-prensa/">ANFAC — sala de prensa (sin notas fechadas visibles)</a></li>
       </ul>
     </section>
+
     <p class="method">
-      <b>Método.</b> Edición del viernes 23.10.2026 con ventana desde la edición del 22.10 (08:13 CEST) hasta las 08:14 CEST de hoy.
+      <b>Método.</b> Edición del lunes 26.10.2026 con ventana desde la edición del 23.10 (08:14 CEST) hasta las 07:12 CET de hoy.
     </p>
+
   </main>
+
   <footer>
     <span class="mark">COVEY</span>
-    <span>Noticias recientes · Edición 23.10.2026</span>
+    <span>Noticias recientes · Edición 26.10.2026</span>
   </footer>
+
 </div>
-<script id="covey-nav" src="nav.js" data-fecha="2026-10-23" defer></script>
+
+<script id="covey-nav" src="nav.js" data-fecha="2026-10-26" defer></script>
 </body>
 </html>
