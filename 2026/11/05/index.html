@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticias Relevantes · Covey · 05.11.2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    color-scheme: light;
+
+    --navy:        #1E2761;
+    --navy-deep:   #0F1740;
+    --navy-mid:    #2A3370;
+    --navy-light:  #3D4FA0;
+    --orange:      #F5A623;
+    --ink:         #171C33;
+    --body:        #4C566B;
+    --muted:       #7B8598;
+    --hairline:    #DCE1EA;
+    --surface:     #FFFFFF;
+    --surface-alt: #F3F5FA;
+    --ground:      #EBEEF4;
+    --brick:       #A93B2C;
+
+    --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --f-body:    "Source Serif 4", Georgia, "Times New Roman", serif;
+    --f-data:    "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+    --measure: 68ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy:        #8FA0E8;
+      --navy-deep:   #0B1030;
+      --navy-mid:    #A9B6EE;
+      --navy-light:  #7A8CD8;
+      --orange:      #F7B54A;
+      --ink:         #E8ECF7;
+      --body:        #B3BCD2;
+      --muted:       #8A94AC;
+      --hairline:    #2A3159;
+      --surface:     #141A38;
+      --surface-alt: #1A2145;
+      --ground:      #0B1030;
+      --brick:       #E08375;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --navy:        #8FA0E8;
+    --navy-deep:   #0B1030;
+    --navy-mid:    #A9B6EE;
+    --navy-light:  #7A8CD8;
+    --orange:      #F7B54A;
+    --ink:         #E8ECF7;
+    --body:        #B3BCD2;
+    --muted:       #8A94AC;
+    --hairline:    #2A3159;
+    --surface:     #141A38;
+    --surface-alt: #1A2145;
+    --ground:      #0B1030;
+    --brick:       #E08375;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--surface);
+    min-height: 100vh;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 34px 44px 26px;
+  }
+
+  .masthead-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px 24px;
+  }
+
+  .wordmark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.10em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .wordmark span {
+    display: block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.62);
+    margin-top: 7px;
+  }
+
+  .edition {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-align: right;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .edition strong {
+    display: block;
+    font-weight: 500;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .masthead h1 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #fff;
+    margin: 26px 0 8px;
+    text-wrap: balance;
+  }
+
+  .masthead p {
+    margin: 0;
+    max-width: 56ch;
+    font-size: 15px;
+    color: rgba(255,255,255,0.74);
+  }
+
+  .rule-accent {
+    height: 5px;
+    background: var(--orange);
+  }
+
+  /* ---------- Page body ---------- */
+
+  main {
+    padding: 0 44px 8px;
+  }
+
+  section {
+    padding: 34px 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  section:first-of-type { border-top: 0; }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--navy-deep);
+    padding: 4px 9px;
+    border-radius: 2px;
+  }
+
+  :root[data-theme="dark"] .badge,
+  :root:not([data-theme="light"]) .badge { color: #fff; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .badge {
+      background: var(--navy-light);
+      color: #0B1030;
+    }
+  }
+
+  :root[data-theme="dark"] .badge {
+    background: var(--navy-light);
+    color: #0B1030;
+  }
+
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 23px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 14px 0 4px;
+    text-wrap: balance;
+  }
+
+  .section-note {
+    font-family: var(--f-data);
+    font-size: 11.5px;
+    color: var(--muted);
+    margin: 0 0 22px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Executive summary ---------- */
+
+  .exec {
+    background: var(--surface-alt);
+    padding: 28px 30px;
+    margin: 0 0 4px;
+    border-left: 5px solid var(--orange);
+  }
+
+  .exec h2 { margin-top: 10px; }
+
+  .exec .section-note { margin: 0; }
+
+  .exec ol {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    counter-reset: keyline;
+  }
+
+  /* Sangría colgante robusta: no usar grid aquí. Un nodo de texto suelto
+     dentro del <li> se convertiría en una celda propia y saldría en vertical. */
+  .exec li {
+    position: relative;
+    padding-left: 38px;
+    max-width: var(--measure);
+    counter-increment: keyline;
+  }
+
+  .exec li::before {
+    content: counter(keyline, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.6;
+    font-family: var(--f-data);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .exec li b {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ---------- Items ---------- */
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 18px;
+  }
+
+  .item-rail { background: var(--hairline); border-radius: 2px; }
+  .item.alta    .item-rail { background: var(--navy); }
+  .item.media   .item-rail { background: var(--navy-light); }
+  .item.contexto .item-rail { background: var(--hairline); }
+
+  .item-body { min-width: 0; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .chip {
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    padding: 1px 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .chip.alta     { color: var(--brick); }
+  .chip.media    { color: var(--navy-light); }
+  .chip.contexto { color: var(--muted); }
+
+  .item h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 9px 0 8px;
+    max-width: var(--measure);
+    text-wrap: balance;
+  }
+
+  .item p {
+    margin: 0 0 10px;
+    max-width: var(--measure);
+  }
+
+  .why {
+    font-family: var(--f-display);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: var(--measure);
+    padding-left: 14px;
+    border-left: 2px solid var(--orange);
+    margin: 0 0 10px;
+  }
+
+  .why b {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .src {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  a {
+    color: var(--navy);
+    text-decoration-color: var(--hairline);
+    text-underline-offset: 3px;
+  }
+
+  a:hover { text-decoration-color: var(--orange); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  /* ---------- Stats ---------- */
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border-block: 1px solid var(--hairline);
+    margin: 0 0 26px;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 18px 16px 16px;
+  }
+
+  .stat .n {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 1;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .stat .d {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Empty state ---------- */
+
+  .empty {
+    font-family: var(--f-data);
+    font-size: 12.5px;
+    color: var(--muted);
+    background: var(--surface-alt);
+    padding: 16px 18px;
+    border-left: 3px solid var(--hairline);
+    letter-spacing: 0.01em;
+  }
+
+  .empty b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Watchlist ---------- */
+
+  .watch {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Columna fija para que la etiqueta temporal alinee en todas las filas. */
+  .watch li {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    max-width: calc(var(--measure) + 146px);
+  }
+
+  .watch .when {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .watch b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Sources ---------- */
+
+  .sources {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-family: var(--f-data);
+    font-size: 12px;
+  }
+
+  .sources li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 8px;
+    color: var(--muted);
+  }
+
+  .sources span { font-variant-numeric: tabular-nums; }
+
+  .sources + .section-note { margin-top: 26px; }
+
+  /* ---------- Method + footer ---------- */
+
+  .method {
+    font-family: var(--f-data);
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+    padding: 24px 0 30px;
+    border-top: 1px solid var(--hairline);
+    max-width: 74ch;
+  }
+
+  footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.6);
+    padding: 16px 44px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+  }
+
+  footer .mark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: #fff;
+  }
+
+  @media (max-width: 620px) {
+    .masthead, main, footer { padding-inline: 24px; }
+    .exec { padding: 22px 20px; }
+    .stats { grid-template-columns: 1fr; }
+    .edition { text-align: left; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { max-width: none; }
+    section { break-inside: avoid; }
+    .item { break-inside: avoid; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
+      <div class="edition">
+        <strong>Edición 05.11.2026</strong>
+        Jueves · Desde la edición del 04.11<br>Actualizado 07:08 CET
+      </div>
+    </div>
+    <h1>Las comisiones del Parlamento Europeo votan que las cuotas de electrificación de flotas sean voluntarias; sigue abierta la venta de Fraikin a Asterion</h1>
+    <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
+  </header>
+  <div class="rule-accent"></div>
+
+  <main>
+
+    <section class="exec">
+      <span class="badge">Resumen ejecutivo</span>
+      <h2>Lo que necesitas saber hoy</h2>
+      <p class="section-note">Nuevas 1 · Actualizadas 1 · Menciones 0 · Competencia 0 · Sector 1 · Regulación 1</p>
+      <ol>
+        <li><div><b>Las comisiones del Parlamento Europeo votan que las cuotas de electrificación de flotas sean voluntarias</b>; la fuente sitúa el pleno a mediados de diciembre [01]. Afecta a turismos de grandes empresas, no a furgonetas.</div></li>
+        <li><div><b>El renting invierte 7.766 millones hasta octubre (+16,57 %)</b> con un coste medio de 24.918 € por unidad (+7,9 %), según la AER [02]. Incluye desglose de comerciales ligeros: 21.602 unidades (+1,28 %).</div></li>
+        <li><div><b>Sin operaciones corporativas nuevas</b> en alquiler de vehículos comerciales en la ventana; la venta de Fraikin a Asterion sigue abierta, con cierre previsto en 2027 [03].</div></li>
+      </ol>
+    </section>
+
+    <section>
+      <span class="badge">Menciones de Covey</span>
+      <h2>Covey en los medios</h2>
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 04–05.11.2026</p>
+      <div class="empty">
+        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey Alquiler furgonetas frigoríficas» en buscadores, descartando resultados sobre Stephen Covey o FranklinCovey; solo aparecen fichas de directorio y artículos sin fecha en la ventana.
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Competidores</span>
+      <h2>Movimientos de la competencia</h2>
+      <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
+      <div class="empty">
+        <b>Sin novedades de competidores en la ventana.</b> Las salas de prensa de Fraikin España (última noticia, 30.10) y Petit Forestier (última, 16.10) y la web de Alquiber no muestran publicaciones fechadas en la ventana. Operaciones corporativas: se ha buscado en español, francés e inglés compras, ventas y fondos en alquiler de furgonetas, renting industrial y vehículos comerciales (incluidos Fraikin, Petit Forestier, Northgate y Alquiber), y la prensa especializada abierta no recoge ninguna operación nueva en la ventana. La venta de Fraikin a Asterion sigue abierta (ver Señales a seguir).
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Sector y mercado</span>
+      <h2>La inversión del renting sube un 16,6 % hasta octubre</h2>
+      <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
+      <div class="stats">
+        <div class="stat">
+          <div class="n">7.766 M€</div>
+          <div class="d">Inversión del renting, ene.–oct. 2026<br>+16,57 % · AER [02]</div>
+        </div>
+        <div class="stat">
+          <div class="n">311.666</div>
+          <div class="d">Matriculaciones de renting, ene.–oct. 2026<br>+8,04 % · AER [02]</div>
+        </div>
+        <div class="stat">
+          <div class="n">24.918 €</div>
+          <div class="d">Coste medio por unidad, ene.–oct. 2026<br>+7,9 % · AER [02]</div>
+        </div>
+      </div>
+
+      <div class="items">
+        <article class="item media">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip media">Relevancia media</span>
+              <span class="chip">Nuevo</span>
+              <span>AER (Asociación Española de Renting de Vehículos)</span>
+              <span>·</span>
+              <span>Renting Automoción</span>
+              <span>·</span>
+              <span>04.11.2026</span>
+            </div>
+            <h3>El renting invierte 7.766 millones en vehículos hasta octubre y el coste medio por unidad sube un 7,9 %</h3>
+            <p>Según datos de la AER, en enero-octubre las operadoras invirtieron 7.766 millones de euros, un 16,57 % más que los 6.662 millones del mismo periodo de 2025, con 311.666 matriculaciones (+8,04 %) y un coste medio de 24.918 € por unidad (23.093 € un año antes). En octubre la inversión fue de 732 millones (−0,94 %) y las matriculaciones cayeron un 5,69 %, con 29.228 unidades. El desglose por tipo recoge 21.602 comerciales ligeros de hasta 3,5 t (+1,28 %), cuya cuota baja del 29,01 % al 27,09 %, y 2.565 pesados de más de 3,5 t (+31,88 %), cifras que la AER marca como pendientes de revisión; la fuente no indica expresamente el periodo de estas dos últimas. Son datos de AER y no coinciden con los de Fleet People/MSI de ayer (28.786 en octubre), por lo que no deben mezclarse.</p>
+            <p class="why"><b>Por qué importa · Flota y compras · Informar:</b> es la primera cifra de comerciales ligeros de renting que sale tras la edición de ayer, aunque mide el renting a largo plazo y no el alquiler flexible; sirve como referencia de precio de compra y de cuota del segmento. A vigilar: el desglose de ANFAC para comerciales ligeros.</p>
+            <p class="src"><a href="https://renting-automocion.com/inversion-renting-compra-vehiculos-octubre-2026/">renting-automocion.com →</a> · [02]</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Regulación y normativa</span>
+      <h2>Marco regulatorio</h2>
+      <p class="section-note">ZBE, transporte de mercancías, ATP frigorífico, fiscalidad del renting y ayudas</p>
+      <div class="items">
+        <article class="item media">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip media">Relevancia media</span>
+              <span class="chip">Actualizado</span>
+              <span>Parlamento Europeo (comisiones de Medio Ambiente y Transportes)</span>
+              <span>·</span>
+              <span>Renting Automoción</span>
+              <span>·</span>
+              <span>04.11.2026</span>
+            </div>
+            <h3>Dos comisiones del Parlamento Europeo votan que los objetivos de electrificación de flotas corporativas para 2030 sean voluntarios</h3>
+            <p>Las comisiones de Medio Ambiente y Transportes han votado a favor de que los objetivos nacionales de 2030 pasen de obligatorios a voluntarios. La propuesta de la Comisión fijaba para España que el 55 % de los nuevos turismos de grandes empresas fuesen de cero y bajas emisiones en 2030, con al menos un 36 % totalmente eléctricos. Cambia respecto a la edición de ayer: el voto en comisión ya se ha producido y la fuente sitúa la decisión del pleno a mediados de diciembre, mientras que Fleet People hablaba del 23.11 (fecha que no hemos podido contrastar en la fuente de hoy). Sin acuerdo con el Consejo, ninguna modificación entra en vigor.</p>
+            <p class="why"><b>Por qué importa · Dirección · Informar:</b> la norma se refiere a turismos de grandes empresas, no a furgonetas; su efecto sobre la demanda de alquiler de vehículo industrial de Covey no está en la fuente y no debe darse por hecho. A vigilar: la fecha real del pleno y la posición del Consejo.</p>
+            <p class="src"><a href="https://renting-automocion.com/dos-comisiones-del-parlamento-europeo-respaldan-que-los-objetivos-de-electrificacion-para-flotas-corporativas-en-2030-sean-voluntarios/">renting-automocion.com →</a> · [01]</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Señales a seguir</span>
+      <h2>Qué vigilar los próximos días</h2>
+      <ul class="watch">
+        <li>
+          <span class="when">Abierta desde 19.10 · cierre previsto 1T 2027</span>
+          <div><b>Venta de Fraikin a Asterion.</b> Los accionistas de Fraikin negocian en exclusiva con Asterion Industrial Partners; el cierre depende de las autoridades de competencia y de la consulta a los empleados, y la fuente apunta a que Asterion podría tomar el control en el primer semestre de 2027 [03]. Dirección: seguir si se publica la firma, el cierre o la autorización de competencia.</div>
+        </li>
+        <li>
+          <span class="when">Mediados de diciembre</span>
+          <div><b>Pleno del Parlamento Europeo sobre cuotas de flotas.</b> Tras el voto en comisión del 04.11 [01]. Dirección: confirmar la fecha (Fleet People citaba el 23.11) y si las cuotas quedan como voluntarias.</div>
+        </li>
+        <li>
+          <span class="when">31.12.2026</span>
+          <div><b>Fin del marco temporal de ayudas al combustible.</b> Cubre hasta el 70 % del sobrecoste y vence el 31.12 sin prórroga anunciada; España tiene aprobado un programa de 402 millones de euros [04]. Operaciones: valorar el efecto en clientes de transporte cuando se acerque la fecha.</div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="badge">Fuentes</span>
+      <h2>Consultado hoy</h2>
+      <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
+      <ol class="sources">
+        <li><span>01</span><a href="https://renting-automocion.com/dos-comisiones-del-parlamento-europeo-respaldan-que-los-objetivos-de-electrificacion-para-flotas-corporativas-en-2030-sean-voluntarios/">Renting Automoción — Dos comisiones del Parlamento Europeo respaldan que los objetivos de electrificación para flotas corporativas en 2030 sean voluntarios (04.11.2026)</a></li>
+        <li><span>02</span><a href="https://renting-automocion.com/inversion-renting-compra-vehiculos-octubre-2026/">Renting Automoción — El renting invierte 7.766 millones en la compra de vehículos hasta octubre y eleva un 7,9 % el coste medio por unidad (04.11.2026)</a></li>
+        <li><span>03</span><a href="https://journalauto.com/journal-des-flottes/fraikin-sur-le-point-detre-vendu-a-un-fonds-espagnol/">Journal de l'Automobile — Fraikin sur le point d'être vendu à un fonds espagnol (13.10.2026)</a></li>
+        <li><span>04</span><a href="https://www.trans.info/es/diesel-caro-en-2027-las-ayudas-al-transporte-llegan-a-su-fin-511711">trans.info — Diésel caro en 2027: las ayudas al transporte llegan a su fin (03.11.2026)</a></li>
+      </ol>
+      <p class="section-note">Revisadas sin novedad en la ventana</p>
+      <ul class="sources">
+        <li><span>—</span><a href="https://www.fraikin.es/es/newsroom-es">Fraikin España — noticias</a></li>
+        <li><span>—</span><a href="https://www.petitforestier.com/es-es/posts">Petit Forestier — noticias y asesoramiento</a></li>
+        <li><span>—</span><a href="https://www.alquiber.es/">Alquiber — web</a></li>
+        <li><span>—</span><a href="https://fleetpeople.es/">Fleet People — portada</a></li>
+        <li><span>—</span><a href="https://journalauto.com/journal-des-flottes/">Journal des Flottes — portada</a></li>
+      </ul>
+    </section>
+
+    <p class="method">
+      <b>Método.</b> Edición completa del 05.11.2026, con ventana desde la edición anterior del 04.11.2026 (07:07 CET) hasta hoy a las 07:08 CET.
+    </p>
+
+  </main>
+
+  <footer>
+    <span class="mark">COVEY</span>
+    <span>Noticias recientes · Edición 05.11.2026</span>
+  </footer>
+
+</div>
+
+<script id="covey-nav" src="../../../nav.js" data-fecha="2026-11-05" defer></script>
+</body>
+</html>
