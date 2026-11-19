@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticias Relevantes · Covey · 19.11.2026</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    color-scheme: light;
+
+    --navy:        #1E2761;
+    --navy-deep:   #0F1740;
+    --navy-mid:    #2A3370;
+    --navy-light:  #3D4FA0;
+    --orange:      #F5A623;
+    --ink:         #171C33;
+    --body:        #4C566B;
+    --muted:       #7B8598;
+    --hairline:    #DCE1EA;
+    --surface:     #FFFFFF;
+    --surface-alt: #F3F5FA;
+    --ground:      #EBEEF4;
+    --brick:       #A93B2C;
+
+    --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --f-body:    "Source Serif 4", Georgia, "Times New Roman", serif;
+    --f-data:    "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+    --measure: 68ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy:        #8FA0E8;
+      --navy-deep:   #0B1030;
+      --navy-mid:    #A9B6EE;
+      --navy-light:  #7A8CD8;
+      --orange:      #F7B54A;
+      --ink:         #E8ECF7;
+      --body:        #B3BCD2;
+      --muted:       #8A94AC;
+      --hairline:    #2A3159;
+      --surface:     #141A38;
+      --surface-alt: #1A2145;
+      --ground:      #0B1030;
+      --brick:       #E08375;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --navy:        #8FA0E8;
+    --navy-deep:   #0B1030;
+    --navy-mid:    #A9B6EE;
+    --navy-light:  #7A8CD8;
+    --orange:      #F7B54A;
+    --ink:         #E8ECF7;
+    --body:        #B3BCD2;
+    --muted:       #8A94AC;
+    --hairline:    #2A3159;
+    --surface:     #141A38;
+    --surface-alt: #1A2145;
+    --ground:      #0B1030;
+    --brick:       #E08375;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--surface);
+    min-height: 100vh;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 34px 44px 26px;
+  }
+
+  .masthead-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px 24px;
+  }
+
+  .wordmark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.10em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .wordmark span {
+    display: block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.62);
+    margin-top: 7px;
+  }
+
+  .edition {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-align: right;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .edition strong {
+    display: block;
+    font-weight: 500;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .masthead h1 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #fff;
+    margin: 26px 0 8px;
+    text-wrap: balance;
+  }
+
+  .masthead p {
+    margin: 0;
+    max-width: 56ch;
+    font-size: 15px;
+    color: rgba(255,255,255,0.74);
+  }
+
+  .rule-accent {
+    height: 5px;
+    background: var(--orange);
+  }
+
+  /* ---------- Page body ---------- */
+
+  main {
+    padding: 0 44px 8px;
+  }
+
+  section {
+    padding: 34px 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  section:first-of-type { border-top: 0; }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--navy-deep);
+    padding: 4px 9px;
+    border-radius: 2px;
+  }
+
+  :root[data-theme="dark"] .badge,
+  :root:not([data-theme="light"]) .badge { color: #fff; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .badge {
+      background: var(--navy-light);
+      color: #0B1030;
+    }
+  }
+
+  :root[data-theme="dark"] .badge {
+    background: var(--navy-light);
+    color: #0B1030;
+  }
+
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 23px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 14px 0 4px;
+    text-wrap: balance;
+  }
+
+  .section-note {
+    font-family: var(--f-data);
+    font-size: 11.5px;
+    color: var(--muted);
+    margin: 0 0 22px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Executive summary ---------- */
+
+  .exec {
+    background: var(--surface-alt);
+    padding: 28px 30px;
+    margin: 0 0 4px;
+    border-left: 5px solid var(--orange);
+  }
+
+  .exec h2 { margin-top: 10px; }
+
+  .exec .section-note { margin: 0; }
+
+  .exec ol {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    counter-reset: keyline;
+  }
+
+  /* Sangría colgante robusta: no usar grid aquí. Un nodo de texto suelto
+     dentro del <li> se convertiría en una celda propia y saldría en vertical. */
+  .exec li {
+    position: relative;
+    padding-left: 38px;
+    max-width: var(--measure);
+    counter-increment: keyline;
+  }
+
+  .exec li::before {
+    content: counter(keyline, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.6;
+    font-family: var(--f-data);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .exec li b {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ---------- Items ---------- */
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 18px;
+  }
+
+  .item-rail { background: var(--hairline); border-radius: 2px; }
+  .item.alta    .item-rail { background: var(--navy); }
+  .item.media   .item-rail { background: var(--navy-light); }
+  .item.contexto .item-rail { background: var(--hairline); }
+
+  .item-body { min-width: 0; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .chip {
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    padding: 1px 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .chip.alta     { color: var(--brick); }
+  .chip.media    { color: var(--navy-light); }
+  .chip.contexto { color: var(--muted); }
+
+  .item h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 9px 0 8px;
+    max-width: var(--measure);
+    text-wrap: balance;
+  }
+
+  .item p {
+    margin: 0 0 10px;
+    max-width: var(--measure);
+  }
+
+  .why {
+    font-family: var(--f-display);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: var(--measure);
+    padding-left: 14px;
+    border-left: 2px solid var(--orange);
+    margin: 0 0 10px;
+  }
+
+  .why b {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .src {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  a {
+    color: var(--navy);
+    text-decoration-color: var(--hairline);
+    text-underline-offset: 3px;
+  }
+
+  a:hover { text-decoration-color: var(--orange); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  /* ---------- Stats ---------- */
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border-block: 1px solid var(--hairline);
+    margin: 0 0 26px;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 18px 16px 16px;
+  }
+
+  .stat .n {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 1;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .stat .d {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Empty state ---------- */
+
+  .empty {
+    font-family: var(--f-data);
+    font-size: 12.5px;
+    color: var(--muted);
+    background: var(--surface-alt);
+    padding: 16px 18px;
+    border-left: 3px solid var(--hairline);
+    letter-spacing: 0.01em;
+  }
+
+  .empty b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Watchlist ---------- */
+
+  .watch {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Columna fija para que la etiqueta temporal alinee en todas las filas. */
+  .watch li {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    max-width: calc(var(--measure) + 146px);
+  }
+
+  .watch .when {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .watch b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Sources ---------- */
+
+  .sources {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-family: var(--f-data);
+    font-size: 12px;
+  }
+
+  .sources li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 8px;
+    color: var(--muted);
+  }
+
+  .sources span { font-variant-numeric: tabular-nums; }
+
+  .sources + .section-note { margin-top: 26px; }
+
+  /* ---------- Method + footer ---------- */
+
+  .method {
+    font-family: var(--f-data);
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+    padding: 24px 0 30px;
+    border-top: 1px solid var(--hairline);
+    max-width: 74ch;
+  }
+
+  footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.6);
+    padding: 16px 44px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+  }
+
+  footer .mark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: #fff;
+  }
+
+  @media (max-width: 620px) {
+    .masthead, main, footer { padding-inline: 24px; }
+    .exec { padding: 22px 20px; }
+    .stats { grid-template-columns: 1fr; }
+    .edition { text-align: left; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { max-width: none; }
+    section { break-inside: avoid; }
+    .item { break-inside: avoid; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
+      <div class="edition">
+        <strong>Edición 19.11.2026</strong>
+        Jueves · Desde la edición del 18.11<br>Actualizado 07:11 CET
+      </div>
+    </div>
+    <h1>El Plan Auto+ agota la línea de particulares y a la de empresas le quedan unos 7 millones; CCOO convoca huelga de conductores el 23 y 24.12, y no hay operaciones nuevas en la competencia</h1>
+    <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
+  </header>
+  <div class="rule-accent"></div>
+
+  <main>
+
+    <!-- ===== 1. RESUMEN EJECUTIVO (1-5 puntos) ===== -->
+    <section class="exec">
+      <span class="badge">Resumen ejecutivo</span>
+      <h2>Lo que necesitas saber hoy</h2>
+      <p class="section-note">Nuevas 1 · Actualizadas 1 · Menciones 0 · Competencia 0 · Sector 0 · Regulación 2</p>
+      <ol>
+        <li><div><b>Al Plan Auto+ le quedan unos 7 millones para empresas, según Arval.</b> La parte de autónomos de la línea 2 está agotada. Según el sector, la línea de particulares se agotó el 18.11, pero no hay confirmación oficial [01][02]. Flota y compras: si Covey piensa pedir la ayuda para vehículos eléctricos, el margen que queda es de días.</div></li>
+        <li><div><b>CCOO convoca una huelga de conductores profesionales el 23 y el 24 de diciembre.</b> Afecta al transporte de mercancías por carretera y al de viajeros. El motivo es el retraso en la jubilación anticipada. La CETM la rechaza [04]. Operaciones y Comercial: coincide con el pico de reparto de Navidad.</div></li>
+        <li><div><b>No hay operaciones corporativas nuevas en el sector.</b> Se ha buscado en español, francés e inglés. La venta de Fraikin a Asterion sigue sin cerrarse. La fuente prevé el cierre en el primer trimestre de 2027 [05].</div></li>
+      </ol>
+    </section>
+
+    <!-- ===== 2. MENCIONES DE COVEY ===== -->
+    <section>
+      <span class="badge">Menciones de Covey</span>
+      <h2>Covey en los medios</h2>
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 18–19.11.2026</p>
+      <div class="empty">
+        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey» junto a alquiler de furgonetas, descartando los resultados sobre Stephen Covey, FranklinCovey y personas apellidadas Covey. Solo aparecen artículos promocionales, comparativas y fichas sin fecha o anteriores a la ventana, que no cuentan como novedad.
+      </div>
+    </section>
+
+    <!-- ===== 3. COMPETIDORES ===== -->
+    <section>
+      <span class="badge">Competidores</span>
+      <h2>Movimientos de la competencia</h2>
+      <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
+      <div class="empty">
+        <b>Sin movimientos ni operaciones corporativas en la ventana.</b> Se han buscado compras, ventas, fusiones y entradas de fondos en alquiler y renting de vehículos comerciales e industriales, en español, francés e inglés. La búsqueda ha cubierto Northgate, Petit Forestier, Fraikin, Alquiber, fondos como Asterion o Everwood, y la prensa especializada española, francesa y británica. También se han revisado las webs de Fraikin España, Petit Forestier España y Alquiber. Ninguna tiene publicaciones nuevas: la última nota de Fraikin España es del 30.10 y la de Petit Forestier España, del 21.10. Las operaciones que aparecen en los buscadores son anteriores a la ventana o ya se habían recogido. La venta de Fraikin a Asterion sigue en Señales a seguir.
+      </div>
+    </section>
+
+    <!-- ===== 4. SECTOR Y MERCADO ===== -->
+    <section>
+      <span class="badge">Sector y mercado</span>
+      <h2>Sin novedades de mercado en la ventana</h2>
+      <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
+      <div class="empty">
+        <b>Sin novedades de mercado con impacto para Covey en la ventana.</b> Se han buscado datos de AER y AELR, matriculaciones de vehículo comercial (ANFAC, Faconauto, Ganvam), transporte frigorífico, cadena de frío y última milla. La última nota de la AER sigue siendo la de los datos hasta octubre. Los datos de noviembre de matriculaciones no se publicarán hasta principios de diciembre. Lo publicado en la ventana por la prensa especializada trata de rankings de turismos en renting, camiones o mercados extranjeros, sin efecto directo en el alquiler de furgonetas en España.
+      </div>
+    </section>
+
+    <!-- ===== 5. REGULACIÓN Y NORMATIVA ===== -->
+    <section>
+      <span class="badge">Regulación y normativa</span>
+      <h2>Marco regulatorio</h2>
+      <p class="section-note">ZBE, transporte de mercancías, ATP frigorífico, fiscalidad del renting y ayudas</p>
+
+      <div class="items">
+
+        <article class="item media">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip media">Relevancia media</span>
+              <span class="chip">Actualizado</span>
+              <span>Plan Auto+</span>
+              <span>·</span>
+              <span>COPE y Panorama Motor</span>
+              <span>·</span>
+              <span>18.11.2026</span>
+            </div>
+            <h3>El Plan Auto+ agota la línea de particulares, según el sector, y a la de empresas le quedan unos 7 millones</h3>
+            <p>Qué cambia respecto a ayer: la previsión se ha cumplido antes de lo esperado en la línea de particulares. Según el sector y las redes de concesionarios, sus 350 millones se agotaron el 18.11, dos días antes de lo previsto, y ya no se admiten nuevas reservas. No hay comunicado oficial [01]. En la línea 2, la parte de autónomos está agotada. La de empresas, dotada con 42 millones, sigue activa con unos 7 millones de remanente, según Arval. Las ayudas son solo para vehículos con etiqueta CERO: hasta 12.000 euros por comercial ligero y hasta 7.000 euros por turismo de menos de 45.000 euros. Cada empresa puede pedirlas para 10 vehículos como máximo, con contratos de renting de al menos 36 meses [02]. Hace tres días, fuentes del sector daban la línea 2 solicitada al 86,2 % (43,12 millones) y preveían que la parte de empresas se agotara el 24.11 [03].</p>
+            <p class="why"><b>Por qué importa · Flota y compras · Actuar:</b> si Covey quiere usar la línea 2 para incorporar vehículos eléctricos, tiene que presentar las solicitudes ya: con unos 7 millones restantes, el margen es de días. Lo que llegue después irá previsiblemente a lista de espera. Comercial · Informar: los clientes particulares y autónomos que esperaban la ayuda para comprar ya no tienen fondos garantizados. Algunos pueden plantearse el alquiler mientras no haya convocatoria para 2027.</p>
+            <p class="src"><a href="https://cope.es/emisoras/comunidad-valenciana/valencia-provincia/valencia/luz-de-cruce/noticias/agotadas-ayudas-plan-auto-20261118_3477839.html">cope.es →</a> · [01] · <a href="https://panoramamotor.com/plan-auto-quedan-unos-7-millones-de-euros-para-electrificar-flotas-de-empresa-por-renting">panoramamotor.com →</a> · [02] · <a href="https://elperiodicodelaenergia.com/el-sector-de-la-automocion-preve-que-los-fondos-del-plan-auto-se-agoten-este-viernes">elperiodicodelaenergia.com →</a> · [03]</p>
+          </div>
+        </article>
+
+        <article class="item media">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip media">Relevancia media</span>
+              <span class="chip">Nuevo</span>
+              <span>CCOO · CETM</span>
+              <span>·</span>
+              <span>trans.info</span>
+              <span>·</span>
+              <span>19.11.2026</span>
+            </div>
+            <h3>CCOO convoca huelga de conductores profesionales el 23 y el 24 de diciembre por el retraso de la jubilación anticipada</h3>
+            <p>La FSC-CCOO convoca la huelga desde las 00:00 del 23.12 hasta las 23:59 del 24.12. Afecta a los conductores profesionales del transporte de mercancías por carretera, de viajeros en autobús y del transporte urbano. El sindicato la anunció el 16.11. Protesta porque aún no se han aprobado los coeficientes reductores para la jubilación anticipada: la comisión evaluadora no se ha constituido. Según CCOO, la edad media de los conductores ronda los 55 años. Antes habrá una concentración en Madrid el 26.11, y el sindicato no descarta más movilizaciones en enero y febrero ni una huelga indefinida en la segunda quincena de marzo de 2027. La patronal CETM rechaza la huelga y culpa a la Administración del retraso [04].</p>
+            <p class="why"><b>Por qué importa · Operaciones · Informar:</b> la fuente no dice si la convocatoria incluye el reparto en furgoneta, y no afecta a la actividad de Covey como empresa de alquiler. Pero si la siguen los conductores de camión, puede alterar las cadenas de suministro de los clientes de reparto y frío en plena campaña de Navidad. Comercial: las delegaciones pueden recibir más peticiones de última hora esos días. Conviene revisar la disponibilidad de flota para el 22 y el 23.12.</p>
+            <p class="src"><a href="https://trans.info/es/espana-los-conductores-anuncian-una-huelga-justo-antes-de-navidad-los-transportistas-rechazan-la-decision-de-los-sindicatos-515152">trans.info →</a> · [04]</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 6. SEÑALES A SEGUIR (2-4) ===== -->
+    <section>
+      <span class="badge">Señales a seguir</span>
+      <h2>Qué vigilar los próximos días</h2>
+      <ul class="watch">
+        <li>
+          <span class="when">Abierta desde 19.10 · cierre previsto 1T 2027</span>
+          <div><b>Venta de Fraikin a Asterion.</b> Los accionistas mayoritarios negocian en exclusiva con Asterion Industrial Partners. El cierre depende de las autoridades de competencia y de la información y consulta a los empleados. La fuente prevé la finalización en el primer trimestre de 2027, aunque también habla de una toma de control en el primer semestre [05]. Dirección: seguir si se publica la firma, el cierre o la autorización de competencia.</div>
+        </li>
+        <li>
+          <span class="when">Actualizada · próximos días</span>
+          <div><b>Fin de los fondos del Plan Auto+ para empresas.</b> A la parte de empresas de la línea 2 le quedan unos 7 millones, según Arval [02]. La previsión del sector era que se agotara el 24.11 [03]. Flota y compras: confirmar en el portal del programa si las solicitudes que presente Covey entran con fondos o en lista de espera.</div>
+        </li>
+        <li>
+          <span class="when">Abierta desde 18.11 · 30.11</span>
+          <div><b>ZBE de Málaga.</b> A partir del 30.11, Málaga restringe la entrada en la ZBE a los coches y motos con etiqueta B que no estén domiciliados en la ciudad. En esta fase la limitación se aplica solo a coches y motos [07]. Comercial (Málaga): confirmar si afecta a los turismos de alquiler no domiciliados en Málaga.</div>
+        </li>
+        <li>
+          <span class="when">Diciembre · dos fechas</span>
+          <div><b>Pleno europeo sobre el CO₂ de las furgonetas y huelga de conductores.</b> El Parlamento Europeo votará en diciembre el recorte del 80 % para las furgonetas nuevas en 2035 que aprobaron las comisiones. En el mismo texto se proponen metas orientativas, en lugar de obligatorias, para la compra de vehículos limpios en flotas corporativas [06]. La huelga de CCOO está convocada para el 23 y el 24.12 [04]. Flota y compras: comprobar si el pleno mantiene el 80 %. Operaciones: seguir si la huelga se desconvoca.</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== 7. FUENTES (citadas + revisadas sin novedad) ===== -->
+    <section>
+      <span class="badge">Fuentes</span>
+      <h2>Consultado hoy</h2>
+      <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
+      <ol class="sources">
+        <li><span>01</span><a href="https://cope.es/emisoras/comunidad-valenciana/valencia-provincia/valencia/luz-de-cruce/noticias/agotadas-ayudas-plan-auto-20261118_3477839.html">COPE — Agotadas las ayudas del Plan Auto+ (18.11.2026)</a></li>
+        <li><span>02</span><a href="https://panoramamotor.com/plan-auto-quedan-unos-7-millones-de-euros-para-electrificar-flotas-de-empresa-por-renting">Panorama Motor — Plan Auto+: quedan unos 7 millones de euros para electrificar flotas de empresa por renting (18.11.2026)</a></li>
+        <li><span>03</span><a href="https://elperiodicodelaenergia.com/el-sector-de-la-automocion-preve-que-los-fondos-del-plan-auto-se-agoten-este-viernes">El Periódico de la Energía — El sector de la automoción prevé que los fondos del Plan Auto+ se agoten este viernes (16.11.2026)</a></li>
+        <li><span>04</span><a href="https://trans.info/es/espana-los-conductores-anuncian-una-huelga-justo-antes-de-navidad-los-transportistas-rechazan-la-decision-de-los-sindicatos-515152">trans.info — España: los conductores anuncian una huelga justo antes de Navidad (19.11.2026)</a></li>
+        <li><span>05</span><a href="https://journalauto.com/journal-des-flottes/fraikin-sur-le-point-detre-vendu-a-un-fonds-espagnol/">Journal des Flottes — Fraikin sur le point d'être vendu à un fonds espagnol (13.10.2026)</a></li>
+        <li><span>06</span><a href="https://trans.info/es/furgonetas-la-eurocamara-respalda-un-recorte-del-80-para-2035-513138">trans.info — Furgonetas: la Eurocámara respalda un recorte del 80 % para 2035 (12.11.2026)</a></li>
+        <li><span>07</span><a href="https://www.malaga.eu/visorcontenido/ANUDocumentDisplayer/178598/COMUNICADO.pdf">Ayuntamiento de Málaga — El 30 de noviembre comienza el segundo año de vigencia de la ordenanza de Movilidad Sostenible (27.11.2025)</a></li>
+      </ol>
+      <p class="section-note">Revisadas sin novedad en la ventana</p>
+      <ul class="sources">
+        <li><span>—</span><a href="https://www.fraikin.es/es/newsroom-es">Fraikin España — sala de prensa</a></li>
+        <li><span>—</span><a href="https://www.petitforestier.com/es-es/posts">Petit Forestier España — noticias</a></li>
+        <li><span>—</span><a href="https://www.alquiber.es/">Alquiber — web corporativa</a></li>
+        <li><span>—</span><a href="https://ae-renting.es/">AER — Asociación Española de Renting</a></li>
+        <li><span>—</span><a href="https://www.fleetpeople.es/">Fleet People — portada</a></li>
+        <li><span>—</span><a href="https://renting-automocion.com/">Renting Automoción — portada</a></li>
+        <li><span>—</span><a href="https://journalauto.com/journal-des-flottes/">Journal des Flottes — portada</a></li>
+        <li><span>—</span><a href="https://www.cadenadesuministro.es/transporte-carretera/frigorifico">Cadena de Suministro — transporte frigorífico</a></li>
+      </ul>
+    </section>
+
+    <p class="method">
+      <b>Método.</b> Edición completa del 19.11.2026. Cubre desde la edición anterior, del 18.11.2026 a las 07:08 CET, hasta hoy a las 07:11 CET.
+    </p>
+
+  </main>
+
+  <footer>
+    <span class="mark">COVEY</span>
+    <span>Noticias recientes · Edición 19.11.2026</span>
+  </footer>
+
+</div>
+
+<script id="covey-nav" src="../../../nav.js" data-fecha="2026-11-19" defer></script>
+</body>
+</html>
