@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticias Relevantes · Covey · 27.11.2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    color-scheme: light;
+
+    --navy:        #1E2761;
+    --navy-deep:   #0F1740;
+    --navy-mid:    #2A3370;
+    --navy-light:  #3D4FA0;
+    --orange:      #F5A623;
+    --ink:         #171C33;
+    --body:        #4C566B;
+    --muted:       #7B8598;
+    --hairline:    #DCE1EA;
+    --surface:     #FFFFFF;
+    --surface-alt: #F3F5FA;
+    --ground:      #EBEEF4;
+    --brick:       #A93B2C;
+
+    --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --f-body:    "Source Serif 4", Georgia, "Times New Roman", serif;
+    --f-data:    "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+    --measure: 68ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy:        #8FA0E8;
+      --navy-deep:   #0B1030;
+      --navy-mid:    #A9B6EE;
+      --navy-light:  #7A8CD8;
+      --orange:      #F7B54A;
+      --ink:         #E8ECF7;
+      --body:        #B3BCD2;
+      --muted:       #8A94AC;
+      --hairline:    #2A3159;
+      --surface:     #141A38;
+      --surface-alt: #1A2145;
+      --ground:      #0B1030;
+      --brick:       #E08375;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --navy:        #8FA0E8;
+    --navy-deep:   #0B1030;
+    --navy-mid:    #A9B6EE;
+    --navy-light:  #7A8CD8;
+    --orange:      #F7B54A;
+    --ink:         #E8ECF7;
+    --body:        #B3BCD2;
+    --muted:       #8A94AC;
+    --hairline:    #2A3159;
+    --surface:     #141A38;
+    --surface-alt: #1A2145;
+    --ground:      #0B1030;
+    --brick:       #E08375;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--surface);
+    min-height: 100vh;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 34px 44px 26px;
+  }
+
+  .masthead-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px 24px;
+  }
+
+  .wordmark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.10em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .wordmark span {
+    display: block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.62);
+    margin-top: 7px;
+  }
+
+  .edition {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-align: right;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .edition strong {
+    display: block;
+    font-weight: 500;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .masthead h1 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #fff;
+    margin: 26px 0 8px;
+    text-wrap: balance;
+  }
+
+  .masthead p {
+    margin: 0;
+    max-width: 56ch;
+    font-size: 15px;
+    color: rgba(255,255,255,0.74);
+  }
+
+  .rule-accent {
+    height: 5px;
+    background: var(--orange);
+  }
+
+  /* ---------- Page body ---------- */
+
+  main {
+    padding: 0 44px 8px;
+  }
+
+  section {
+    padding: 34px 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  section:first-of-type { border-top: 0; }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--f-data);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--navy-deep);
+    padding: 4px 9px;
+    border-radius: 2px;
+  }
+
+  :root[data-theme="dark"] .badge,
+  :root:not([data-theme="light"]) .badge { color: #fff; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .badge {
+      background: var(--navy-light);
+      color: #0B1030;
+    }
+  }
+
+  :root[data-theme="dark"] .badge {
+    background: var(--navy-light);
+    color: #0B1030;
+  }
+
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 23px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 14px 0 4px;
+    text-wrap: balance;
+  }
+
+  .section-note {
+    font-family: var(--f-data);
+    font-size: 11.5px;
+    color: var(--muted);
+    margin: 0 0 22px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Executive summary ---------- */
+
+  .exec {
+    background: var(--surface-alt);
+    padding: 28px 30px;
+    margin: 0 0 4px;
+    border-left: 5px solid var(--orange);
+  }
+
+  .exec h2 { margin-top: 10px; }
+
+  .exec .section-note { margin: 0; }
+
+  .exec ol {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    counter-reset: keyline;
+  }
+
+  /* Sangría colgante robusta: no usar grid aquí. Un nodo de texto suelto
+     dentro del <li> se convertiría en una celda propia y saldría en vertical. */
+  .exec li {
+    position: relative;
+    padding-left: 38px;
+    max-width: var(--measure);
+    counter-increment: keyline;
+  }
+
+  .exec li::before {
+    content: counter(keyline, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.6;
+    font-family: var(--f-data);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .exec li b {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ---------- Items ---------- */
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 18px;
+  }
+
+  .item-rail { background: var(--hairline); border-radius: 2px; }
+  .item.alta    .item-rail { background: var(--navy); }
+  .item.media   .item-rail { background: var(--navy-light); }
+  .item.contexto .item-rail { background: var(--hairline); }
+
+  .item-body { min-width: 0; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .chip {
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    padding: 1px 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .chip.alta     { color: var(--brick); }
+  .chip.media    { color: var(--navy-light); }
+  .chip.contexto { color: var(--muted); }
+
+  .item h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 9px 0 8px;
+    max-width: var(--measure);
+    text-wrap: balance;
+  }
+
+  .item p {
+    margin: 0 0 10px;
+    max-width: var(--measure);
+  }
+
+  .why {
+    font-family: var(--f-display);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: var(--measure);
+    padding-left: 14px;
+    border-left: 2px solid var(--orange);
+    margin: 0 0 10px;
+  }
+
+  .why b {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .src {
+    font-family: var(--f-data);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  a {
+    color: var(--navy);
+    text-decoration-color: var(--hairline);
+    text-underline-offset: 3px;
+  }
+
+  a:hover { text-decoration-color: var(--orange); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  /* ---------- Stats ---------- */
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border-block: 1px solid var(--hairline);
+    margin: 0 0 26px;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 18px 16px 16px;
+  }
+
+  .stat .n {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 1;
+    color: var(--navy);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .stat .d {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Empty state ---------- */
+
+  .empty {
+    font-family: var(--f-data);
+    font-size: 12.5px;
+    color: var(--muted);
+    background: var(--surface-alt);
+    padding: 16px 18px;
+    border-left: 3px solid var(--hairline);
+    letter-spacing: 0.01em;
+  }
+
+  .empty b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Watchlist ---------- */
+
+  .watch {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Columna fija para que la etiqueta temporal alinee en todas las filas. */
+  .watch li {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    max-width: calc(var(--measure) + 146px);
+  }
+
+  .watch .when {
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .watch b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Sources ---------- */
+
+  .sources {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-family: var(--f-data);
+    font-size: 12px;
+  }
+
+  .sources li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 8px;
+    color: var(--muted);
+  }
+
+  .sources span { font-variant-numeric: tabular-nums; }
+
+  .sources + .section-note { margin-top: 26px; }
+
+  /* ---------- Method + footer ---------- */
+
+  .method {
+    font-family: var(--f-data);
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+    padding: 24px 0 30px;
+    border-top: 1px solid var(--hairline);
+    max-width: 74ch;
+  }
+
+  footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.6);
+    padding: 16px 44px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--f-data);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+  }
+
+  footer .mark {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: #fff;
+  }
+
+  @media (max-width: 620px) {
+    .masthead, main, footer { padding-inline: 24px; }
+    .exec { padding: 22px 20px; }
+    .stats { grid-template-columns: 1fr; }
+    .edition { text-align: left; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { max-width: none; }
+    section { break-inside: avoid; }
+    .item { break-inside: avoid; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="wordmark">COVEY<span>NOTICIAS RECIENTES</span></div>
+      <div class="edition">
+        <strong>Edición 27.11.2026</strong>
+        Viernes · Desde la edición del 26.11<br>Actualizado 07:07 CET
+      </div>
+    </div>
+    <h1>Sin operaciones nuevas en la competencia; Alquiber y Arval están entre las seis empresas del sistema de renting centralizado de Asturias, y las empresas con centros de más de 200 empleados deben tener su plan de movilidad al trabajo el 5 de diciembre</h1>
+    <p>Informe diario de menciones, competidores, mercado y regulación para el alquiler y renting de vehículos industriales en España.</p>
+  </header>
+  <div class="rule-accent"></div>
+
+  <main>
+
+    <section class="exec">
+      <span class="badge">Resumen ejecutivo</span>
+      <h2>Lo que necesitas saber hoy</h2>
+      <p class="section-note">Nuevas 3 · Actualizadas 0 · Menciones 0 · Competencia 1 · Sector 1 · Regulación 1</p>
+      <ol>
+        <li><div><b>No hay operaciones corporativas nuevas en la competencia.</b> Se ha buscado en español, francés e inglés y en la prensa especializada de España y Francia. La venta de Fraikin a Asterion sigue pendiente de la autorización de competencia y de la consulta a los empleados, con cierre previsto en el primer trimestre de 2027 [05].</div></li>
+        <li><div><b>Alquiber Quality, competidor directo, es una de las seis empresas admitidas en el sistema de renting centralizado de Asturias</b>, valorado en 10,74 millones de euros sin IVA, y Arval ha vuelto a entrar tras haber sido excluida. Covey no figura entre las admitidas [01].</div></li>
+        <li><div><b>El 5 de diciembre vence el plazo para que los centros de trabajo de más de 200 empleados tengan su plan de movilidad al trabajo</b>, según la Ley de Movilidad Sostenible. El Gobierno aún no ha habilitado la plataforma de registro, pero la obligación de tener el plan aprobado se mantiene [04].</div></li>
+        <li><div><b>El 79 % de los transportistas no ha podido trasladar a sus tarifas toda la subida del gasóleo</b>, según el estudio de Continental y FENADISMER con más de 700 empresas. Además, el 84,8 % señala que han subido el mantenimiento y los recambios [02][03].</div></li>
+      </ol>
+    </section>
+
+    <section>
+      <span class="badge">Menciones de Covey</span>
+      <h2>Covey en los medios</h2>
+      <p class="section-note">Menciones externas en prensa, sectorial, notas de prensa y licitaciones · 26–27.11.2026</p>
+
+      <div class="empty">
+        <b>Sin menciones externas en la ventana.</b> Se ha buscado «Covey» junto a alquiler de furgonetas, descartando los resultados sobre Stephen Covey, FranklinCovey y personas apellidadas Covey. Solo aparecen comparativas, artículos patrocinados y fichas sin fecha o anteriores a la ventana. Nada de eso cuenta como novedad.
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Competidores</span>
+      <h2>Movimientos de la competencia</h2>
+      <p class="section-note">Renting, alquiler flexible y gestión de flotas · operaciones, resultados y cambios directivos</p>
+
+      <div class="items">
+
+        <article class="item media">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip media">Relevancia media</span>
+              <span class="chip">Nuevo</span>
+              <span>Alquiber · Arval · Principado de Asturias</span>
+              <span>·</span>
+              <span>Fleet People</span>
+              <span>·</span>
+              <span>26.11.2026</span>
+            </div>
+            <h3>Alquiber y Arval, entre las seis empresas que podrán optar al renting de la flota del Principado de Asturias</h3>
+            <p>El Principado de Asturias contratará de forma centralizada el renting de su flota mediante un sistema dinámico de adquisición valorado en 10,74 millones de euros sin IVA. Durará dos años y podrá ampliarse hasta seis más. Hay seis empresas admitidas: Alvemaco Rentacar, Alquiber Quality, AT Capital, Comercio y Asistencia, Wanacars Rent y Arval. Arval fue excluida a finales de septiembre por presentar unas cuentas anuales que no eran las depositadas en el Registro Mercantil, y fue readmitida tras una nueva solicitud. Andacar se quedó fuera. El sistema no fija el número ni el tipo de vehículos: cada organismo pedirá lo que necesite en contratos concretos, a los que se invitará a las seis empresas [01].</p>
+            <p class="why"><b>Por qué importa · Comercial · Informar:</b> Alquiber, competidor directo de Covey, queda habilitada para recibir las invitaciones a los contratos de renting de los organismos asturianos durante al menos dos años. Covey no figura entre las admitidas. Comercial: comprobar en el perfil del contratante del Principado si el sistema acepta todavía nuevas solicitudes y si los contratos incluirán furgonetas o vehículos frigoríficos.</p>
+            <p class="src"><a href="https://fleetpeople.es/arval-vuelve-al-megaconcurso-de-renting-para-la-flota-del-principado-de-asturias/">fleetpeople.es →</a> · [01]</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Sector y mercado</span>
+      <h2>Los transportistas no consiguen repercutir la subida de costes</h2>
+      <p class="section-note">Oferta de vehículo comercial, matriculaciones e inversión en flota</p>
+
+      <div class="items">
+
+        <article class="item contexto">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip contexto">Relevancia contexto</span>
+              <span class="chip">Nuevo</span>
+              <span>Continental · FENADISMER</span>
+              <span>·</span>
+              <span>Renting Automoción · trans.info</span>
+              <span>·</span>
+              <span>26.11.2026 · 27.11.2026</span>
+            </div>
+            <h3>El 79 % de los transportistas no ha podido trasladar a sus tarifas toda la subida del gasóleo</h3>
+            <p>Continental y FENADISMER han publicado la cuarta edición de su estudio sobre el transporte por carretera, una encuesta anónima hecha en octubre a más de 700 empresas. El 79 % no ha podido repercutir en sus tarifas toda la subida del gasóleo: el 55,6 % las ha actualizado solo en parte y el 23 % las ha congelado. El 81 % considera insuficientes las ayudas al gasóleo. Los costes que más han subido son el mantenimiento y los recambios (84,8 %), los seguros (67,7 %) y la financiación de la renovación de la flota (45,2 %) [03]. Más del 90 % sigue eligiendo el diésel para renovar su flota [02].</p>
+            <p class="why"><b>Por qué importa · Comercial · Contexto:</b> el estudio se centra en el transporte por carretera y no da datos de furgonetas. Aun así, describe a clientes con márgenes estrechos y con más coste de mantenimiento y de financiación de la flota propia. Comercial: puede servir como argumento para ofrecer alquiler con el mantenimiento incluido a transportistas que renuevan flota.</p>
+            <p class="src"><a href="https://trans.info/es/el-79-de-los-transportistas-no-ha-podido-trasladar-a-sus-tarifas-toda-la-subida-del-gasoleo-517069">trans.info →</a> · [03] · <a href="https://renting-automocion.com/costes-transporte-79-transportistas-no-traslada-alza-diesel-a-sus-tarifas/">renting-automocion.com →</a> · [02]</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Regulación y normativa</span>
+      <h2>Marco regulatorio</h2>
+      <p class="section-note">ZBE, transporte de mercancías, ATP frigorífico, fiscalidad del renting y ayudas</p>
+
+      <div class="items">
+
+        <article class="item media">
+          <div class="item-rail"></div>
+          <div class="item-body">
+            <div class="meta">
+              <span class="chip media">Relevancia media</span>
+              <span class="chip">Nuevo</span>
+              <span>Gobierno de España</span>
+              <span>·</span>
+              <span>Renting Automoción</span>
+              <span>·</span>
+              <span>26.11.2026</span>
+            </div>
+            <h3>Los planes de movilidad al trabajo vencen el 5 de diciembre y la plataforma para registrarlos aún no funciona</h3>
+            <p>La Ley de Movilidad Sostenible obliga a las empresas con centros de trabajo de más de 200 empleados a tener, antes del 5 de diciembre, un plan de movilidad para los desplazamientos de sus empleados entre casa y trabajo. El Gobierno aún no ha habilitado la plataforma para registrar los planes, que desarrolla el Centro de Referencia de la Economía del Dato. Según el Ministerio, eso no retrasa el plazo: la obligación es tener el plan aprobado, no registrarlo. Una consultora citada en el artículo explica que las empresas pueden acreditar el plan con certificados de quien lo haya elaborado, incluidos los operadores de renting, o con las actas de las reuniones con los representantes de los trabajadores, algo que puede contar en licitaciones públicas [04].</p>
+            <p class="why"><b>Por qué importa · Dirección · Informar:</b> la obligación depende de cada centro de trabajo. Dirección: comprobar si algún centro de Covey supera los 200 empleados y, si es así, que el plan esté aprobado y documentado antes del 5.12, sobre todo si Covey se presenta a licitaciones públicas.</p>
+            <p class="src"><a href="https://renting-automocion.com/planes-movilidad-trabajo-plataforma-registro/">renting-automocion.com →</a> · [04]</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section>
+      <span class="badge">Señales a seguir</span>
+      <h2>Qué vigilar los próximos días</h2>
+      <ul class="watch">
+        <li>
+          <span class="when">Abierta desde 19.10 · cierre previsto 1T 2027</span>
+          <div><b>Venta de Fraikin a Asterion.</b> El acuerdo depende de la autorización de las autoridades de competencia y de la información y consulta a los empleados. La fuente prevé el cierre en el primer trimestre de 2027, aunque también dice que Asterion podría tomar el control en el primer semestre [05]. Dirección: seguir si se publica la firma, el cierre o la autorización de competencia.</div>
+        </li>
+        <li>
+          <span class="when">Abierta desde 23.11 · fin de noviembre · 10.12</span>
+          <div><b>Venta de parte de Lamberet a Schmitz Cargobull.</b> Schmitz Cargobull quiere el control exclusivo de parte de los activos de Lamberet y de sus filiales, entre ellas Lamberet Vehículos Frigoríficos. Se espera un punto de situación antes de que acabe noviembre, y las observaciones de terceros se pueden presentar hasta el 10.12 [06]. Flota y compras: seguir si la filial española entra finalmente en la venta.</div>
+        </li>
+        <li>
+          <span class="when">Hasta el 31.12</span>
+          <div><b>Plan Auto+ para empresas.</b> Según cálculos de Arval publicados el 19.11, a las empresas privadas les quedaban unos 7 millones de euros. Las solicitudes siguen abiertas hasta el 31.12 a las 14:00 o hasta que se agoten los fondos, con hasta 12.000 euros por vehículo comercial N1 y un máximo de 10 vehículos por empresa [07]. Flota y compras: si Covey va a pedir la ayuda, confirmar en el portal del programa si quedan fondos.</div>
+        </li>
+        <li>
+          <span class="when">23-24.12</span>
+          <div><b>Huelga de conductores profesionales.</b> CCOO convoca huelga de conductores de mercancías, autobús interurbano y transporte urbano desde las 00:00 del 23.12 hasta las 23:59 del 24.12 por el retraso de los coeficientes reductores para la jubilación anticipada. La patronal CETM se opone [08]. Operaciones: seguir si la huelga se desconvoca antes de planificar la demanda de esos días.</div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="badge">Fuentes</span>
+      <h2>Consultado hoy</h2>
+      <p class="section-note">Citadas en el informe · el número es el que aparece en cada ítem</p>
+      <ol class="sources">
+        <li><span>01</span><a href="https://fleetpeople.es/arval-vuelve-al-megaconcurso-de-renting-para-la-flota-del-principado-de-asturias/">Fleet People — Arval vuelve al megaconcurso de renting para la flota del Principado de Asturias (26.11.2026)</a></li>
+        <li><span>02</span><a href="https://renting-automocion.com/costes-transporte-79-transportistas-no-traslada-alza-diesel-a-sus-tarifas/">Renting Automoción — Costes transporte: el 79% de los transportistas no consiguen trasladar a sus tarifas el incremento de sus costes operativos (26.11.2026)</a></li>
+        <li><span>03</span><a href="https://trans.info/es/el-79-de-los-transportistas-no-ha-podido-trasladar-a-sus-tarifas-toda-la-subida-del-gasoleo-517069">trans.info — El 79% de los transportistas no ha podido trasladar a sus tarifas toda la subida del gasóleo (27.11.2026)</a></li>
+        <li><span>04</span><a href="https://renting-automocion.com/planes-movilidad-trabajo-plataforma-registro/">Renting Automoción — El Gobierno aún no ha habilitado la plataforma para registrar los planes de movilidad al trabajo (26.11.2026)</a></li>
+        <li><span>05</span><a href="https://journalauto.com/journal-des-flottes/fraikin-sur-le-point-detre-vendu-a-un-fonds-espagnol/">Journal des Flottes — Fraikin sur le point d'être vendu à un fonds espagnol (13.10.2026)</a></li>
+        <li><span>06</span><a href="https://journalauto.com/constructeurs/lamberet-pourrait-etre-repris-par-schmitz-cargobull/">Journal de l'Automobile — Lamberet pourrait être repris par Schmitz Cargobull (20.11.2026)</a></li>
+        <li><span>07</span><a href="https://fleetpeople.es/las-empresas-aun-pueden-pedir-siete-millones-del-plan-auto-para-electrificar-sus-flotas/">Fleet People — Las empresas aún pueden pedir siete millones del Plan Auto+ para electrificar sus flotas (19.11.2026, actualizado 20.11.2026)</a></li>
+        <li><span>08</span><a href="https://trans.info/es/espana-los-conductores-anuncian-una-huelga-justo-antes-de-navidad-los-transportistas-rechazan-la-decision-de-los-sindicatos-515152">trans.info — España: los conductores anuncian una huelga justo antes de Navidad (19.11.2026)</a></li>
+      </ol>
+      <p class="section-note">Revisadas sin novedad en la ventana</p>
+      <ul class="sources">
+        <li><span>—</span><a href="https://www.northgate.es/sobre-nosotros/actualidad">Northgate Renting Flexible — actualidad</a></li>
+        <li><span>—</span><a href="https://www.alquiber.es/">Alquiber — web corporativa</a></li>
+        <li><span>—</span><a href="https://journalauto.com/journal-des-flottes/">Journal des Flottes — portada</a></li>
+        <li><span>—</span><a href="https://www.flotauto.com/">Flotauto — portada</a></li>
+      </ul>
+    </section>
+
+    <p class="method">
+      <b>Método.</b> Edición completa del 27.11.2026, con ventana desde la edición anterior del 26.11.2026 (07:07 CET) hasta hoy a las 07:07 CET.
+    </p>
+
+  </main>
+
+  <footer>
+    <span class="mark">COVEY</span>
+    <span>Noticias recientes · Edición 27.11.2026</span>
+  </footer>
+
+</div>
+
+<script id="covey-nav" src="../../../nav.js" data-fecha="2026-11-27" defer></script>
+</body>
+</html>
